@@ -2,6 +2,8 @@
 
 Deploying (/building) new versions of Directus is a multifaceted process. The application and api should be treated as two separate entities, only to be bundled together for a final build.
 
+
+
 ::: warning
 These steps need to be followed precisely. Any deviation will cause breaking changes.
 :::
@@ -20,7 +22,7 @@ $ cd app
 ```
 
 2. Bump the version in `package.json`
-  
+
 3. Install npm dependencies
 
 ```bash
@@ -45,7 +47,7 @@ $ git clone -b build git@github.com:directus/app.git app-build
 7. Copy everything from `app/dist` to `app-build`
 
 ```bash
-$ cp -r app/dist/. app-build  
+$ cp -r app/dist/. app-build
 ```
 
 8. Delete all .DS_Store files
@@ -252,3 +254,9 @@ $ rm -rf directus
 $ rm -rf api-build
 $ rm -rf app-build
 ```
+
+## Tagging Docs Releases
+
+When releasing a new major or minor version (not a patch) we should also create a git release tag on `directus/docs`. This will ensure that users of previous versions can go back and look at the specific docs from that version.
+
+It's also important to _flag_ each new feature in the Docs with a version number (eg: `7.1+`) so that users can tell when a new feature was made available.
