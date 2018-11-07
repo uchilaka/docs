@@ -91,7 +91,7 @@ This document provides an explanation of all tables and fields within the Direct
 | options                     | JSON of interface option values                                               |
 | locked                      | If this field is locked from editing, typically system fields                 |
 | translation                 | JSON of translations                                                          |
-| validation                  | A RegEx to validate the input against                                         |
+| validation                  | A PCRE RegEx pattern to validate the input against. Must include delimiters   |
 | readonly                    | If the field is globally read-only                                            |
 | required                    | If the field is required                                                      |
 | hidden_input                | If the field is hidden globally on the Item Detail page                       |
