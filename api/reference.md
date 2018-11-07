@@ -167,7 +167,7 @@ The API uses numeric codes to avoid the need for translated error messages based
 The API performs two types of validation on submitted data:
 
 *   **Data Type** – The API checks the submitted value's type against the Directus or database's field type. For example, a String submitted for an INT field will result in an error.
-*   **RegEx** – The API checks the submitted value against its column's `directus_fields.validation` PCRE RegEx pattern (must include delimiters). If the value doesn't match then an error will be returned.
+*   **RegEx** – The API checks the submitted value against its column's `directus_fields.validation` PCRE RegEx pattern (must include delimiters). If the value doesn't match then an error will be returned. Read more about [PCRE patterns](http://php.net/manual/en/pcre.pattern.php) and [delimiters](http://php.net/manual/en/regexp.reference.delimiters.php).
 
 ## Authentication
 

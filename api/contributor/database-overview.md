@@ -101,6 +101,8 @@ This document provides an explanation of all tables and fields within the Direct
 | note                        | A helpful note for users                                                      |
 | group                       | Used for grouping fields (Foreign Key: directus_fields)                       |
 
+Read more about the validation [PCRE patterns](http://php.net/manual/en/pcre.pattern.php) and [delimiters](http://php.net/manual/en/regexp.reference.delimiters.php).
+
 ### directus_files
 
 | Field                       | Notes                                                                         |
