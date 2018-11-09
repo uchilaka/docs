@@ -1240,7 +1240,25 @@ POST /[project]/fields/[collection]
   "field": "description",
   "type": "string",
   "datatype": "varchar",
-  "interface": "textarea"
+  "interface": "textarea",
+  "unique": true,
+  "primary_key": false,
+  "auto_increment": false,
+  "default_value": null,
+  "note": null,
+  "signed": true,
+  "sort": 0,
+  "hidden_detail": false,
+  "hidden_browse": false,
+  "required": false,
+  "options": null,
+  "locked": false,
+  "translation": null,
+  "readonly": false,
+  "width": 4,
+  "validation": null,
+  "group": null,
+  "length": '255'
 }
 ```
 
