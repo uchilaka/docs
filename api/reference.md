@@ -1076,7 +1076,7 @@ When `type` requires a length, such as a string or numeric, a `length` attribute
     "fields": [
         {
             "field": "id",
-            "type": "number",
+            "type": "integer",
             "datatype": "int",
             "interface": "primary_key",
             "primary_key": true,
