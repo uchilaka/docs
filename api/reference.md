@@ -18,16 +18,28 @@ The Directus API uses [SemVer](https://semver.org/) for version labeling within 
 
 All endpoints are prefixed with a project key based on the configuration file name. The API will attempt to find a configuration file that matches the provided project key and use its settings. The underscore (`_`) is reserved as the _default_ project key.
 
-Below are few examples of API requests when your API is located in an `/api` sub-directory:
+Below are few examples of API requests when your API is located in the root directory:
 
-*   `/api/_/collections` (uses the default config file `api.php`)
-*   `/api/prod/items/projects` (uses "prod" config file `api.prod.php`)
+```
+# API
+https://example.com/server/ping
 
-::: tip NOTE
+# Default Project — uses the default config file: api.php
+https://example.com/_/collections
+
+# Custom Project — uses "prod" config file: api.prod.php
+https://example.com/prod/collections
+```
+
+::: tip App Location
+For the combined build the Directus App would be located at: `https://example.com/admin`
+:::
+
+::: tip Project Config File
 The naming format of the configuration file is `api.<project-key>.php`
 :::
 
-::: warning
+::: warning Default Config File
 A default API project (`api.php`) is required for the API to function properly.
 :::
 
