@@ -6,7 +6,7 @@ A lot of thought has gone into the Directus brand and UX. It is therefore extrem
 
 ## Global CSS Variables
 
-To keep things standardized across many extensions, we have a global set of [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) that are available within the App (since extensions don't have access to "local" imports, we chose not to use SASS Variables). Whenever possible, these variables should be used. Variables can be found here: `/src/assets/global.scss`
+To keep things standardized across many extensions, we have a global set of [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) that are available within the App (since extensions don't have access to "local" imports, we chose not to use SASS Variables). Whenever possible, these variables should be used. All the variables in use by the Directus app can be found in [the global.scss file](https://github.com/directus/app/blob/master/src/assets/global.scss).
 
 ### Variable Usage
 
