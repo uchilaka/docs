@@ -134,10 +134,6 @@ $ cd ..
 * README.md
 * docker-compose.yml
 
-```bash
-$ cp -r ./{bin,config,docker,logs,migrations,public,src,vendor,LICENSE.md,README.md,docker-compose.yml} ../api-build
-$ cd ..
-```
 
 9. Delete all .DS_Store files
 
@@ -146,7 +142,62 @@ $ cd api-build
 $ find . -name '.DS_Store' -type f -delete
 ```
 
-10. Add-commit-push
+10. Add this .gitignore file:
+
+```
+Icon
+.DS_Store
+*.log
+.cache
+
+# Ignore dev files
+/.idea
+node_modules
+
+package-lock.json
+
+# Don't track composer phar/vendors
+composer.phar
+composer.lock
+
+# Ignore configuration files
+/config/*
+!/config/migrations.php
+!/config/migrations.upgrades.php
+!/config/api_sample.php
+
+# PHPUnit
+/phpunit.xml
+/documents
+
+# Custom extensions
+/public/extensions/custom/*/*
+
+##  Auth
+/public/extensions/custom/auth
+
+##  Endpoints
+!/public/extensions/custom/endpoints/_directory/
+!/public/extensions/custom/endpoints/_example.php
+
+##  Hashers
+!/public/extensions/custom/hashers/_CustomHasher.php
+
+##  Hooks
+!/public/extensions/custom/hooks/_products
+!/public/extensions/custom/hooks/_webhook
+
+# Storage
+/public/uploads/*/
+!public/uploads/_/originals/.gitignore
+!public/uploads/_/thumbnails/.gitignore
+
+# Keep gitkeep files
+# This will make sure empty directories has at least one file so it can be tracked by git
+!**/.gitkeep
+```
+
+11. Add-commit-push
 
 ```bash
 $ git add .
@@ -154,9 +205,9 @@ $ git commit -m "<VERSION NUMBER>"
 $ git push origin build
 ```
 
-11. Create release on GH
+12. Create release on GH
 
-12. Delete local repos
+13. Delete local repos
 
 ```bash
 $ cd ..
