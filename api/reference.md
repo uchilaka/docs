@@ -1061,7 +1061,7 @@ In the `fields` list, `field`, `type`, and `interface` are required.
 
 The `datatype` (database vendor specific) may also be required if the `type` supports different datatypes. For example, the `primary_key` type supports both _string_ and _number_, so it is also required to set the `datatype` to a numeric or string datatype.
 
-When `type` requires a length, such as a string or numeric, a `length` attribute is required.
+When `type` requires a length, such as a string or integer, a `length` attribute is required.
 
 ```json
 {
