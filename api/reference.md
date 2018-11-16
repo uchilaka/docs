@@ -1258,7 +1258,7 @@ POST /[project]/fields/[collection]
   "width": 4,
   "validation": null,
   "group": null,
-  "length": '255'
+  "length": "255"
 }
 ```
 
