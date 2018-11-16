@@ -9,7 +9,7 @@ In order to work on the API, you'll need to install the source version locally. 
 * MySQL 5.2+
     * Database (empty or existing)
     * Database User (with access to database)
-* PHP 5.6+ or 7.0+
+* PHP 7.1+
     * `pdo` + `mysql`
     * `curl`
     * `gd`

@@ -10,7 +10,7 @@ Directus is quite flexible and can be installed on many different varieties of s
 * MySQL 5.2+
     * Database (empty or existing)
     * Database User (with access to database)
-* PHP 5.6+
+* PHP 7.1+
     * `pdo` + `mysql`
     * `curl`
     * `gd`

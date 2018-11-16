@@ -37,7 +37,7 @@ Directus can manage your database's schema, this requires the user to have privi
 
 ## PHP
 
-Directus requires PHP 5.6+, though we recommend using the most recent/stable version possible.
+Directus requires PHP 7.1+, though we recommend using the most recent/stable version possible.
 
 ## PHP Extensions
 

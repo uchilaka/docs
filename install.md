@@ -14,7 +14,7 @@ Learn more about these system requirements, neccesary permissions, and other ser
 * MySQL 5.2+
     * Database (empty or existing)
     * Database User (with access to database)
-* PHP 5.6+
+* PHP 7.1+
     * Extensions:  `pdo`, `mysql`, `curl`, `gd`, `fileinfo`, and `mbstring`
 
 ## Install
