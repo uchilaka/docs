@@ -60,9 +60,14 @@ The `mine` and `role` permission options are only available when the parent coll
 To enforce the `mine` and `role` permissions described above, Directus needs to know who created an item. Additionally, you may want to track _when_ an item was created, or when it was last _updated_. This can all happen automatically, but you first must include a few system fields.
 
 * **User Created** – Stores the ID of the user who created this item. Setup: Create a field with the `user_created` interface
+    * This field is required to use the `mine` and `role` permissions
 * **DateTime Created** – Stores the GMT datetime this item was created. Setup: Create a field with the `datetime_created` interface
 * **User Updated** – Stores the ID of the last user to update this item. Setup: Create a field with the `user_updated` interface
 * **DateTime Updated** – Stores the GMT datetime this item was last updated. Setup: Create a field with the `datetime_updated` interface
+
+::: tip
+There are dedicated interfaces available to make it easier to set up the above fields.
+:::
 
 ## Field Level
 

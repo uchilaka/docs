@@ -44,5 +44,5 @@ The Directus permissions system is quite granular so it is important to understa
 * `always` Requires a "commit" comment on Create and Update
 
 :::tip NOTE
-The `mine` and `role` permission options are only available when the parent collection contains `created_on` and `created_by` interface fields.
+The `mine` and `role` permission options are only available when the parent collection contains the `created_by` interface field.
 :::
