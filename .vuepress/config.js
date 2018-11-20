@@ -103,7 +103,7 @@ module.exports = {
       }
     ],
     lastUpdated: 'Last Updated',
-    repo: 'directus/docs-v7',
+    repo: 'directus/docs',
     docsDir: '',
     editLinks: true
   }
