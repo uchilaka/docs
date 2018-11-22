@@ -639,6 +639,8 @@ GET /items/comments?filter[datetime][lte]=2018-05-21 15:48:03,2018-05-21 15:49:0
 
 The `lang` parameter is a CSV of languages that should be returned with the response. This parameter can only be used when a Translation field has been included in the collection. This parameter supports the wildcard (`*`) to return all language translations.
 
+In order to receive the translated values you **must** specify the [`fields`](#fields) parameter (e.g. `lang=*&fields=*.*` or `lang=en&fields=article_translations.*`).
+
 ### Search Query
 
 The `q` parameter allows you to perform a search on all `string` and `number` type fields within a collection. It's an easy way to search for an item without creating complex field filters – though it is far less optimized. It only searches the root item's fields, related item fields are not included.
