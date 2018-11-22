@@ -1,6 +1,6 @@
 # Extending Directus
 
-To keep the core codebase as simple and clean as possible, all edge-case ([80/20 rule](../feature-requests.md#80-20-rule)) functionality is added through extensions. There are many different types of extensions which we'll cover, but first let's clarify why extensions are displayed in the App but located in the API codebase.
+To keep the core codebase as simple and clean as possible, all edge-case (80/20 rule) functionality is added through extensions. There are many different types of extensions which we'll cover, but first let's clarify why extensions are displayed in the App but located in the API codebase.
 
 ## Architecture Explanation
 

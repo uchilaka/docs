@@ -25,6 +25,7 @@
   "homepage": "https://github.com/directus/docs#readme",
   "devDependencies": {},
   "dependencies": {
-    "vuepress": "^0.14.2"
+    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.0",
+    "vuepress": "^1.0.0-alpha.23"
   }
 }
