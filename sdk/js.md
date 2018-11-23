@@ -624,7 +624,7 @@ client.getMyPermissions();
 
 ---
 
-#### `createPermission(data)`
+#### `createPermissions(data)`
 
 Create multiple new permissions.
 
@@ -650,6 +650,258 @@ client.createPermissions([
   }
 ]);
 ```
+
+---
+
+#### `updatePermissions(data)`
+
+Update multiple permissions
+
+```js
+client.updatePermissions([
+  {
+    id: 15,
+    delete: "none"
+  },  
+  {
+    id: 21,
+    update: "full"
+  }
+]);
+```
+
+---
+
+### Relations
+
+#### `getRelations(params = {})`
+
+Get all the Directus relations.
+
+```js
+client.getRelations();
+```
+
+---
+
+#### `createRelation(data)`
+
+Create a new relationship.
+
+```js
+client.createRelation({
+  collection_many: "sales",
+  field_many: "ticket",
+  collection_one: "tickets"
+});
+```
+
+---
+
+#### `updateRelation(primaryKey, data)`
+
+Update a relationship by primary key.
+
+```js
+client.updateRelation(22, {
+  field_one: "sold_tickets"
+});
+```
+
+---
+
+#### `getCollectionRelations(collection, params = {})`
+
+Get the relationships that apply to a given collection.
+
+```js
+client.getCollectionRelations("movies");
+```
+
+---
+
+### Revisions
+
+#### `getItemRevisions(collection, primaryKey, params = {})`
+
+Get all the revisions of a single item.
+
+```js
+client.getItemRevisions("movies", 15);
+```
+
+---
+
+#### `revert(collection, primaryKey, revisionID)`
+
+Revert an item to a previous state based on the ID of the revision.
+
+```js
+client.revert("movies", 15, 21);
+```
+
+:::warning
+This doesn't take schema changes into account. Use with caution.
+:::
+
+---
+
+### Roles
+
+#### `getRole(primaryKey, params = {})`
+
+Get a user role by primary key.
+
+```js
+client.getRole(primaryKey, params = {})
+```
+
+---
+
+#### `getRoles(params = {})`
+
+Get all the user roles
+
+```js
+client.getRoles();
+```
+
+---
+
+#### `updateRole(primaryKey, body)`
+
+Update a user role
+
+```js
+client.updateRole(15, {
+  name: "Interns"
+});
+```
+
+---
+
+#### `createRole(body)`
+
+Create a new user role
+
+```js
+client.createRole({
+  name: "Project Managers",
+  ip_whitelist: ["192.168.0.1"]
+});
+```
+
+---
+
+#### `deleteRole(primaryKey)`
+
+Delete a user role
+
+```js
+client.deleteRole(15);
+```
+
+:::danger
+This doesn't affect the users in the role. Make sure to remove all users from this role before deleting the role. Otherwise your users will lose access to the system.
+:::
+
+---
+
+### Settings
+
+#### `getSettings(params = {})`
+
+Get Directus' settings
+
+```js
+client.getSettings();
+```
+
+---
+
+### Users
+
+#### `getUsers(params = {})`
+
+Get a list of available users in Directus
+
+```js
+client.getUsers({
+  filter: {
+    status: {
+      eq: "active"
+    }
+  }
+});
+```
+
+---
+
+#### `getUser(primaryKey, params = {})`
+
+Get information about a single user
+
+```js
+client.getUser(15, {
+  fields: ["first_name", "last_name"]
+});
+```
+
+---
+
+#### `getMe(params = {})`
+
+Get the currently logged in user.
+
+```js
+client.getMe();
+```
+
+---
+
+#### `updateUser(primaryKey, body)`
+
+Update a user by primary key
+
+```js
+client.updateUser(5, {
+  locale: "nl-NL"
+});
+```
+
+---
+
+### Server Utils
+
+#### `ping()`
+
+See if the server is live and reachable
+
+```js
+client.ping();
+```
+
+---
+
+#### `serverInfo()`
+
+Fetches the info of the server, like php version or server type.
+
+```js
+client.serverInfo();
+```
+
+---
+
+#### `getThirdPartyAuthProviders()`
+
+Get all the third party auth providers that can be used to login to the API
+
+```js
+client.getThirdPartyAuthProviders();
+```
+
+---
 
 ### Internal methods
 
