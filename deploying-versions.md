@@ -1,8 +1,8 @@
 # Deploying Versions
 
-Deploying (/building) new versions of Directus is a multifaceted process. The application and api should be treated as two separate entities, only to be bundled together for a final build.
+Deploying (building) new versions of Directus is a multifaceted process. The application and API should be treated as two separate entities, only to be bundled together for a final build.
 
-
+The output of the deploy process is the full "Directus Suite", which is located within the combined build ([`directus/directus`](https://github.com/directus/directus)) repository. This codebase is essentially the Directus API ([`directus/api`](https://github.com/directus/api)) with the Directus App ([`directus/app`](https://github.com/directus/app)) included in the `/public/admin/` directory. All other differences can be referenced in the following deploy steps.
 
 ::: warning
 These steps need to be followed precisely. Any deviation will cause breaking changes.
