@@ -223,7 +223,7 @@ $ rm -rf api-build
 $ git clone git@github.com:directus/directus.git
 ```
 
-2. Delete everything in it except the `.git` folder
+2. Delete everything in it except the `.git` and `.github` folders
 
 3. Clone the api build
 
