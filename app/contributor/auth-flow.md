@@ -10,7 +10,7 @@ The Directus API returns a [JWT token](https://jwt.io/) on successful login. Thi
 
 The application forwards the credentials to the SDK, which will make the request for the token and start an internal interval.
 
-**The SDK keeps the user logged in forever**. To logout of the application, the `logout` method has to be fired on the SDK. This will delete the token locally and cancel the refresh interval. Checkout the [SDK implementation](https://github.com/directus/directus-sdk-javascript/blob/3.0.0/remote.js) for the actual inner working of this.
+**The SDK keeps the user logged in forever**. To logout of the application, the `logout` method has to be fired on the SDK. This will delete the token locally and cancel the refresh interval. Checkout the [SDK implementation](https://github.com/directus/sdk-js/blob/master/remote.d.ts) for the actual inner working of this.
 
 ### Application Auth Flow
 
