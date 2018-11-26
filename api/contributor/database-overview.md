@@ -208,8 +208,7 @@ Phinx migrations table, record all migrations executed.
 | Field                       | Notes                                                                         |
 |-----------------------------|-------------------------------------------------------------------------------|
 | id                          | Primary Key                                                                   |
-| scope                       | The scope of the setting (global, an extension id, etc)                       |
-| key                         | The key (name) of the settings option. Must be unique within scope            |
+| key                         | The key (name) of the settings option. Must be unique                         |
 | value                       | The value of the settings option                                              |
 
 ### directus_user_roles
