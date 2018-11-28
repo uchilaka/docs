@@ -1036,7 +1036,7 @@ A single object representing the new comment.
 Update a comment by its ID.
 
 ```http
-POST /[project]/activity/comment/[id]
+PATCH /[project]/activity/comment/[id]
 ```
 
 ##### Body
