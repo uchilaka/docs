@@ -126,6 +126,7 @@ Choose where files can be uploaded. Currently we support local and Amazon-S3
 | `region`      | S3 Bucket Region
 | `version`     | S3 API version
 | `bucket`      | S3 Bucket name
+| `options`     | S3 Options
 
 :::tip NOTE
 If you are using the `s3` storage adapter, you must install the `aws/aws-sdk-php` package. Run `composer require aws/aws-sdk-php` in the terminal.
