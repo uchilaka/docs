@@ -45,7 +45,7 @@ Database Name  | The name of the database
 Database Type  | As of now, Directus only supports MySQL
 
 :::tip Manual Config
-If you would rather setup your project manually you can [follow these instructions](./api/admin/configure.md). This method creates the default config file (`/config/api.php`) from our sample (`/config/api_sample.php`) and installs the boilerplate database using the included schema file (`/src/schema.sql`).
+If you would rather setup your project manually you can [follow these instructions](./api/admin/configure-manually.md). This method creates the default config file (`/config/api.php`) from our sample (`/config/api_sample.php`) and installs the boilerplate database using the included schema file (`/src/schema.sql`). Details on the configuration options can be viewed [here](./api/admin/configure.md).
 :::
 
 ## Logging In
