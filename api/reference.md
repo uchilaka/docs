@@ -2646,7 +2646,7 @@ A list of all system objects expected or returned by Directus endpoints.
 | --------------------- | ----------------- | ----------------------------------------- |
 | `id`                  | `integer`         |                                           |
 | `action`              | `string`          |                                           |
-| `action_by`           | `integer`,`User`  |                                           |
+| `action_by`           | `integer`,`User`  | The ID of the User                        |
 | `action_on`           | `timestamp`       |                                           |
 | `ip`                  | `string`          |                                           |
 | `user_agent`          | `string`          |                                           |
@@ -2661,8 +2661,8 @@ A list of all system objects expected or returned by Directus endpoints.
 | Key                   |  Type                 | Description                               |
 | --------------------- | --------------------- | ----------------------------------------- |
 | `id`                  | `integer`             |                                           |
-| `activity`            | `integer`, `Activity` |                                           |
-| `user`                | `integer`,`User`      |                                           |
+| `activity`            | `integer`, `Activity` | The ID of the Activity                    |
+| `user`                | `integer`,`User`      | The ID of the User                        |
 | `seen_on`             | `timestamp`           |                                           |
 | `archived`            | `boolean`             |                                           |
 
@@ -2684,8 +2684,8 @@ A list of all system objects expected or returned by Directus endpoints.
 | --------------------- | -------------------- | ----------------------------------------- |
 | `id`                  | `integer`            |                                           |
 | `title`               | `string`             |                                           |
-| `user`                | `integer`,`User`     |                                           |
-| `role`                | `integer`, `Role`    |                                           |
+| `user`                | `integer`,`User`     |  The ID of the User                       |
+| `role`                | `integer`, `Role`    |  The ID of the Role                       |
 | `collection`          | `string`             |                                           |
 | `search_query`        | `string`             |                                           |
 | `filters`             | `json`               |                                           |
@@ -2699,7 +2699,7 @@ A list of all system objects expected or returned by Directus endpoints.
 | Key                   |  Type                  | Description                               |
 | --------------------- | ---------------------- | ----------------------------------------- |
 | `id`                  | `integer`              |                                           |
-| `collection`          | `string`, `Collection` |                                           |
+| `collection`          | `string`, `Collection` | The ID of the Collection                  |
 | `field`               | `string`               |                                           |
 | `type`                | `string`               |                                           |
 | `interface`           | `string`               |                                           |
@@ -2718,21 +2718,128 @@ A list of all system objects expected or returned by Directus endpoints.
 
 ### File Object
 
+| Key           | Type               | Description          |
+|---------------|--------------------|----------------------|
+| `id`          | `integer`          |                      |
+| `storage`     | `string`           |                      |
+| `filename`    | `string`           |                      |
+| `title`       | `string`           |                      |
+| `type`        | `string`           |                      |
+| `uploaded_by` | `integer`, `User`  | The ID of the User   |
+| `uploaded_on` | `timestamp`        |                      |
+| `charset`     | `string`           |                      |
+| `filesize`    | `integer`          |                      |
+| `width`       | `integer`          |                      |
+| `height`      | `integer`          |                      |
+| `duration`    | `integer`          |                      |
+| `embed`       | `TODO`             |                      |
+| `folder`      | `string`, `Folder` | The ID of the Folder |
+| `description` | `string`           |                      |
+| `location`    | `string`           |                      |
+| `tags`        | `array`, `string`  |                      |
+| `metadata`    | `TODO`             |                      |
+| `data`        | `json`             |                      |
+
 ### Folder Object
+
+| Key             | Type               | Description |
+|-----------------|--------------------|-------------|
+| `id`            | `integer`          |             |
+| `name`          | `string`           |             |
+| `parent_folder` | `string`, `Folder` |             |
 
 ### Permission Object
 
+| Key                     | Type              | Description                                  |
+|-------------------------|-------------------|----------------------------------------------|
+| `id`                    | `integer`         |                                              |
+| `collection`            | `string`          |                                              |
+| `role`                  | `integer`, `Role` | The ID of the Role                           |
+| `status`                | `string`          |                                              |
+| `create`                | `string`          | "none", "mine" or "full"                     |
+| `read`                  | `string`          | "none", "mine" or "full"                     |
+| `update`                | `string`          | "none", "mine" or "full"                     |
+| `delete`                | `string`          | "none", "mine" or "full"                     |
+| `comment`               | `string`          | "none", "read", "update", "create" or "full" |
+| `explain`               | `string`          | "none", "on_updat", "on_creat" or "always"   |
+| `read_field_blacklist`  | `array`, `string` | List of fields that the role cannot read     |
+| `write_field_blacklist` | `array`, `string` | List of fields that the role cannot edit     |
+| `status_blacklist`      | `array`, `TODO`   |                                              |
+
 ### Relation Object
+
+| Key               | Type                   | Description |
+|-------------------|------------------------|-------------|
+| `id`              | `integer`              |             |
+| `collection_many` | `string`, `Collection` |             |
+| `field_many`      | `string`, `Field`      |             |
+| `collection_one`  | `string`, `Collection` |             |
+| `field_one`       | `string`               |             |
+| `junction_one`    | `string` `TODO`        |             |
 
 ### Revision Object
 
+| Key                 | Type                   | Description                                                                                       |
+|---------------------|------------------------|---------------------------------------------------------------------------------------------------|
+| `id`                | `integer`              |                                                                                                   |
+| `activity`          | `integer`, `Activity`  | The ID of the Activity                                                                            |
+| `collection`        | `string`, `Collection` | The ID of the Collection                                                                          |
+| `item`              | `string`               | ID of the item in the collection, or the Collection name if the collection is directus_collection |
+| `data`              | `json`                 | The item's JSON object                                                                            |
+| `delta`             | `json`                 | Item keys that were changed and their updated values                                              |
+| `parent_collection` | `string`,`Collection`  |                                                                                                   |
+| `parent_item`       | `string`,`Item`        |                                                                                                   |
+| `parent_changed`    | `boolean`              |                                                                                                   |
+
 ### Role Object
+
+| Key             | Type            | Description             |
+|-----------------|-----------------|-------------------------|
+| `id`            | `integer`       |                         |
+| `name`          | `string`        | Name of the role        |
+| `description`   | `string`        | Description of the role |
+| `ip_whitelist`  | `string` `TODO` |                         |
+| `nav_blacklist` | `string` `TODO` |                         |
+| `external_id`   | `string`        |                         |
 
 ### Setting Object
 
+| Key     | Type      | Description |
+|---------|-----------|-------------|
+| `id`    | `integer` |             |
+| `scope` | `string`  |             |
+| `key`   | `string`  |             |
+| `value` | `string`  |             |
+
 ### User Object
 
+| Key                   | Type              | Description                   |
+|-----------------------|-------------------|-------------------------------|
+| `id`                  | `integer`         |                               |
+| `status`              | `string`          |                               |
+| `first_name`          | `string`          |                               |
+| `last_name`           | `string`          |                               |
+| `email`               | `string`          |                               |
+| `password`            | `string`          |                               |
+| `token`               | `string`          | Static token                  |
+| `timezone`            | `string`          |                               |
+| `locale`              | `string`          |                               |
+| `locale_options`      | `string`          |                               |
+| `avatar`              | `integer`, `File` | The ID of the File            |
+| `company`             | `string`          |                               |
+| `title`               | `string`          |                               |
+| `email_notifications` | `boolean`         |                               |
+| `last_access_on`      | `timestamp`       |                               |
+| `last_page`           | `string`          | The relative path of the page |
+| `external_id`         | `string`          |                               |
+
 ### User Role Object
+
+| Key    | Type              | Description        |
+|--------|-------------------|--------------------|
+| `id`   | `integer`         |                    |
+| `user` | `integer`, `User` | The ID of the User |
+| `role` | `integer`, `Role` | The ID of the Role |
 
 ## SCIM
 
