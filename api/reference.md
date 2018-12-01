@@ -2756,7 +2756,7 @@ A list of all system objects expected or returned by Directus endpoints.
 | `collection`            | `string`          |                                              |
 | `role`                  | `integer`, `Role` | The ID of the Role                           |
 | `status`                | `string`          |                                              |
-| `create`                | `string`          | "none", "mine" or "full"                     |
+| `create`                | `string`          | "none" or "full"                             |
 | `read`                  | `string`          | "none", "mine" or "full"                     |
 | `update`                | `string`          | "none", "mine" or "full"                     |
 | `delete`                | `string`          | "none", "mine" or "full"                     |

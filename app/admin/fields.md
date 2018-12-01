@@ -30,7 +30,8 @@ Only the "Name" is required for this step, but it's good to familiarize yourself
 * **Default**
   The default value for this field. Will be added when an item is created but the field left blank.
 * **Validation**
-  RegEX string that will be used to validate the value on save and upload.
+  RegEX string that will be used to validate the value on save and upload. The expression must be within quotation marks.
+  For example, you have a `twitter_handle` field, and you want to require the @ sign: `"@"`. The user will be unable to submit the form if @ is missing.
 * **Validation Message**
   A custom validation message that will be returned if the validation fails according to the RegEX string in the _Validation_ option.
 * **Required**
