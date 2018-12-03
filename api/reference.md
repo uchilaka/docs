@@ -2808,7 +2808,6 @@ A list of all system objects expected or returned by Directus endpoints.
 | Key     | Type      | Description |
 |---------|-----------|-------------|
 | `id`    | `integer` |             |
-| `scope` | `string`  |             |
 | `key`   | `string`  |             |
 | `value` | `string`  |             |
 
