@@ -2185,6 +2185,30 @@ Returns the user with an ID of `1`.
 curl -u <token>: https://api.directus.io/_/users/1
 ```
 
+#### Get Currently Logged-In User
+
+Gets a single user from within this project based on the token that's used to make the request.
+
+```http
+GET /[project]/users/me
+```
+
+##### Supported Query Parameters
+
+| Name          | Documentation              |
+| ------------- | -------------------------- |
+| `fields`      | [Read More](#fields)       |
+| `meta`        | [Read More](#meta)         |
+| `status`      | [Read More](#status)       |
+
+##### Examples
+
+Returns the user based on the token provided.
+
+```bash
+curl -u <token>: https://api.directus.io/_/users/me
+```
+
 #### Update User
 
 Updates a Directus User.
