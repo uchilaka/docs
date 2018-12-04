@@ -23,13 +23,15 @@ As you can see, when requesting a thumbnail the end result is the same, all of t
 
 ## Configuration
 
-The whitelist is managed within the project's _Global Settings_ and are stored in the `directus_settings` collection using the `thumbnail` scope. Below are the configurable options:
+The whitelist is managed within the project's _Global Settings_ and are stored in the `directus_settings` collection. Below are the configurable options:
 
-* `dimensions` – An array of allowed sizes with the format: `[width]x[height]` in pixels (eg: `100x100`)
-* `qualityTags` – An array of key-value-pairs where the key is the name used in the url and the value is the JPG compression (0-100) (eg: `'better' => 75`)
-* `actions` – This is an array of actions, each with nested options defining specifically how the thumbnail will be created. The two predefined options are:
+* `thumbnail_dimensions` – An array of allowed sizes with the format: `[width]x[height]` in pixels (eg: `100x100`)
+* `thumbnail_quality_tags` – An array of key-value-pairs where the key is the name used in the url and the value is the JPG compression (0-100) (eg: `'better' => 75`)
+* `thumbnail_actions` – This is an array of actions, each with nested options defining specifically how the thumbnail will be created. The two predefined options are:
   * `contain` – Maintains the original aspect ratio, scaling the image to fit entirely within the dimension bounds. Any "negative space" can be filled with the `canvasBackground` color.
   * `crop` –  Scales the image to completely fill the entire dimension bounds; the aspect ratio will always match the dimensions
+* `thumbnail_cache_ttl` – Cache time to live in seconds. It sets HTTP `max-age` and `Expires` datetime. Default: `86400` seconds = 1 day
+* `thumbnail_not_found_location` – This image will be used when trying to generate a thumbnail with invalid options or an error happens on the server trying
 
 :::tip
 Make sure the `root`, `root_url`, and `thumb_root` keys within the `filesystem` section of your project config file are set properly. Otherwise you may receive 404s instead of images.
@@ -37,12 +39,12 @@ Make sure the `root`, `root_url`, and `thumb_root` keys within the `filesystem` 
 
 ### Example Configuration
 
-#### `not_found_location`
+#### `thumbnail_not_found_location`
 ```
 
 ```
 
-#### `dimensions`
+#### `thumbnail_dimensions`
 
 Comma separate value of dimensions in [width]x[height] format
 
@@ -52,7 +54,7 @@ This image will be used when trying to generate a thumbnail with invalid options
 100x100,200x200,100x200
 ```
 
-#### `quality_tags`
+#### `thumbnail_quality_tags`
 
 Key-Value json string of qualities tagged with a name. Ex: {"best": 100}. Ranging from 0 to 100. 0 = Worst quality and smaller file size to 100 best quality biggest file size.
 
@@ -65,7 +67,7 @@ Key-Value json string of qualities tagged with a name. Ex: {"best": 100}. Rangin
 }
 ```
 
-#### `actions`
+#### `thumbnail_actions`
 
 WIP; List options to perform different thumbnail generation actions.
 
@@ -85,7 +87,7 @@ WIP; List options to perform different thumbnail generation actions.
 ]
 ```
 
-#### `cache_ttl`
+#### `thumbnail_cache_ttl`
 
 Cache time to live in seconds. It sets HTTP max-age and Expires datetime. Default: 86400 seconds = 1 day
 

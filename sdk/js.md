@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # SDK JS
 
 The JavaScript SDK can be used to make connections to the API from JavaScript easier. The SDK will keep you logged in and handles the token management.
@@ -14,10 +10,20 @@ You can install the SDK from `npm` by running:
 npm install @directus/sdk-js
 ```
 
+```js
+import DirectusSDK from "@directus/sdk-js";
+
+const client = new DirectusSDK();
+```
+
 Alternatively, you can use the bundle hosted on a static npm cdn:
 
 ```html
-<script src="https://unpkg.com/@directus/sdk-js@3.10.0/dist/remote.umd.js"></script>
+<script src="https://unpkg.com/@directus/sdk-js@4.0.0/dist/directus-sdk.umd.min.js"></script>
+
+<script>
+  const client = new DirectusSDK();
+</script>
 ```
 
 ## Usage
@@ -31,9 +37,9 @@ You can connect and login to the API in two ways:
 If you're making API requests from client side JS, you should login using the `login` method. The SDK will fetch an access token based on the credentials and use that for all subsequent requests.
 
 ```js{3,5-10}
-import SDK from "@directus/sdk-js";
+import DirectusSDK from "@directus/sdk-js";
 
-const client = new SDK();
+const client = new DirectusSDK();
 
 client.login({
   url: "https://demo-api.directus.app/",
@@ -49,9 +55,9 @@ The user will stay authenticated until you call the `.logout()` method.
 Alternatively, you can connect to the API with a static token (as controlled by the `token` field in the directus_users collection). This token doesn't expire and thus shouldn't be used on the client side.
 
 ```js{3-7}
-import SDK from "@directus/sdk-js";
+import DirectusSDK from "@directus/sdk-js";
 
-const client = new SDK({
+const client = new DirectusSDK({
   url: "https://demo-api.directus.app/",
   project: "_",
   token: "demo"

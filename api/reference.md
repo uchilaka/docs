@@ -102,6 +102,7 @@ The API uses numeric codes to avoid the need for translated error messages based
 - `0017` - Invalid Configuration Path (422)
 - `0018` - Project Name Already Exists (409)
 - `0018` - Unauthorized Location Access (401)
+- `0019` - Installation Invalid database information (400)
 
 #### Authentication Error Codes
 
@@ -1036,7 +1037,7 @@ A single object representing the new comment.
 Update a comment by its ID.
 
 ```http
-POST /[project]/activity/comment/[id]
+PATCH /[project]/activity/comment/[id]
 ```
 
 ##### Body
@@ -2182,6 +2183,30 @@ Returns the user with an ID of `1`.
 
 ```bash
 curl -u <token>: https://api.directus.io/_/users/1
+```
+
+#### Get Currently Logged-In User
+
+Gets a single user from within this project based on the token that's used to make the request.
+
+```http
+GET /[project]/users/me
+```
+
+##### Supported Query Parameters
+
+| Name          | Documentation              |
+| ------------- | -------------------------- |
+| `fields`      | [Read More](#fields)       |
+| `meta`        | [Read More](#meta)         |
+| `status`      | [Read More](#status)       |
+
+##### Examples
+
+Returns the user based on the token provided.
+
+```bash
+curl -u <token>: https://api.directus.io/_/users/me
 ```
 
 #### Update User
