@@ -2751,21 +2751,21 @@ A list of all system objects expected or returned by Directus endpoints.
 
 ### Permission Object
 
-| Key                     | Type              | Description                                  |
-|-------------------------|-------------------|----------------------------------------------|
-| `id`                    | `integer`         |                                              |
-| `collection`            | `string`          |                                              |
-| `role`                  | `integer`, `Role` | The ID of the Role                           |
-| `status`                | `string`          |                                              |
-| `create`                | `string`          | "none" or "full"                             |
-| `read`                  | `string`          | "none", "mine" or "full"                     |
-| `update`                | `string`          | "none", "mine" or "full"                     |
-| `delete`                | `string`          | "none", "mine" or "full"                     |
-| `comment`               | `string`          | "none", "read", "update", "create" or "full" |
-| `explain`               | `string`          | "none", "on_updat", "on_creat" or "always"   |
-| `read_field_blacklist`  | `array`, `string` | List of fields that the role cannot read     |
-| `write_field_blacklist` | `array`, `string` | List of fields that the role cannot edit     |
-| `status_blacklist`      | `array`, `TODO`   |                                              |
+| Key                     | Type              | Description                                          |
+|-------------------------|-------------------|------------------------------------------------------|
+| `id`                    | `integer`         |                                                      |
+| `collection`            | `string`          |                                                      |
+| `role`                  | `integer`, `Role` | The ID of the Role                                   |
+| `status`                | `string`          |                                                      |
+| `create`                | `string`          | "none" (or NULL), "full"                             |
+| `read`                  | `string`          | "none" (or NULL), "mine", "role", "full"             |
+| `update`                | `string`          | "none" (or NULL), "mine", "full"                     |
+| `delete`                | `string`          | "none" (or NULL), "mine", "role", "full"             |
+| `comment`               | `string`          | "none", "read", "update" (or NULL), "create", "full" |
+| `explain`               | `string`          | "none" (or NULL), "on_update", "on_create", "always" |
+| `read_field_blacklist`  | `array`, `string` | List of fields that the role cannot read             |
+| `write_field_blacklist` | `array`, `string` | List of fields that the role cannot edit             |
+| `status_blacklist`      | `array`, `TODO`   |                                                      |
 
 ### Relation Object
 
@@ -2831,7 +2831,7 @@ A list of all system objects expected or returned by Directus endpoints.
 | `email_notifications` | `boolean`         |                               |
 | `last_access_on`      | `timestamp`       |                               |
 | `last_page`           | `string`          | The relative path of the page |
-| `external_id`         | `string`          |                               |
+| `external_id`         | `string`          | For SCIM authorization        |
 
 ### User Role Object
 
