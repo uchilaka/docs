@@ -39,8 +39,8 @@ The Directus permissions system is quite granular so it is important to understa
 ## Explain (Force)
 
 * `none` (or `NULL`, default) Never requires "commit" comment
-* `on_create` Requires a "commit" comment on Create
-* `on_update` Requires a "commit" comment on Update
+* `create` Requires a "commit" comment on Create
+* `update` Requires a "commit" comment on Update
 * `always` Requires a "commit" comment on Create and Update
 
 :::tip NOTE
