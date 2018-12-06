@@ -2762,7 +2762,7 @@ A list of all system objects expected or returned by Directus endpoints.
 | `update`                | `string`          | "none" (or NULL), "mine", "full"                     |
 | `delete`                | `string`          | "none" (or NULL), "mine", "role", "full"             |
 | `comment`               | `string`          | "none", "read", "update" (or NULL), "create", "full" |
-| `explain`               | `string`          | "none" (or NULL), "on_update", "on_create", "always" |
+| `explain`               | `string`          | "none" (or NULL), "update", "create", "always"       |
 | `read_field_blacklist`  | `array`, `string` | List of fields that the role cannot read             |
 | `write_field_blacklist` | `array`, `string` | List of fields that the role cannot edit             |
 | `status_blacklist`      | `array`, `TODO`   |                                                      |
