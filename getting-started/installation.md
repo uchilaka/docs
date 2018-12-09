@@ -16,7 +16,7 @@ Directus supports different stacks, however this guide specifically covers LAMP.
     * Extensions:  `pdo`, `mysql`, `curl`, `gd`, `fileinfo`, and `mbstring`
 
 ::: tip Detailed Requirements
-View our [detailed requirements page](/advanced/suite/requirements.md) to learn more about these requirements, neccesary permissions, and other server-specific prerequisites.
+View our [detailed requirements page](/advanced/requirements.md) to learn more about these requirements, neccesary permissions, and other server-specific prerequisites.
 :::
 
 ## Setup
@@ -55,7 +55,7 @@ Database Name  | The name of the database
 Database Type  | As of now, Directus only supports MySQL
 
 :::tip Manual Configuration
-Alternatively, you can [manually configure Directus](/advanced/api/configure.md).
+Alternatively, you can [manually configure Directus](/advanced/api/configuration.md).
 :::
 
 ## Logging In

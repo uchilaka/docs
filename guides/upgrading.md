@@ -20,7 +20,7 @@ The Directus API is "versionless", which means that new releases will only inclu
 :::
 
 ::: warning Legacy Upgrades
-Directus 7 is a major release with significant breaking changes from previous versions. Therefore there is no automated way to migrate your settings and configuration from v6 to v7. However, because Directus stores your content as pure SQL, that data is always portable between versions. [Learn More About Legacy Upgrades](/advanced/suite/legacy-upgrades.md)
+Directus 7 is a major release with significant breaking changes from previous versions. Therefore there is no automated way to migrate your settings and configuration from v6 to v7. However, because Directus stores your content as pure SQL, that data is always portable between versions. [Learn More About Legacy Upgrades](/advanced/legacy-upgrades.md)
 :::
 
 ## Which version am I using?

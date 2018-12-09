@@ -9,7 +9,7 @@
 * **Rackconnect** – Store files on Rackspace's storage solution
 
 :::tip
-You can change your project's default storage adapter within the [API configuration](../advanced/api/configure.html#storage).
+You can change your project's default storage adapter within the [API configuration](../advanced/api/configuration.html#storage).
 :::
 
 ## Files & Structure

@@ -112,3 +112,7 @@ The following reserved project names can not be used because they represent root
 ### Schema
 
 The SQL database's tables, columns, datatypes, defaults, and other architectual information. This does not include any items or content.
+
+### Versionless
+
+The Directus API is "versionless", which means that new releases will only include fixes and improvements, but no deprecations or breaking changes.

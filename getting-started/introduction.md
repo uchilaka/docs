@@ -19,3 +19,23 @@ Every aspect of Directus is data-first and guided by the following core principl
 * **Portable** — Directus does not _lock_ you to its platform or services. You can migrate your data elsewhere at any point — or just delete Directus and connect to your database directly.
 * **Pure** — Directus does not alter your data or store it in a predefined or proprietary way. All system data is stored elsewhere, never commingled.
 * **Unopinionated** — Directus does not impose any self-proclaimed "best practices". It lets you decide how your data is modeled, managed, and accessed.
+
+## The Directus Ecosystem
+
+The Directus ecosystem is quite multifaceted, let's quickly go over each of the properties.
+
+### Directus API
+
+### Directus Application
+
+### Directus Suite
+
+### Directus Cloud
+
+### Directus Docs
+
+### Directus Demo
+
+### Directus Website
+
+### Directus Marketplace

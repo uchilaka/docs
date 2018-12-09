@@ -4,7 +4,7 @@
 
 ## Requirements
 
-Directus is quite flexible and can be installed on many different varieties of server/database setups. Learn more about the [Directus Requirements](../suite/requirements.md).
+Directus is quite flexible and can be installed on many different varieties of server/database setups. Learn more about the [Directus Requirements](/advanced/requirements.md).
 
 * HTTP/Web Server
 * MySQL 5.2+
@@ -49,11 +49,11 @@ Directus API should work on any HTTP Server, but most testing has been done on A
 
 #### Specific Server Setup
 
-[Apache 2 Setup](../server-setup.md#apache)
+[Apache 2 Setup](/advanced/server-setup.md#apache)
 
-[NGINX Setup](../server-setup.md#nginx)
+[NGINX Setup](/advanced/server-setup.md#nginx)
 
-[Caddy Setup](../server-setup.md#caddy)
+[Caddy Setup](/advanced/server-setup.md#caddy)
 
 ::: tip
 For local development environments you can use WAMP, XAMP or MAMP
@@ -67,13 +67,13 @@ We appreciate any pull-requests outlining steps for new server-types. Just submi
 
 Lastly, we need to generate a project config file and add the system boilerplate data to the database.
 
-[Configure with App](./configure-with-app.md)
+[Configure with App](/advanced/api/configuration.md#configure-with-app)
 
-[Configure with Script](./configure-with-script.md)
+[Configure with Script](/advanced/api/configuration.md#configure-with-script)
 
-[Configure Manually](./configure-manually.md)
+[Configure Manually](/advanced/api/configuration.md#configure-manually)
 
-Once you've finished configuration then you have successfully installed the Directus API and can now access secure endpoints with your Admin credentials. To learn more about the many Directus API endpoints you can browse our [API Reference](/api-reference/reference.md).
+Once you've finished configuration then you have successfully installed the Directus API and can now access secure endpoints with your Admin credentials. To learn more about the many Directus API endpoints you can browse our [API Reference](/api/reference.md).
 
 ## Updating
 
@@ -95,4 +95,4 @@ Updating is basically the same as installing fresh. You can download a copy of t
 
 After you update the Directus API code, there may be changes in the database, such as a new field, a field with a different interface or new options.
 
-You can upgrade the database using the [terminal](/guides/cli.md) or the [endpoint](/api-reference/reference.md#update)
+You can upgrade the database using the [terminal](/guides/cli.md) or the [endpoint](/api/reference.md#update)
