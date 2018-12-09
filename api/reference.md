@@ -1244,7 +1244,7 @@ These endpoints are used for creating, reading, updating, and deleting fields wi
 
 #### Create Field
 
-Creates a new field in a given collection. When creating a field you must submit the [Directus field type](/api/admin/field-types.md) (`type`) as well as a database datatype (`datatype`) specific to your SQL vendor.
+Creates a new field in a given collection. When creating a field you must submit the [Directus field type](/guides/field-types.md) (`type`) as well as a database datatype (`datatype`) specific to your SQL vendor.
 
 ```http
 POST /[project]/fields/[collection]
@@ -2185,6 +2185,30 @@ Returns the user with an ID of `1`.
 curl -u <token>: https://api.directus.io/_/users/1
 ```
 
+#### Get Currently Logged-In User
+
+Gets a single user from within this project based on the token that's used to make the request.
+
+```http
+GET /[project]/users/me
+```
+
+##### Supported Query Parameters
+
+| Name          | Documentation              |
+| ------------- | -------------------------- |
+| `fields`      | [Read More](#fields)       |
+| `meta`        | [Read More](#meta)         |
+| `status`      | [Read More](#status)       |
+
+##### Examples
+
+Returns the user based on the token provided.
+
+```bash
+curl -u <token>: https://api.directus.io/_/users/me
+```
+
 #### Update User
 
 Updates a Directus User.
@@ -2591,7 +2615,7 @@ If there's a fille in the root named `.lock` this instance is locked from creati
 
 ## Field Types
 
-Returns the list of [Directus field types](/api/admin/field-types.md).
+Returns the list of [Directus field types](/guides/field-types.md).
 
 ```http
 GET /types

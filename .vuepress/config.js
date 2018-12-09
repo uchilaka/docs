@@ -20,94 +20,100 @@ module.exports = {
     ['meta', { name: "msapplication-config", content: "/browserconfig.xml" }]
   ],
   themeConfig: {
+    lastUpdated: 'Last Updated',
+    repo: 'directus/docs',
+    docsDir: '',
+    editLinks: true,
+    serviceWorker: true,
+    hiddenLinks: [
+      '/api-reference/reference.html',
+    ],
     nav: [
       { text: 'Website', link: 'https://directus.io' },
       { text: 'Cloud', link: 'https://directus.cloud' },
       { text: 'Demo', link: 'https://directus.app' }
     ],
     sidebarDepth: 1,
+    // 🧠 📡 🤖 ✨ 💥 🔥 🌈 ⭐️ 🍄 🍹 🎱 🎨 🏆 🚨 🚀 💡 ⚙️ 🔮 🛠 🔑 🎁 🎈 🎀 ❤️ 💯
     sidebar: [
       {
-        title: 'Introduction',
-        collapsable: true,
+        title: '🐰 Getting Started',
+        collapsable: false,
         children: [
-          '/what-is-directus',
-          '/install',
-          '/contributing',
-          '/supporting-directus',
-          '/docs-structure',
-          '/i18n',
-          '/glossary'
+          ['/getting-started/introduction', 'Introduction'],
+          ['/getting-started/installation', 'Installation'],
+          ['/getting-started/concepts', 'Concepts'],
+          ['/getting-started/contributing', 'Contributing'],
+          ['/getting-started/supporting-directus', 'Supporting Directus'],
+          ['/getting-started/troubleshooting', 'Troubleshooting'],
         ]
       },
       {
-        title: 'API',
+        title: '📖 Guides',
         collapsable: true,
         children: [
-          ['/api/reference', 'API Reference'],
-          ['/', '┄┄┄┄┄┄┄┄┄┄'],
-          ['/api/admin/', 'Admin Guide'],
-          ['/api/admin/install', 'Installing'],
-          ['/api/admin/update', 'Updating'],
-          ['/api/admin/configure', 'Configuring'],
-          ['/api/admin/thumbnailer', 'Thumbnailer'],
-          ['/api/admin/field-types', 'Field Types'],
-          ['/api/admin/permissions', 'Permissions'],
-          ['/api/admin/global-settings', 'Global Settings'],
-          ['/', '┄┄┄┄┄┄┄┄┄┄'],
-          ['/api/contributor/', 'Contributor Guide'],
-          ['/api/contributor/install-dev', 'Development Environment'],
-          ['/api/contributor/cli', 'CLI'],
-          ['/api/contributor/codebase-overview', 'Codebase Overview'],
-          ['/api/contributor/database-overview', 'Database Overview'],
-          ['/api/contributor/resources', 'Resources'],
-          ['/api/contributor/troubleshooting', 'Troubleshooting']
+          '/guides/user-guide',
+          '/guides/auth',
+          '/guides/cli',
+          '/guides/collections',
+          '/guides/database',
+          '/guides/fields',
+          '/guides/field-types',
+          ['/guides/i18n', 'Internationalization'],
+          '/guides/permissions',
+          '/guides/relationships',
+          '/guides/roles',
+          '/guides/settings',
+          '/guides/sso',
+          '/guides/status',
+          ['/guides/style-guide', 'Style Guide'],
+          '/guides/thumbnailer',
+          '/guides/upgrading',
         ]
       },
       {
-        title: 'Application',
+        title: '🚀 API Reference',
         collapsable: true,
         children: [
-          ['/app/user-guide', 'User Guide'],
-          ['/', '┄┄┄┄┄┄┄┄┄┄'],
-          ['/app/admin/', 'Admin Guide'],
-          ['/app/admin/install', 'Installing'],
-          ['/app/admin/update', 'Updating'],
-          ['/app/admin/troubleshooting', 'Troubleshooting'],
-          ['/app/admin/collections', 'Collections'],
-          ['/app/admin/fields', 'Fields'],
-          ['/app/admin/relationships', 'Relationships'],
-          ['/app/admin/status', 'Status'],
-          ['/app/admin/roles', 'Roles'],
-          ['/app/admin/permissions', 'Permissions'],
-          ['/', '┄┄┄┄┄┄┄┄┄┄'],
-          ['/app/contributor/', 'Contributor Guide'],
-          ['/app/contributor/install-dev', 'Development Environment'],
-          ['/app/contributor/helpers', 'Helpers'],
-          ['/app/contributor/i18n', 'Internationalization'],
-          ['/app/contributor/resources', 'Resources'],
-          ['/app/contributor/troubleshooting', 'Troubleshooting']
+          '/api-reference/reference',
         ]
       },
       {
-        title: 'Extending Directus',
+        title: '⚡️ SDKs',
+        collapsable: true,
+        children: [
+          ['/sdk/js', 'Javascript'],
+        ]
+      },
+      {
+        title: '🦄 Extensions',
         collapsable: true,
         children: [
           ['/extensions/', 'Introduction'],
-          '/extensions/architecture',
+          '/extensions/auth-providers',
+          '/extensions/custom-endpoints',
+          '/extensions/hooks',
           '/extensions/interfaces',
           '/extensions/layouts',
           '/extensions/pages',
-          '/extensions/hooks',
-          '/extensions/custom-endpoints',
           '/extensions/storage-adapters',
-          '/extensions/auth-providers'
+        ]
+      },
+      {
+        title: '🚧 Advanced',
+        collapsable: true,
+        children: [
+          ['/advanced/app/standalone', 'Standalone Application'],
+          ['/advanced/api/standalone', 'Standalone API'],
+          ['/advanced/other-install-methods', 'Other Install Methods'],
+          ['/advanced/source', 'Local Dev Environment'],
+          ['/advanced/server-setup', 'Server Setup'],
+          ['/advanced/app/configuration', 'Application Configuration'],
+          ['/advanced/api/configuration', 'API Configuration'],
+          ['/advanced/api/codebase', 'API Codebase'],
+          // ['/advanced/deploying-versions', 'Deploying Versions'],
         ]
       }
-    ],
-    lastUpdated: 'Last Updated',
-    repo: 'directus/docs',
-    docsDir: '',
-    editLinks: true
+    ]
   }
 };

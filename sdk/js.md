@@ -1,6 +1,6 @@
 # SDK JS
 
-The JavaScript SDK can be used to make connections to the API from JavaScript easier. The SDK will keep you logged in and handles the token management.
+> A lightweight JavaScript library that makes working with the Directus API even easier. It keeps you logged in, handles token management, and provides quick access to all [API Endpoints](../api-reference/reference.md).
 
 ## Installation
 
@@ -32,7 +32,7 @@ Alternatively, you can use the bundle hosted on a static npm cdn:
 
 You can connect and login to the API in two ways:
 
-**Using JWT**  
+**Using JWT**
 
 If you're making API requests from client side JS, you should login using the `login` method. The SDK will fetch an access token based on the credentials and use that for all subsequent requests.
 
@@ -51,7 +51,7 @@ client.login({
 
 The user will stay authenticated until you call the `.logout()` method.
 
-**Using a static access token**  
+**Using a static access token**
 Alternatively, you can connect to the API with a static token (as controlled by the `token` field in the directus_users collection). This token doesn't expire and thus shouldn't be used on the client side.
 
 ```js{3-7}
@@ -91,7 +91,7 @@ async function fetchAllItems() {
 
 ## Reference
 
-If you think a method is missing, please reach out on GitHub or Slack! 
+If you think a method is missing, please reach out on GitHub or Slack!
 
 ### Authentication
 
@@ -106,7 +106,7 @@ The credentials object has the following structure:
   email: "admin@example.com",
   password: "password",
 
-  // Optional: 
+  // Optional:
   url: "https://demo-api.directus.app/",
   project: "_", // Defaults to '_'
   persist: true // Defaults to true
@@ -142,7 +142,7 @@ client.login({
 
 #### `logout()`
 
-Make the SDK forget the token, project, and URL of the API. 
+Make the SDK forget the token, project, and URL of the API.
 
 ```js
 client.logout();
@@ -435,11 +435,11 @@ Update multiple fields at once
 ```js
 // Set multiple fields to the same value
 client.updateFields(
-  "projects", 
+  "projects",
   ["first_name", "last_name", "email"],
   { default_value: "" }
 );
- 
+
 // Set multiple fields to different values
 client.updateFields("projects", [
   { id: 14, sort: 1 },
@@ -644,7 +644,7 @@ client.createPermissions([
     read: "mine",
     update: "role",
     delete: "none"
-  },  
+  },
   {
     collection: "movies",
     role: 2,
@@ -668,7 +668,7 @@ client.updatePermissions([
   {
     id: 15,
     delete: "none"
-  },  
+  },
   {
     id: 21,
     update: "full"
