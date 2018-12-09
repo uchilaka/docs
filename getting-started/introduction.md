@@ -22,7 +22,7 @@ Every aspect of Directus is data-first and guided by the following core principl
 
 ## The Directus Ecosystem
 
-There are several different properties within the Directus ecosystem, let's quickly go over each of them.
+There are several properties within the Directus ecosystem, below is a brief overview.
 
 ### Directus API
 
