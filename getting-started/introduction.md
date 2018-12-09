@@ -22,20 +22,36 @@ Every aspect of Directus is data-first and guided by the following core principl
 
 ## The Directus Ecosystem
 
-The Directus ecosystem is quite multifaceted, let's quickly go over each of the properties.
+There are several different properties within the Directus ecosystem, let's quickly go over each of them.
 
 ### Directus API
 
+This is the "engine" of Directus, providing a dynamic API for any MySQL database. It is bundled in the Directus Suite or it can be installed as a standalone framework. The [codebase](https://github.com/directus/api) is written primarily in PHP and uses Zend-DB for database abstraction.
+
 ### Directus Application
+
+This is the admin app that allows non-technical users to manage database content. It can be installed as a standalone webapp for multitenancy but must be connected to an instance of the Directus API to function. The [codebase](https://github.com/directus/app) is written in Vue.js.
 
 ### Directus Suite
 
+Both the App and API will be needed for most use-cases, so our [main repository](https://github.com/directus/directus) is a combined build that includes the Directus API, Directus App, and all dependencies. This is the recommended method for installing Directus.
+
 ### Directus Cloud
+
+Directus is completely free and open-source, but we also offer a [Content-as-a-Service platform](https://directus.cloud/) to help offset our operating costs. The open-source and hosted versions are identical, but our Cloud service offers faster setup, automatic upgrades, and premium support.
 
 ### Directus Docs
 
+This is what you're reading right now. We believe that maintaining great Documentation is just as important as releasing great software. Luckily our docs are all written in markdown in a [public repository](https://github.com/directus/docs) so the community can help!
+
 ### Directus Demo
+
+To make it as easy as possible to actually play around with Directus we maintain two online demos: [latest release](https://directus.app) (stable) and [latest commit](https://next.directus.app) (canary). Both demos reset each hour so if things look a little screwy just wait a bit.
 
 ### Directus Website
 
+For general information, resources, and team info we maintain a marketing [website](https://directus.io/). This is a good non-technical hub to serve as as introduction to the Directus platform.
+
 ### Directus Marketplace
+
+Coming in early 2019, this will be a library of extensions available for Directus. Eventually we plan on opening this up to community submissions and allowing monetization — but initially it will showcase free extensions created by our core team.
