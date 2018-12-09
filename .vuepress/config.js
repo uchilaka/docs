@@ -26,7 +26,7 @@ module.exports = {
     editLinks: true,
     serviceWorker: true,
     hiddenLinks: [
-      '/api-reference/reference.html',
+      '/api/reference.html',
     ],
     nav: [
       { text: 'Website', link: 'https://directus.io' },
@@ -75,7 +75,7 @@ module.exports = {
         title: '🚀 API Reference',
         collapsable: true,
         children: [
-          '/api-reference/reference',
+          '/api/reference',
         ]
       },
       {
