@@ -139,3 +139,24 @@ thead {
     // margin-top: -2.0rem !important;
     // padding-top: 4.6rem;
 }
+
+//////////////////////////////////////////////////////////////////////////////
+
+blockquote {
+  font-size: 1.3rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .content:not(.custom) > & {
+    padding-top: 4.6rem !important;
+    margin-top: -3rem !important;
+    &:first-child {
+      margin-top 1rem !important;
+      + p, + pre, + .custom-block {
+        margin-top 2rem !important;
+      }
+    }
+  }
+}

@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "vuepress build ."
+    "build": "vuepress build .",
+    "eject": "vuepress eject"
   },
   "author": "Rijk van Zanten <rijkvanzanten@me.com>",
   "contributors": [

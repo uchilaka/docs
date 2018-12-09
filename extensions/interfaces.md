@@ -1,36 +1,14 @@
 # Interfaces
 
-## Introduction
-
-Interfaces are Directus' way of interacting with user data. An interface contains two parts: the actual Interface and a Readonly component. The Interface is the _thing_ the user interacts with and uses to create and update data. Eg: a text-field, color picker, JSON editor, or WYSIWYG. These interfaces are primarily used on the edit page, but can also be used inside the filter, modals, or anywhere else.
+> Interfaces allow for different ways of viewing and interacting with field data. These interfaces are primarily used on the edit form of the Item Detail page, but also render readonly data on the Item Browse page.
 
 ## Files & Structure
 
-An interface is made up out of three core files:
+An interface is made up out of three required core files. You can create these from scratch or duplicate an existing Interface to get a head-start.
 
-### input.vue
+### `input.vue`
 
-The main file is the input itself. This file contains the code that renders the interface and emits the value of the interface on change / input.
-
-### display.vue
-
-Certain interfaces need to display data differently elsewhere in the system: the interface saves a raw value, but the user wants to see the data in a more appropriate way elsewhere in the system. A good example of this is the Color Picker. The Color Picker interfaces saves the value as a HEX value, but the user wants to see a color swatch preview when looking at the data.
-
-These display components are used in the system in places where the regular readonly state of the interface doesn't fit, or doesn't make sense. Examples of these are inline in the tabular listing view or in the title of a card.
-
-### meta.json
-
-The meta.json file contains information over the interface (like unique name, author, version) and it's options. Whenever updating any extensions, it is important to increment the version number in accordance with [SemVer](https://semver.org/).
-
-::: tip Hiding Labels
-To hide the label on the edit form, add `"hideLabel": true` to `meta.json`
-:::
-
-## Boilerplate
-
-The minimum files required for each interface are the aforementioned input.vue, display.vue, and meta.json files.
-
-Both the interface and and readonly components are both a standard vue single file component:
+A standard Vue.js single file component that renders the actual interface and emits the value on create/update. This is what is shown on the Item Detail page. For example the Color interface shows a palette of clickable color options.
 
 ```vue
 <template>
@@ -41,8 +19,8 @@ Both the interface and and readonly components are both a standard vue single fi
 import { interfaceMixin } from "@directus/vue-mixins";
 
 export default {
-  mixins: [interfaceMixin],
-  name: "interface-example"
+  name: "interface-example",
+  mixins: [interfaceMixin]
 }
 </script>
 
@@ -53,24 +31,67 @@ input {
 </style>
 ```
 
-The meta.json file requires at the least a name and a version:
+### `display.vue`
+
+A standard Vue.js single file component that renders a readonly version of the value. This is what is shown on the Item Browse page (depending on the selected layout). For example the Color interface shows a swatch of the saved value.
+
+```vue
+<template>
+  <div class="class-name">
+    {{value}}
+  </div>
+</template>
+
+<script>
+import { interfaceMixin } from "@directus/vue-mixins";
+
+export default {
+  name: "readonly-example",
+  mixins: [interfaceMixin]
+}
+</script>
+
+<style lang="scss" scoped>
+.class-name {
+  color: var(--accent);
+}
+</style>
+```
+
+### `meta.json`
+
+The meta.json file contains metadata for the interface, such as its unique name, author, version, interface options, and translations.
 
 ```json
 {
-  "name": "interface-example",
+  "name": "Interface Example",
   "version": "1.0.0"
 }
 ```
 
+#### Options
+
+* `name` — REQUIRED. The unique name of this interface
+* `version` — REQUIRED. Whenever updating an extension it is important to increment the version number in accordance with [SemVer](https://semver.org/)
+* `types` — An array of allowed Directus Field Types
+* `fieldset` — TODO
+* `icon` — The name of a Material Design icon to represent the interface within Settings
+* `options` — Define the options available to this interface
+* `recommended` — Recommended values used during creation of the field (eg: set a recommnded length or default)
+* `translation` — JSON of translations used by the interface
+* `hideLabel` — Can be set to `true` to hide the field label on the Item Detail page
+
 ## States
+
 Every interface should support a `readonly` and a `disabled` state.
 
 ## Mixin (props)
+
 We've prepared a [mixin](https://github.com/directus/extensions/blob/master/mixins/interface.js) that adds all the props to the component that the application passes to the interface. These include value, collection, relationship, and a bunch of others. A minimal interface mostly uses `value` and `options`.
 
 ## Testing
 
-The alpha version of the directus app contains an interface debugger which you can use to test all the different properties and options of your interface. Head over to `/interfaces` in the app to see a list of all the available interfaces in the API you're connected to.
+There is an interface debugger under Directus App Settings which you can use to test all the different properties and options of any interface available within the connected API.
 
 ## Styling
 

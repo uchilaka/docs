@@ -12,4 +12,8 @@ Extension types (interfaces, pages, layouts, etc) are based on a file naming sch
 
 Extensions are being served in bundled form from the API. In order for the API to serve them correctly, they have to be in the `/public/extensions` folder. This folder is split up into `core` and `custom` which both have the same nested file structure. For example, the full path of the `datetime` core interface would be `/public/extensions/core/interfaces/datetime/Interface.js`.
 
-The application is built and bundled completely separate from the extensions and the extensions have their own build-chain setup which is currently setup in the `build` folder in the directus/extensions repo. We plan on releasing this (little) build chain (including the Vue mixins for extensions) as a separate CLI tool later on, but that has to wait until after the main application is finished and released.
+The application is built and bundled completely separate from the extensions and the extensions have their own build-chain setup which is currently setup in the `build` folder in the directus/extensions repo. We plan on releasing this (little) build chain (including the Vue mixins for extensions) as a separate CLI tool later on.
+
+::: tip Reporting Extension Issues
+If you're adding a GitHub issue related to an extension, you still [add it to the App](https://github.com/directus/app/issues/new/choose) since that is the logical place to discuss GUI components.
+:::
