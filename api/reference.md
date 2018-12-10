@@ -103,6 +103,7 @@ The API uses numeric codes to avoid the need for translated error messages based
 - `0018` - Project Name Already Exists (409)
 - `0018` - Unauthorized Location Access (401)
 - `0019` - Installation Invalid database information (400)
+- `0020` - Missing Storage Configuration (500)
 
 #### Authentication Error Codes
 
