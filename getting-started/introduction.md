@@ -26,7 +26,7 @@ There are several properties within the Directus ecosystem, below is a brief ove
 
 ### Directus API
 
-This is the "engine" of Directus, providing a dynamic API for any MySQL database. It is bundled in the Directus Suite or it can be installed as a standalone framework. The [codebase](https://github.com/directus/api) is written primarily in PHP and uses Zend-DB for database abstraction.
+This is the "engine" of Directus, providing a dynamic API for any MySQL database. It is bundled in the Directus Suite but it can also be installed as a standalone framework. The [codebase](https://github.com/directus/api) is written primarily in PHP and uses Zend-DB for database abstraction.
 
 ### Directus Application
 
@@ -44,7 +44,7 @@ Directus is completely free and open-source, but we also offer a [Content-as-a-S
 
 This is what you're reading right now. We believe that maintaining great Documentation is just as important as releasing great software. Luckily our docs are all written in markdown in a [public repository](https://github.com/directus/docs) so the community can help!
 
-### Directus Demo
+### Directus Demos
 
 To make it as easy as possible to actually play around with Directus we maintain two online demos: [latest release](https://directus.app) (stable) and [latest commit](https://next.directus.app) (canary). Both demos reset each hour so if things look a little screwy just wait a bit.
 
