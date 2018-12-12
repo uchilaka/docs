@@ -89,3 +89,28 @@ while ($result->valid()) {
 }
 ```
 
+### Access Control
+
+Directus ACL helps you verify user privilege to access a collection.
+
+Some of the ACL Methods are:
+
+```
+Acl::canCreate($collection, $status = null);
+Acl::canRead($collection, $status = null);
+Acl::canUpdate($collection, $status = null);
+Acl::canDelete($collection, $status = null);
+```
+
+You can see all the methods in the [Directus\Permissions\Acl](https://github.com/directus/api/blob/master/src/core/Directus/Permissions/Acl.php) class.
+
+Example:
+
+```
+$container = \Directus\Application\Application::getInstance()->getContainer();
+$acl = $container->get('acl');
+
+if ($acl->canRead('directus_users)) {
+    // read directus_users items
+}
+```
