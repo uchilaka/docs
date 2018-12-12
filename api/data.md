@@ -89,6 +89,19 @@ while ($result->valid()) {
 }
 ```
 
+### Items Service
+
+This is the same class that the API uses behind the HTTP Layer.
+
+```php
+$container = \Directus\Application\Application::getInstance()->getContainer();
+$itemsService = new \Directus\Services\ItemsService($container);
+
+$params = [];
+$items = $itemsService->findAll('directus_users', $params);
+$item = $itemsService->find('directus_users', 1, $params);
+```
+
 ### Access Control
 
 Directus ACL helps you verify user privilege to access a collection.
