@@ -1357,6 +1357,17 @@ Passing the file form-data to the `data` field when making the `multipart/form-d
 
 This allows for easier uploading of files when using an HTML form element with the `enctype` (encoding type) set to `multipart/form-data`.
 
+##### Using Supported embedded URLs
+
+Directus supports to upload (embed) videos from YouTube and Vimeo, saving a image as its thumbnail.
+
+```json
+{
+  "filename": "image.jpg",
+  "data": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
+```
+
 #### Get Files
 
 Returns a list of files.
