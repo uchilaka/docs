@@ -213,6 +213,35 @@ return [
 ];
 ```
 
+## Validate Data
+
+An example on how to validate data could be done using regex, but these are example on how it might be accomplish, you can use whatever suits you best.
+
+```php
+'hooks' => [
+  'filters' => [
+    'item.create.articles:before' => function (\Directus\Hook\Payload $payload) {
+      if ($payload->has('uuid')) {
+        throw new \Directus\Exception\UnprocessableEntityException('User are not allowed to set UUID');
+      }
+
+      $title = $payload->get('title');
+      if (!$title || strlen($title) < 10) {
+        throw new \Directus\Exception\UnprocessableEntityException('Article title is too short. Expecting at least 10 characters.');
+      }
+
+      if (preg_match('/[^a-z0-9]/i', $title)) {
+        throw new \Directus\Exception\UnprocessableEntityException('Article title has invalid characters. Only alphanumeric characters are allowed');
+      }
+
+      $payload->set('uuid', \Directus\generate_uuid4());
+
+      return $payload;
+    }
+  ]
+]
+```
+
 ## Error Logs
 
 If you want to log your own hook exceptions/errors you should try/catch those calls you make inside the hook code.
