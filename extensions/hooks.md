@@ -212,3 +212,43 @@ return [
     ]
 ];
 ```
+
+## Error Logs
+
+If you want to log your own hook exceptions/errors you should try/catch those calls you make inside the hook code.
+
+Example:
+
+```php
+<?php
+
+return [
+    'actions' => [
+        // Post a web callback when an article is created
+        'item.create.articles' => function (array $data) {
+            $client = new \GuzzleHttp\Client([
+                'base_uri' => 'https://example.com'
+            ]);
+
+            try {
+                $response = $client->request('POST', 'alert', [
+                    'json' => [
+                        'type' => 'post',
+                        'data' => $data
+                    ]
+                ]);
+            } catch (\Exception $e) {
+              // use your own logger
+              // log_write($e);
+              // Or
+              $container = \Directus\Application\Application::getInstance();
+              // Monolog\Logger instance
+              $logger = $container->get('logger');
+              $logger->error($e);
+              // beside error there are:
+              // debug, info, notice, warning, critical, alert, and emergency methods
+            }
+        }
+    ]
+];
+```
