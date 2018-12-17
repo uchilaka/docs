@@ -32,7 +32,7 @@ By default, the hooks above occur _after_ an event has happened. You can append 
 
 ### Creating an Action Hook
 
-To create a hook, a [callable](http://php.net/manual/en/language.types.callable.php) must be added to a hook name. Below we are using a function.
+To create an action hook, a PHP [callable](http://php.net/manual/en/language.types.callable.php) or `Directus\Hook\HookInterface` implementation must be added to a hook name inside the `hooks` key. Below we are using a function.
 
 ```php
 [
@@ -150,7 +150,7 @@ In this example we'll generate and set a `uuid` right before every article is cr
 ]
 ```
 
-#### Useful Methods
+#### Payload Useful Methods
 
 Name                    | Description
 ----------------------- | ------------
@@ -185,6 +185,65 @@ if (in_array($collectionName, SchemaManager::getSystemCollections())) {
 ```
 :::
 
+## Places to Create Hooks
+
+To create a hook, a PHP [callable](http://php.net/manual/en/language.types.callable.php) or `Directus\Hook\HookInterface` implementation must be added to a hook name. functions, methods and class that implements `__invoke` are callables and can be added to a hook to be execute in an specific moment.
+
+There are 4 places you can add a hook:
+
+1. API Configuration
+2. Interfaces
+3. Pages
+4. Custom Hooks
+
+### API Configuration
+
+If you want to add hooks using the api configuration file located in `config` directory, you must find the `hooks` key and add your [callable](http://php.net/manual/en/language.types.callable.php) or `Directus\Hook\HookInterface` implementation  to a hook name.
+
+Example:
+
+```php
+'hooks' => [
+  'actions' => [
+    'item.create.articles' => function ($collectionName, array $data) {
+      // execute any code
+    }
+  ],
+
+  'filters' => [
+    'item.create.articles:before' => function (\Directus\Hook\Payload $payload) {
+      // run code that alterates the $payload data
+      return $payload;
+    }
+  ]
+]
+```
+
+### Interfaces, Pages, and Custom Hooks
+
+If you want to add hooks from the Interfaces, Pages or Custom hooks, you have to create a `hooks.php` file returning an array with two keys: `actions` for actions hooks and `filters` for action filters.
+
+Example of `hooks.php` file content:
+
+```php
+return [
+  'actions' => [
+    'item.create.articles' => function ($collectionName, array $data) {
+      // execute any code
+    }
+  ],
+
+  'filters' => [
+    'item.create.articles:before' => function (\Directus\Hook\Payload $payload) {
+      // run code that alterates the $payload data
+      return $payload;
+    }
+  ]
+];
+```
+
+All these example are using functions but you can use any php [callable](http://php.net/manual/en/language.types.callable.php) or `Directus\Hook\HookInterface` implementation.
+
 ## Web Hooks
 
 It is easy to create Web Hooks in Directus. Simply include an HTTP POST that includes the desired data within the event. We've included a [disabled example](https://github.com/directus/api/tree/master/public/extensions/custom/hooks/_webhook) in the codebase to help you get started.
@@ -193,23 +252,23 @@ It is easy to create Web Hooks in Directus. Simply include an HTTP POST that inc
 <?php
 
 return [
-    'actions' => [
-        // Post a web callback when an article is created
-        'item.create.articles' => function (array $data) {
-            $client = new \GuzzleHttp\Client([
-                'base_uri' => 'https://example.com'
-            ]);
+  'actions' => [
+    // Post a web callback when an article is created
+    'item.create.articles' => function (array $data) {
+      $client = new \GuzzleHttp\Client([
+        'base_uri' => 'https://example.com'
+      ]);
 
-            $data = [
-                'type' => 'post',
-                'data' => $data
-            ];
+      $data = [
+        'type' => 'post',
+        'data' => $data,
+      ];
 
-            $response = $client->request('POST', 'alert', [
-                'json' => $data
-            ]);
-        }
-    ]
+      $response = $client->request('POST', 'alert', [
+        'json' => $data
+      ]);
+    }
+  ]
 ];
 ```
 
@@ -256,32 +315,32 @@ Example:
 <?php
 
 return [
-    'actions' => [
-        // Post a web callback when an article is created
-        'item.create.articles' => function (array $data) {
-            $client = new \GuzzleHttp\Client([
-                'base_uri' => 'https://example.com'
-            ]);
+  'actions' => [
+    // Post a web callback when an article is created
+    'item.create.articles' => function (array $data) {
+      $client = new \GuzzleHttp\Client([
+        'base_uri' => 'https://example.com'
+      ]);
 
-            try {
-                $response = $client->request('POST', 'alert', [
-                    'json' => [
-                        'type' => 'post',
-                        'data' => $data
-                    ]
-                ]);
-            } catch (\Exception $e) {
-              // use your own logger
-              // log_write($e);
-              // Or
-              $container = \Directus\Application\Application::getInstance();
-              // Monolog\Logger instance
-              $logger = $container->get('logger');
-              $logger->error($e);
-              // beside error there are:
-              // debug, info, notice, warning, critical, alert, and emergency methods
-            }
-        }
-    ]
+      try {
+        $response = $client->request('POST', 'alert', [
+          'json' => [
+            'type' => 'post',
+            'data' => $data,
+          ]
+        ]);
+      } catch (\Exception $e) {
+        // use your own logger
+        // log_write($e);
+        // Or
+        $container = \Directus\Application\Application::getInstance();
+        // Monolog\Logger instance
+        $logger = $container->get('logger');
+        $logger->error($e);
+        // beside error there are:
+        // debug, info, notice, warning, critical, alert, and emergency methods
+      }
+    }
+  ]
 ];
 ```
