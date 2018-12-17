@@ -368,6 +368,7 @@ Okta offers both SSO as well as external user management through SCIM. [Learn mo
 | `client_id`         | Your application client id |
 | `client_secret`     | Your application client secret key |
 | `hosted_domain`     | Your application allowed hosted domain |
+| `use_oidc_mode`     | (`true`/`false`) Whether you want to use the Google+ API or the OpenID Connect API. The only main different is that Google+ API needs to be enable before use it. |
 
 #### Twitter
 
