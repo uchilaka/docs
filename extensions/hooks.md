@@ -217,6 +217,10 @@ return [
 
 An example on how to validate data could be done using regex, but these are example on how it might be accomplish, you can use whatever suits you best.
 
+::: tip NOTE
+NOTE: Make sure to validate using `:before` to make sure to validate before the data is added into the collection.
+:::
+
 ```php
 'hooks' => [
   'filters' => [
