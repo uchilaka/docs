@@ -82,44 +82,40 @@ Directus `.htaccess` actually uses `FileInfo` for rewriting and `Options` to fol
 ### `directus.conf`
 
 ```
-location /api {
-  if (!-e $request_filename) {
-    rewrite ^/api/extensions/([^/]+) /api/api.php?run_extension=$1 last;
-  }
-  rewrite ^ /api/api.php?run_api_router=1 last;
+disable_symlinks if_not_owner;
+
+location /admin {
+    rewrite ^/admin/(.*) /admin/index.html last;
 }
 
 location / {
-  try_files $uri $uri/ /index.php$args;
+    try_files $uri $uri/ /index.php$args;
 }
 
 location /thumbnail {
-  rewrite ^ /thumbnail/index.php last;
+    rewrite /thumbnail/(.*) /thumbnail/index.php last;
 }
 
-# Force file extensions to output as text
-location ~ ^/(media|storage)/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
+# Deny direct access to php files in extensions
+location /extensions/.+\.php$ {
+    deny all;
+}
+
+# All uploads files (originals) cached for a year
+location ~* /uploads/([^/]+)/originals/(.*) {
+    add_header Cache-Control "max-age=31536000";
+}
+
+# Serve php, html and cgi files as text file
+location ~* /uploads/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
   add_header Content-Type text/plain;
 }
 
-# No direct access to extension files
-location ~* [^/]+/customs/extensions/api\.php$ {
-  return 403;
+# Deny access to any file starting with .ht,
+# including .htaccess and .htpasswd
+location ~ /\.ht {
+    deny all;
 }
-
-# No direct access to custom API endpoint files
-location ~* /customs/endpoints/ {
-  deny all;
-}
-
-include pagespeed.conf;
-```
-
-### `pagespeed.conf`
-
-```
-# Prevent PageSpeed module from rewriting/breaking the templates files
-pagespeed Disallow */app/**/*.html;
 ```
 
 ## Caddy
