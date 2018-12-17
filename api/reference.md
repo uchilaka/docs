@@ -191,19 +191,29 @@ Most endpoints are checked against permissions. If a user is not authenticated o
 
 To gain access to protected data, you must include an access token with every request. There are two types of tokens.
 
-#### Static Tokens
-
-These optional tokens never expire and can be assigned to specific Directus users within `directus_users.token`.
-
-#### Temporary Tokens
+#### JWT Access Tokens
 
 These tokens are generated upon the user's request and follow the [JWT spec](https://jwt.io).
 
-The JWT token payload contains the user ID, type of token (`auth`), and an expiration date, which is signed with a secret key using the `HS256` hashing algorithm.
+The JWT token payload contains the user ID, type of token (`auth`), and an expiration date, which is signed with a secret key using the `HS256` hashing algorithm. You can generate one of these tokens using the _Get Auth Token_ below.
 
-There are several ways to include this access token:
+#### Static Tokens
 
-#### 1. Bearer Token in Authorization Header
+The JWT access tokens are the safest way to authenticate into Directus. However, the tokens expire really quickly and you need to login using a users credentials to retrieve it. This is not the most convenient when using Directus on the server side.
+
+You can assign a static token to any user by adding a value to the `token` column in the `directus_users` table in the database directly. As of right now, it's not (yet) possible to set this token from the admin application, as it's rather easy to create a huge security leak for unexperienced users.
+
+The token will never expire and should be considered top secret.
+
+::: danger
+This token doesn't expire and doesn't auto refresh. Only use this feature if you know what you're doing.
+:::
+
+#### Sending the token
+
+There are several ways to include the access token in a request:
+
+##### 1. Bearer Token in Authorization Header
 
 ```
 curl -H "Authorization: Bearer Py8Rumu.LD7HE5j.uFrOR5" https://example.com/api/
@@ -211,10 +221,10 @@ curl -H "Authorization: Bearer staticToken" https://example.com/api/
 ```
 
 ::: warning NOTE
-For security reasons Apache hides the Authorization header to prevent other scripts from seeing the credentials used to access the server. Make sure your Apache is passing the `Authentication` header. [Read more](https://httpd.apache.org/docs/2.4/en/mod/core.html#cgipassauth)
+For security reasons certain Apache installations hide the Authorization header to prevent other scripts from seeing the credentials used to access the server. Make sure your Apache is passing the `Authentication` header. [Read more](https://httpd.apache.org/docs/2.4/en/mod/core.html#cgipassauth)
 :::
 
-#### 2. HTTP Basic Auth
+##### 2. HTTP Basic Auth
 
 ```
 curl -u Py8Ru.muLD7HE.5juFrOR5: https://example.com/api/
@@ -223,7 +233,7 @@ curl -u staticToken: https://example.com/api/
 
 Notice that the token is `Py8Ru.muLD7HE.5juFrOR5` and has a colon `:` at the end. Using Basic auth, the auth user is the token and the auth password should be either blank or the same token.
 
-#### 3. Query Parameter
+##### 3. Query Parameter
 
 ```
 curl https://example.com/api/?access_token=Py8RumuLD.7HE5j.uFrOR5
