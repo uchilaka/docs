@@ -4,14 +4,12 @@
 
 ## Requirements
 
-Directus supports different stacks, however this guide specifically covers LAMP. Please ensure your server meets the following requirements:
+Directus is developed and tested on the LAMP stack, and therefore this is the only officially supported environment. Alternate stacks (NGINX, Caddy, MariaDB, Percona, etc) may also work but you should proceed at your own risk. Please ensure your server meets the following requirements:
 
 * **Apache**
-    * _Other HTTP Servers: [NGINX](#) or [Caddy](#)_
 * **MySQL 5.2+**
     * A Database (empty or existing)
     * A Database User (with access to database)
-    * _Other SQL Vendors: [MariaDB](#) or [Percona](#)_
 * **PHP 7.1+**
     * Extensions:  `pdo`, `mysql`, `curl`, `gd`, `fileinfo`, and `mbstring`
 
@@ -29,10 +27,10 @@ git clone https://github.com/directus/directus.git
 
 ::: tip Other Install Methods
 Alternatively, you can choose from one of these other installation methods.
-* [Docker](#)
-* [Zip, Tar, or FTP](#)
-* [Standalone](#)
-* [Source](#)
+* [Docker](/advanced/other-install-methods.md#docker)
+* [Zip, Tar, or FTP](/advanced/other-install-methods.md#manual)
+* [Standalone](/advanced/other-install-methods.md#standalone)
+* [Source](/advanced/other-install-methods.md#source)
 :::
 
 ## Configure
