@@ -2,15 +2,15 @@
 
 ## HTTP Web Server
 
-Directus has been tested on Apache 2, NGINX, and Caddy. In theory, it should work on any HTTP Server. The API requires the web server to support URL rewriting for routing the request.
+Directus has been developed and tested on [Apache 2](/advanced/server-setup.md#apache).
 
-### Server Specific
+::: tip Alternate Web Servers
+In theory, Directus should work on any HTTP Server, including [NGINX](/advanced/server-setup.md#nginx) and [Caddy](/advanced/server-setup.md#caddy). However these are not officially supported so you should proceed at your own risk.
+:::
 
-Depending on the HTTP web server you are using, you may need to ensure proper setup for Directus to work as expected. Any edge-case server configurations are outlined below:
+### Routing
 
-* **Apache 2** – [View Setup Details](/advanced/server-setup.md#apache)
-* **NGINX** – [View Setup Details](/advanced/server-setup.md#nginx)
-* **Caddy** – [View Setup Details](/advanced/server-setup.md#caddy)
+The Directus API requires URL rewriting for routing requests. On Apache this means having `mod_rewrite` enabled for `.htaccess` files.
 
 ### Permissions
 
@@ -23,7 +23,11 @@ Depending on the HTTP web server you are using, you may need to ensure proper se
 
 ## SQL
 
-Directus requires MySQL 5.2+ or any drop-in alternatives such as MariaDB or Percona Server.
+Directus has been developed and tested on MySQL and requires version 5.2+.
+
+::: tip Alternate SQL Vendors
+In theory, Directus should work with MySQL drop-in alternatives such as MariaDB or Percona Server. However these are not officially supported so you should proceed at your own risk.
+:::
 
 ### Database
 
