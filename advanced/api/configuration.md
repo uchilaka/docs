@@ -223,6 +223,7 @@ Choose where files can be uploaded. Currently we support local and Amazon-S3
 | `region`      | S3 Bucket Region
 | `version`     | S3 API version
 | `bucket`      | S3 Bucket name
+| `endpoint`    | Custom S3 endpoint, e.g. `http://minio.acme.com`
 | `options`     | S3 Options
 
 :::tip NOTE
