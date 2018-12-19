@@ -12,7 +12,7 @@ Name                              | Description
 `application.error`               | An app exception has been thrown. The exception object is passed.
 `auth.request:credentials`        | User requested token via credentials. The user object is passed.
 `auth.success`                    | User authenticated successfully. The user object is passed.
-`auth.fail`                       | User authentication failed. @TODO is passed.
+`auth.fail`                       | User authentication failed. Exception object is passed.
 `collection.create`               | Collection is created. Collection's name passed. Supports `:before` and `:after` (default)
 `collection.update`               | Collection is updated. Collection's name passed. Supports `:before` and `:after` (default)
 `collection.delete`               | Collection is deleted. Collection's name passed. Supports `:before` and `:after` (default)

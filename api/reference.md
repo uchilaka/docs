@@ -440,6 +440,7 @@ The API has a set of query parameters that can be used for specific actions, suc
 | `q`           | Search for items that matches the given string in any of their fields*
 | `groups`      | Groups the items by one or more fields
 | `activity_skip` | Disable activity logging for the request
+| `comment`     | An activity message to explain the reason of an action.
 
 ### Metadata
 
@@ -623,10 +624,6 @@ The format for date is `YYYY-MM-DD` and for datetime is `YYYY-MM-DD HH:MM:SS`. T
 - Months, days, minutes and seconds in two digits, adding leading zero padding when it's a one digit month
 - Hour in 24 hour format
 
-@TODO: Implemented soon
-
-Alias for current datetime `now` and current date `today`.
-
 ```
 # Equals to
 GET /items/comments?filter[datetime]=2018-05-21 15:48:03
@@ -674,7 +671,39 @@ The `activity_skip` parameter prevent the activity logging to be saved in the `d
 
 #### Examples
 
-@TODO: Add examples and useful examples behind this feature
+If there's collection used to logs a project specific activity and that happens frequently and you want to avoid this activity from filling the `directus_activity` collection, you use the `activity_skip=1` query parameter to skip saving this activity.
+
+```http
+POST /_/items/doors_access_logs?activity_skip=1
+```
+
+```json
+{
+  "door": "D190",
+  "user": 1,
+  "datetime": "2018-12-19 14:58:21"
+}
+```
+
+### Activity Comment
+
+The `comment` parameter is used to add a message to explain why the request is being made. This value is stored in the activity record. This can be either optional, required or forbidden, based on permissions.
+
+This parameter will not work when `activity_skip` is enabled.
+
+#### Examples
+
+If you want to keep track of the reason why a project from the `projects` collection went from `active` to `cancelled`, you can add a comment explaning the reason.
+
+```http
+PATCH /_/items/projects/1?comment=Client business closed doors
+```
+
+```json
+{
+  "status": "cancelled"
+}
+```
 
 ## Items
 
@@ -862,8 +891,6 @@ GET /[project]/items/[collection-name]/[id]/revisions
 
 Update or replace a single item from a given collection.
 
-@TODO LOOK INTO ALLOWING FILTER PARAM FOR UPDATES, EG: `PUT /[project]/items/projects?filter[title][eq]=title`
-
 ```http
 PATCH /[project]/items/[collection-name]/[pk]
 ```
@@ -1005,6 +1032,41 @@ GET /[project]/activity
 | `q`           | [Read More](#search-query) |
 | `groups`      | [Read More](#groups)       |
 
+##### Response
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "action": "authenticate",
+      "action_by": 1,
+      "action_on": "2018-12-19T14:05:41+00:00",
+      "ip": "::1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15",
+      "collection": "directus_users",
+      "item": "1",
+      "edited_on": null,
+      "comment": null,
+      "comment_deleted_on": null
+    },
+    {
+      "id": 2,
+      "action": "create",
+      "action_by": 1,
+      "action_on": "2018-12-19T14:06:42+00:00",
+      "ip": "::1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15",
+      "collection": "directus_fields",
+      "item": "133",
+      "edited_on": null,
+      "comment": null,
+      "comment_deleted_on": null
+    }
+  ]
+}
+```
+
 #### Get Activity Event
 
 Get one or more specific activity events.
@@ -1023,6 +1085,26 @@ GET /[project]/activity/[id1],[id2],[id3],...
 | `status`      | [Read More](#status)       |
 | `lang`        | [Read More](#language)     |
 
+##### Response
+
+```json
+{
+  "data": {
+    "id": 1,
+    "action": "authenticate",
+    "action_by": 1,
+    "action_on": "2018-12-19T14:05:41+00:00",
+    "ip": "::1",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15",
+    "collection": "directus_users",
+    "item": "1",
+    "edited_on": null,
+    "comment": null,
+    "comment_deleted_on": null
+  }
+}
+```
+
 #### Create Comment
 
 Create a new comment on an item. Each comment must include the item primary key and its parent collection name.
@@ -1030,6 +1112,12 @@ Create a new comment on an item. Each comment must include the item primary key 
 ```http
 POST /[project]/activity/comment
 ```
+
+##### Supported Query Parameters
+
+| Name          | Documentation              |
+| ------------- | -------------------------- |
+| `meta`        | [Read More](#meta)         |
 
 ##### Body
 
@@ -1043,6 +1131,26 @@ A single object representing the new comment.
 }
 ```
 
+##### Response
+
+```json
+{
+  "data": {
+    "id": 2,
+    "action": "comment",
+    "action_by": 1,
+    "action_on": "2018-12-19T21:39:41+00:00",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15",
+    "collection": "projects",
+    "item": "1",
+    "edited_on": null,
+    "comment": "A new comment",
+    "comment_deleted_on": null
+  }
+}
+```
+
 #### Update Comment
 
 Update a comment by its ID.
@@ -1050,6 +1158,12 @@ Update a comment by its ID.
 ```http
 PATCH /[project]/activity/comment/[id]
 ```
+
+##### Supported Query Parameters
+
+| Name          | Documentation              |
+| ------------- | -------------------------- |
+| `meta`        | [Read More](#meta)         |
 
 ##### Body
 
@@ -1061,6 +1175,26 @@ A single object representing the new comment. The collection and item fields are
 }
 ```
 
+##### Response
+
+```json
+{
+  "data": {
+    "id": 2,
+    "action": "comment",
+    "action_by": 1,
+    "action_on": "2018-12-19T21:39:41+00:00",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15",
+    "collection": "test",
+    "item": "1",
+    "edited_on": "2018-12-20T02:41:00+00:00",
+    "comment": "An updated comment",
+    "comment_deleted_on": null
+  }
+}
+```
+
 #### Delete Comment
 
 Delete a comment by its ID.
@@ -1068,6 +1202,14 @@ Delete a comment by its ID.
 ```http
 DELETE /[project]/activity/comment/[id]
 ```
+
+##### Supported Query Parameters
+
+None.
+
+##### Response
+
+Empty (HTTP 204)
 
 ### Collections
 
@@ -1092,7 +1234,6 @@ When `type` requires a length, such as a string or integer, a `length` attribute
 ```json
 {
     "collection": "projects",
-    "item_name_template": null,
     "managed": true,
     "hidden": false,
     "single": false,
@@ -1104,10 +1245,9 @@ When `type` requires a length, such as a string or integer, a `length` attribute
             "field": "id",
             "type": "integer",
             "datatype": "int",
-            "interface": "primary_key",
+            "interface": "primary-key",
             "primary_key": true,
             "auto_increment": true,
-            "length": 10,
             "signed": false
         },
         {
@@ -1121,6 +1261,28 @@ When `type` requires a length, such as a string or integer, a `length` attribute
             "note": "The project title"
         }
     ]
+}
+```
+
+##### Supported Query Parameters
+
+| Name          | Documentation              |
+| ------------- | -------------------------- |
+| `meta`        | [Read More](#meta)         |
+
+##### Response
+
+```json
+{
+  "data": {
+    "collection": "projects",
+    "managed": true,
+    "hidden": false,
+    "single": false,
+    "icon": null,
+    "note": "This collection will store all of our projects",
+    "translation": null
+  }
 }
 ```
 
@@ -2239,8 +2401,6 @@ Updates a Directus User.
 PATCH /[project]/users/[id]
 ```
 
-@TODO DO WE WANT TO SUPPORT CSV OF PKs HERE TOO?
-
 :::tip NOTE
 **PATCH** will partially update the item with the provided data, any missing fields will be ignored.
 :::
@@ -2721,9 +2881,9 @@ A list of all system objects expected or returned by Directus endpoints.
 | `managed`             | `boolean`            |                                           |
 | `hidden`              | `boolean`            |                                           |
 | `single`              | `boolean`            |                                           |
-| `translation`         | `json`               |                                           |
-| `note`                | `string`             |                                           |
 | `icon`                | `string`             |                                           |
+| `note`                | `string`             |                                           |
+| `translation`         | `json`               |                                           |
 
 ### Collection Preset Object
 
@@ -2731,7 +2891,7 @@ A list of all system objects expected or returned by Directus endpoints.
 | --------------------- | -------------------- | ----------------------------------------- |
 | `id`                  | `integer`            |                                           |
 | `title`               | `string`             |                                           |
-| `user`                | `integer`,`User`     |  The ID of the User                       |
+| `user`                | `integer`, `User`    |  The ID of the User                       |
 | `role`                | `integer`, `Role`    |  The ID of the Role                       |
 | `collection`          | `string`             |                                           |
 | `search_query`        | `string`             |                                           |
@@ -2752,16 +2912,16 @@ A list of all system objects expected or returned by Directus endpoints.
 | `interface`           | `string`               |                                           |
 | `options`             | `json`                 |                                           |
 | `locked`              | `boolean`              |                                           |
-| `translation`         | `json`                 |                                           |
-| `readonly`            | `boolean`              |                                           |
-| `required`            | `boolean`              |                                           |
-| `sort`                | `integer`              |                                           |
-| `view_width`          | `integer`              |                                           |
-| `note`                | `string`               |                                           |
-| `hidden_input`        | `boolean`              |                                           |
 | `validation`          | `string`               |                                           |
-| `hidden_list`         | `boolean`              |                                           |
+| `required`            | `boolean`              |                                           |
+| `readonly`            | `boolean`              |                                           |
+| `hidden_detail`       | `boolean`              |                                           |
+| `hidden_browse`       | `boolean`              |                                           |
+| `sort`                | `integer`              |                                           |
+| `width`               | `integer`              |                                           |
 | `group`               | `integer`              |                                           |
+| `note`                | `string`               |                                           |
+| `translation`         | `json`                 |                                           |
 
 ### File Object
 
@@ -2779,12 +2939,12 @@ A list of all system objects expected or returned by Directus endpoints.
 | `width`       | `integer`          |                      |
 | `height`      | `integer`          |                      |
 | `duration`    | `integer`          |                      |
-| `embed`       | `TODO`             |                      |
+| `embed`       | `string`           |                      |
 | `folder`      | `string`, `Folder` | The ID of the Folder |
 | `description` | `string`           |                      |
 | `location`    | `string`           |                      |
 | `tags`        | `array`, `string`  |                      |
-| `metadata`    | `TODO`             |                      |
+| `metadata`    | `json`             |                      |
 | `data`        | `json`             |                      |
 
 ### Folder Object
@@ -2809,9 +2969,9 @@ A list of all system objects expected or returned by Directus endpoints.
 | `delete`                | `string`          | "none" (or NULL), "mine", "role", "full"             |
 | `comment`               | `string`          | "none", "read", "update" (or NULL), "create", "full" |
 | `explain`               | `string`          | "none" (or NULL), "update", "create", "always"       |
-| `read_field_blacklist`  | `array`, `string` | List of fields that the role cannot read             |
-| `write_field_blacklist` | `array`, `string` | List of fields that the role cannot edit             |
-| `status_blacklist`      | `array`, `TODO`   |                                                      |
+| `read_field_blacklist`  | `array`           | List of fields that the role cannot read             |
+| `write_field_blacklist` | `array`           | List of fields that the role cannot edit             |
+| `status_blacklist`      | `array`           |                                                      |
 
 ### Relation Object
 
@@ -2821,8 +2981,8 @@ A list of all system objects expected or returned by Directus endpoints.
 | `collection_many` | `string`, `Collection` |             |
 | `field_many`      | `string`, `Field`      |             |
 | `collection_one`  | `string`, `Collection` |             |
-| `field_one`       | `string`               |             |
-| `junction_one`    | `string` `TODO`        |             |
+| `field_one`       | `string`, `Field`      |             |
+| `junction_field`  | `string`, `Field`      |             |
 
 ### Revision Object
 
@@ -2845,8 +3005,8 @@ A list of all system objects expected or returned by Directus endpoints.
 | `id`            | `integer`       |                         |
 | `name`          | `string`        | Name of the role        |
 | `description`   | `string`        | Description of the role |
-| `ip_whitelist`  | `string` `TODO` |                         |
-| `nav_blacklist` | `string` `TODO` |                         |
+| `ip_whitelist`  | `string`        |                         |
+| `nav_blacklist` | `string`        |                         |
 | `external_id`   | `string`        |                         |
 
 ### Setting Object
