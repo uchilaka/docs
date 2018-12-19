@@ -17,7 +17,7 @@ To keep things standardized across many extensions, we have a global set of [CSS
 
 ## Breakpoints
 
-Directus uses 3 main breakpoints. They are given to `vue-mq` as well and can be checked programmatically by using `this.$mq`
+Directus uses 4 main breakpoints:
 
 * Small: 0 - 800px
 * Medium: 800px - 1000px
