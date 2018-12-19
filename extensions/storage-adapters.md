@@ -12,6 +12,37 @@
 You can change your project's default storage adapter within the [API configuration](../advanced/api/configuration.html#storage).
 :::
 
+## Using AWS S3
+
+First you need to install the adapter (not installed by default, to keep dependencies small).
+
+`composer require aws/aws-sd-php`
+
+Then simply set the following into your configuration file (by default `config/api.php`):
+
+```php
+'storage' => [
+    'adapter' => 's3',
+    'key' => 'your-aws-key',
+    'secret' => 'your-aws-secret',
+    'bucket' => 'your-aws-bucket-name',
+    'version' => 'latest',
+    'region' => 'us-east-1',
+]
+```
+
+## Using AWS S3 with custom endpoint
+
+If you want to connect a custom AWS S3 endpoint (for example a minio server), you can (additionally to the the configuration above) add:
+
+```php
+'storage' => [
+  'adapter' => 's3',
+  // ...
+  'endpoint' => 'http://minio.acme.com'
+]
+```
+
 ## Files & Structure
 
 TK
