@@ -49,7 +49,23 @@ client.login({
 });
 ```
 
-The user will stay authenticated until you call the `.logout()` method.
+#### Staying logged in
+
+The SDK will automatically refresh the token until you call the `.logout()` method. 
+
+You can provide a storage method to persist the token across refreshes and browser re-opens:
+
+```js{6}
+import DirectusSDK from "@directus/sdk-js";
+
+const client = new DirectusSDK({
+  url: "https://demo-api.directus.app/",
+  project: "_",
+  storage: window.localStorage
+});
+```
+
+This storage can be any provider, as long as it has synchronous `.getItem()` and `.setItem()` methods. `window.localStorage` and `window.sessionStorage` work natively in the browser.
 
 **Using a static access token**
 Alternatively, you can connect to the API with a static token (as controlled by the `token` field in the directus_users collection). This token doesn't expire and thus shouldn't be used on the client side.
