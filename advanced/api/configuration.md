@@ -159,11 +159,15 @@ Enables caching to speed-up API responses
 
 #### APC
 
+It uses PHP [Alternative PHP Cache (APC)](https://secure.php.net/manual/en/book.apc.php) extension to store the cache data.
+
 | Name          | Description   |
 | ------------- | ------------- |
 | `adapter`     |  Name of the adapter. Must be `apc`
 
 #### APCU
+
+It uses PHP [APC User Cache (APCu)](https://secure.php.net/manual/en/book.apcu.php) extension to store the cache data. APCu is the same extension as APC, the only different is that doesn't have OPCache. Directus only needs the data store feature.
 
 | Name          | Description   |
 | ------------- | ------------- |
@@ -171,12 +175,16 @@ Enables caching to speed-up API responses
 
 #### Filesystem
 
+It stores cache data in the server's filesystem.
+
 | Name          | Description   |
 | ------------- | ------------- |
 | `adapter`     |  Name of the adapter. Must be `filesystem`
 | `path`        |  Where on the cache will be stored relative to the API root path. Prepend with `/` for absolute
 
 #### Memcached
+
+It uses [Memcached](https://memcached.org) caching system and [PHP Memcached](http://php.net/manual/en/book.memcached.php) extension to store cache data.
 
 | Name          | Description   |
 | ------------- | ------------- |
@@ -193,6 +201,8 @@ sudo apt-get install php-memcached
 ```
 
 #### Redis
+
+It uses [Redis](https://redis.io) and [PHP Redis](https://github.com/phpredis/phpredis) extension to store cache data.
 
 | Name          | Description   |
 | ------------- | ------------- |
