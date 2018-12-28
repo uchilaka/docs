@@ -12,7 +12,6 @@ Option              | Description
 `name`              | String. The name presented to the user in the App
 `text_color`        | Directus Color Name. The text color of the badge on the browse items page
 `background_color`  | Directus Color Name. The background color of the badge (or dot if using the Simple Badge option)
-`browse_subdued`    | Boolean. Subdues (50% opacity) the entire item row on the browse items page
 `browse_badge`      | Boolean. Whether to show the badge on the browse items page or not
 `soft_delete`       | Boolean. If true, items will not be returned by default in the App or API. Only Admin users have access to soft-deleted items
 
@@ -23,7 +22,6 @@ Option              | Description
   "name": "Published",
   "text_color": "white",
   "background_color": "accent",
-  "browse_subdued": false,
   "browse_badge": false,
   "soft_delete": false
 },
@@ -31,7 +29,6 @@ Option              | Description
   "name": "Draft",
   "text_color": "white",
   "background_color": "blue-grey-200",
-  "browse_subdued": true,
   "browse_badge": true,
   "soft_delete": false
 },
@@ -39,7 +36,6 @@ Option              | Description
   "name": "Deleted",
   "text_color": "white",
   "background_color": "red",
-  "browse_subdued": true,
   "browse_badge": true,
   "soft_delete": true
 }
