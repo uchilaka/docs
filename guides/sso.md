@@ -12,6 +12,14 @@
 
 ## Google SSO
 
+:::tip NOTE
+We support google SSO with both Google+ (soon to be discontinued) and OpenID Connect.
+:::
+
+Follow [Google instructions](https://developers.google.com/identity/protocols/OpenIDConnect#registeringyourapp) on how to register an app and get the `client_id` and `client_secret` tokens.
+
+If you want to use Google+ API, Read these steps on [how to enable/disable Google+ APIs](https://support.google.com/a/answer/3187191)
+
 ## Twitter SSO
 
 ## Facebook SSO
