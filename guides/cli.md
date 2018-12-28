@@ -2,6 +2,17 @@
 
 > Directus CLI provides commands that allow you to perform various tasks such as installation, resetting a user's email, or upgrading the database to the most recent Directus schema.
 
+## Commands List
+
+| Name                                                  | Description
+| ----------------------------------------------------- | -----------------------------
+| [`install:config`](#configure-directus)               | Create a configuration file
+| [`install:database`](#populate-the-database-schema)   | Create the default tables and data
+| [`install:install`](#install-initial-configurations)  | Create initial configuration data
+| [`db:upgrade`](#upgrade-directus-schema)              | Upgrade the Database Schema
+| [`user:password`](#change-user-password)              | Change a user password
+| [`log:prune`](#prune-old-log-files)                   | Remove old logs files
+
 ## Help
 
 You can use the `help` command at any time to learn about available CLI actions:
@@ -108,12 +119,6 @@ This requires that Directus has a valid connection configured in `config/api.php
 :::warning
 Always backup your database before running the database module to prevent data loss.
 :::
-
-### Install Directus Schema:
-
-```bash
-php bin/directus db:install
-```
 
 ### Upgrade Directus Schema
 
