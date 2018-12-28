@@ -16,7 +16,7 @@ You can change your project's default storage adapter within the [API configurat
 
 First you need to install the adapter (not installed by default, to keep dependencies small).
 
-`composer require aws/aws-sdk-php`
+`composer require league/flysystem-aws-s3-v3`
 
 Then simply set the following into your configuration file (by default `config/api.php`):
 
