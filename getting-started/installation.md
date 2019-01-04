@@ -33,6 +33,10 @@ Alternatively, you can choose from one of these other installation methods.
 * [Source](/advanced/other-install-methods.md#source)
 :::
 
+::: tip
+If after installation you are experiencing missing functions or packages errors, [follow these steps](https://github.com/directus/api/issues/620#issuecomment-449905619) to recreate `composer.json` and update the composer autoloader.
+:::
+
 ## Configure
 
 1. Set your document root to the `/public` directory

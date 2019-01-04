@@ -16,6 +16,10 @@ You can change your project's default storage adapter within the [API configurat
 
 First you need to install the adapter (not installed by default, to keep dependencies small).
 
+::: tip
+If are using the Directus Suite version, this version is missing the `composer.json` file. [Follow these steps](https://github.com/directus/api/issues/620#issuecomment-449905619) before installing the AWS S3 storage to recreate `composer.json` and update the composer autoloader.
+:::
+
 `composer require league/flysystem-aws-s3-v3`
 
 Then simply set the following into your configuration file (by default `config/api.php`):
