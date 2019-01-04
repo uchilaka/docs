@@ -642,8 +642,23 @@ GET /items/comments?filter[datetime][lt]=2018-05-21 15:48:03
 GET /items/comments?filter[datetime][lte]=2018-05-21 15:48:03
 
 # Between two date
-GET /items/comments?filter[datetime][lte]=2018-05-21 15:48:03,2018-05-21 15:49:03
+GET /items/comments?filter[datetime][between]=2018-05-21 15:48:03,2018-05-21 15:49:03
 ```
+
+For `date` and `datetime` type, `now` can be used as value for "currrent server time".
+
+```
+# Equals to
+GET /items/comments?filter[datetime]=now
+
+# Greater than
+GET /items/comments?filter[datetime][gt]=now
+
+# Between two date
+GET /items/comments?filter[datetime][between]=2018-05-21 15:48:03,now
+```
+
+When the field belongs to a Directus collection, `now` is converted to a UTC date/datime.
 
 ### Language
 
