@@ -34,7 +34,7 @@ Alternatively, you can choose from one of these other installation methods.
 :::
 
 ::: tip
-If after installation you are experiencing missing functions or packages errors, [follow these steps](https://github.com/directus/api/issues/620#issuecomment-449905619) to recreate `composer.json` and update the composer autoloader.
+If after installation you are experiencing missing functions or packages errors, [follow these steps](https://github.com/directus/api/issues/620#issuecomment-449905619) to recreate `composer.json` and update the composer autoloader. If there's already a `composer.json`, either run [`composer dump-autoload`](https://getcomposer.org/doc/03-cli.md#dump-autoload-dumpautoload-).
 :::
 
 ## Configure

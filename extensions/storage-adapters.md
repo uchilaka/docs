@@ -17,7 +17,7 @@ You can change your project's default storage adapter within the [API configurat
 First you need to install the adapter (not installed by default, to keep dependencies small).
 
 ::: tip
-If are using the Directus Suite version, this version is missing the `composer.json` file. [Follow these steps](https://github.com/directus/api/issues/620#issuecomment-449905619) before installing the AWS S3 storage to recreate `composer.json` and update the composer autoloader.
+If are using the Directus Suite version, this version is missing the `composer.json` file. [Follow these steps](https://github.com/directus/api/issues/620#issuecomment-449905619) before installing the AWS S3 storage to recreate `composer.json` and update the composer autoloader. If there's already a `composer.json`, run [`composer dump-autoload`](https://getcomposer.org/doc/03-cli.md#dump-autoload-dumpautoload-).
 :::
 
 `composer require league/flysystem-aws-s3-v3`
