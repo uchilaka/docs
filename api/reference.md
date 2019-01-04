@@ -133,6 +133,7 @@ The API uses numeric codes to avoid the need for translated error messages based
 - `0211` - Can Not Update Comment for Item
 - `0212` - Can Not Delete Comment from Item
 - `0213` - Field does not allow object or array as value (422)
+- `0214` - Unknown Filter (422)
 
 #### Collections Error Codes
 
