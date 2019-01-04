@@ -21,4 +21,101 @@ These are other potential layouts that could be created to view specific types o
 
 ## Files & Structure
 
-TK
+### layout.vue
+
+A standard Vue.js single file component that renders the actual layout like cards in this example.
+
+```vue
+<template>
+	<div id="grid">
+		<div v-for="item in items" class="card" @click="$router.push(item.__link__)">{{ item[viewOptions.title] }}</div>
+	</div>
+</template>
+
+<script>
+import mixin from "../../../mixins/layout";
+
+export default {
+  name: "layout-example",
+  mixins: [mixin]
+}
+</script>
+
+<style lang="scss" scoped>
+
+#grid {
+	display: grid;
+}
+
+.card {
+  border-radius: var(--border-radius);
+  padding: 5px;
+}
+</style>
+```
+
+### options.vue
+
+A standard Vue.js single file component that renders the options tab when clicking on the info icon. The options allow to define how the layout displays data and what should be displayed. The options can then be accessed in the `layout.vue` file to display the right data.
+For more advanced examples, you can look into the `options.vue` file of the [default layouts](https://github.com/directus/api/tree/master/extensions/core/layouts)
+
+```vue
+<template>
+  <form @submit.prevent>
+    <label for="title" class="style-3">title</label>
+    <v-select
+      :value="viewOptions.title || this.primaryKeyField"
+      :options="fieldOptions"
+      @input="setOption('title', $event === '__none__' ? null : $event)"
+    ></v-select>
+  </form>
+</template>
+
+<script>
+import mixin from "../../../mixins/layout";
+
+export default {
+  mixins: [mixin],
+  computed: {
+
+    fieldOptions() {
+      return {
+      	__none__: `dont_show`,
+        ...this.$lodash.mapValues(this.fields, info => info.name)
+      };
+    },
+  },
+  methods: {
+
+    setOption(field, value) {
+      this.$emit("options", {
+        ...this.viewOptions,
+        [field]: value
+      });
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+label {
+  margin: 10px;
+}
+</style>
+```
+
+### meta.json
+
+The meta.json file contains metadata for the layout, such as its unique name, author, version and translations.
+
+```json
+{
+  "name": "$t:example",
+  "version": "1.0.0"
+  }
+}
+```
+
+## Mixin (props)
+
+We've prepared a [mixin](https://github.com/directus/extensions/blob/master/mixins/layout.js) that adds all the props to the component that the application passes to the layout. These include items and a bunch of others.
