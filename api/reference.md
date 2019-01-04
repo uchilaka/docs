@@ -2779,6 +2779,7 @@ POST /projects
 | --------------- | -------------------------------------- | ---------
 | `project`       | The project key. Default: `_`          | No
 | `force`         | Force the installation                 | No
+| `existing`      | Ignore existing installation           | No
 | `db_type`       | Database type. Only `mysql` supported  | No
 | `db_host`       | Database host. Default: `localhost`    | No
 | `db_port`       | Database port. Default: `3306`         | No
