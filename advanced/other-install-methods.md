@@ -40,4 +40,4 @@ If you would like to extend or make contributions to the core codebase then you 
 
 ## Docker
 
-TK
+See [https://github.com/directus/docker](https://github.com/directus/docker)
