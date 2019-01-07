@@ -32,8 +32,17 @@ Then simply set the following into your configuration file (by default `config/a
     'bucket' => 'your-aws-bucket-name',
     'version' => 'latest',
     'region' => 'us-east-1',
+    'options' => [
+      'ACL' => 'public-read',
+      'Cache-Control' => 'max-age=604800'
+    ],
+    'endpoint' => 's3-endpoint',
 ]
 ```
+
+Read more  about the ACL permissions here: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl.
+
+If you want to set any new uploaded files to be publicly readable, you should set the `ACL` to `public-read`.
 
 ## Using AWS S3 with custom endpoint
 
