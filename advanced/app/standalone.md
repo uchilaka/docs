@@ -30,21 +30,7 @@ For instructions on how to setup a local development copy, checkout our [dev ins
 
 ### Using Docker
 
-Seeing how the Directus Application is a SPA, running it in Docker is a breeze. The application comes with its own Dockerfile, which you can use to run the application.
-
-Download a copy of the latest release from the [Releases Page](https://github.com/directus/app/releases), `cd` into the directory and run
-
-```bash
-$ docker build . -t directus
-```
-
-After the image has been build, you can run it with
-
-```bash
-$ docker run -it -d -e API_URL=<url> -p <port>:80 <name>
-```
-
-Replace `<url>` with the API URL you'd like to connect to, `<port>` with the port you want the application to be exposed on, and `<name>` with a name of your choosing which Docker will use internally.
+See [https://github.com/directus/docker](https://github.com/directus/docker)
 
 ## Configuration
 
