@@ -87,7 +87,7 @@ In addition to the custom options set within your status interface, there is alw
 
 This feature enables absolute control over the most fluid workflows, but it can be difficult to fully understand its potential, so let's explore an example with all the bells and whistles:
 
-![Workflow Example](/img/workflow-example.png)
+![Workflow Example](../img/workflow-example.png)
 
 #### Intern
 
