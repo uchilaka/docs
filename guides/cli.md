@@ -45,12 +45,19 @@ This command will overwrite any existing default configuration file at `config.a
 php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pass> -e <directus_email> -s <db_unix_socket>
 ```
 
-* `db_host` - The database host
-* `db_name` - The database name (it must already exist)
-* `db_user` - The database user's name
-* `db_pass` - The database user's password
-* `directus_email` - (Optional) The Directus email that will be used as sender in the mailing process
-* `db_unix_socket` - The database unix socket
+| Option         | Description
+| -------------- | -----------------------------
+| `t`            | Database type. (**Only `mysql` supported**)
+| `h`            | Database host
+| `P`            | Database port
+| `n`            | Database name (it must already exist)
+| `u`            | Database user's name
+| `p`            | Database user's password
+| `e`            | (Optional) The Directus email that will be used as sender in the mailing process
+| `s`            | Database unix socket
+| `c`            | Enable/Disable CORS
+| `N`            | Unique Project's name
+| `timezone`     | API Server default timezone
 
 #### Example: http://example.local
 
@@ -80,9 +87,15 @@ Create the default admin user and the site's default settings.
 php bin/directus install:install -e <admin_email> -p <admin_password> -t <site_name>
 ```
 
-* `admin_email` - The admin email
-* `admin_password` - The admin password
-* `site_name` - The project title
+| Option         | Description
+| -------------- | -----------------------------
+| `e`            | Admin email
+| `p`            | Admin password
+| `T`            | Admin Static Auth Token
+| `t`            | Project title
+| `N`            | Unique Project's name
+| `timezone`     | Admin timezone
+| `locale`       | Admin locale
 
 #### Example
 
