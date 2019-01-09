@@ -42,7 +42,7 @@ This command will overwrite any existing default configuration file at `config.a
 :::
 
 ```bash
-php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pass> -e <directus_email>
+php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pass> -e <directus_email> -s <db_unix_socket>
 ```
 
 * `db_host` - The database host
@@ -50,6 +50,7 @@ php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pa
 * `db_user` - The database user's name
 * `db_pass` - The database user's password
 * `directus_email` - (Optional) The Directus email that will be used as sender in the mailing process
+* `db_unix_socket` - The database unix socket
 
 #### Example: http://example.local
 

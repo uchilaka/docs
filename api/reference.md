@@ -2782,6 +2782,7 @@ POST /projects
 | `existing`      | Ignore existing installation           | No
 | `db_type`       | Database type. Only `mysql` supported  | No
 | `db_host`       | Database host. Default: `localhost`    | No
+| `db_socket`     | Database unix socket                   | No
 | `db_port`       | Database port. Default: `3306`         | No
 | `db_name`       | Database name                          | Yes
 | `db_user`       | Database user name                     | Yes
