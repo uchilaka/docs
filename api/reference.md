@@ -2800,6 +2800,7 @@ POST /projects
 | `user_token`    | Directus Admin token. Default: `null`  | No
 | `mail_from`     | Default mailer `from` email            | No
 | `project_name`  | The project name. Default: `Directus`  | No
+| `app_url`       | The application's URL.                 | No
 | `cors_enabled`  | Enable CORS. Default `true`            | No
 | `auth_secret`   | Sets the authentication secret key     | No
 

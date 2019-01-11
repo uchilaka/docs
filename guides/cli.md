@@ -94,6 +94,7 @@ php bin/directus install:install -e <admin_email> -p <admin_password> -t <site_n
 | `p`            | Admin password
 | `T`            | Admin Static Auth Token
 | `t`            | Project title
+| `a`            | Project's Application URL
 | `N`            | Unique Project's name
 | `timezone`     | Admin timezone
 | `locale`       | Admin locale
