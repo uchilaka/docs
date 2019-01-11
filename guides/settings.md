@@ -9,6 +9,7 @@ These are settings that apply to the entire project environment. They are stored
 Scope     | Key             | Description
 --------- | --------------- | -----------------------------------------------------------------------------
 `global`    | `project_name`    | The title of the project
+            | `app_url`         | URL of the Project's application
 `global`    | `auto_sign_out`   | The number of seconds until inactive users will be automatically logged out of the application. (auth token expiration)
 `global`    | `default_limit`   | Number of items per request
 `global`    | `logo`            | If you would like to use your own logo you can upload it here. 200px by 60px, PNG or SVG, with a white foreground and transparent background
