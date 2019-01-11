@@ -58,6 +58,7 @@ php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pa
 | `c`            | Enable/Disable CORS
 | `N`            | Unique Project's name
 | `timezone`     | API Server default timezone
+| `f`            | Force file overwritten
 
 #### Example: http://example.local
 
@@ -96,6 +97,7 @@ php bin/directus install:install -e <admin_email> -p <admin_password> -t <site_n
 | `N`            | Unique Project's name
 | `timezone`     | Admin timezone
 | `locale`       | Admin locale
+| `f`            | Recreate Directus core tables. Also remove all Directus data
 
 #### Example
 
