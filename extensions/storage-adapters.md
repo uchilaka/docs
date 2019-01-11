@@ -37,12 +37,19 @@ Then simply set the following into your configuration file (by default `config/a
       'Cache-Control' => 'max-age=604800'
     ],
     'endpoint' => 's3-endpoint',
+    'root' => '/',
+    'thumb_root' => '/thumbnails',
+    'root_url' => 'http://<bucket>.s3-<region>.amazonaws.com',
 ]
 ```
 
+- The `root` option indicates the root path of all uploads.
+- The `thumb_root` option indicates the root path where all the thumbnails are going to be stored.
+- The `root_url` is the URL to access all the files stored in the bucket, such as your bucket url, or AWS CloudFront URL.
+
 Read more  about the ACL permissions here: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl.
 
-If you want to set any new uploaded files to be publicly readable, you should set the `ACL` to `public-read`.
+If you want to set any new uploaded files to be publicly readable, you should set the `ACL` to `public-read`, otherwise all these permission will follow you default S3 bucket permissions.
 
 ## Using AWS S3 with custom endpoint
 
