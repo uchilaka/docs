@@ -1,6 +1,6 @@
 # SDK JS
 
-> A lightweight JavaScript library that makes working with the Directus API even easier. It keeps you logged in, handles token management, and provides quick access to all [API Endpoints](../api-reference/reference.md).
+> A lightweight JavaScript library that makes working with the Directus API even easier. It keeps you logged in, handles token management, and provides quick access to all [API Endpoints](../api/reference.md).
 
 ## Installation
 
@@ -51,7 +51,7 @@ client.login({
 
 #### Staying logged in
 
-The SDK will automatically refresh the token until you call the `.logout()` method. 
+The SDK will automatically refresh the token until you call the `.logout()` method.
 
 You can provide a storage method to persist the token across refreshes and browser re-opens:
 

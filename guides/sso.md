@@ -1,6 +1,6 @@
 # SSO
 
-> For Single Sign-On (SSO) to function properly, a user with a matching email address must already exist within `directus_users`. If you would like to manage users _externally_ then you would use our [SCIM endpoints](../api-reference/reference.md#scim).
+> For Single Sign-On (SSO) to function properly, a user with a matching email address must already exist within `directus_users`. If you would like to manage users _externally_ then you would use our [SCIM endpoints](../api/reference.md#scim).
 
 ### Table of Contents
 * [Google](#google)
@@ -40,5 +40,5 @@ If you want to use Google+ API, Read these steps on [how to enable/disable Googl
 8. **Base URL**: The `base_url` can be found under _API_ in the main menu. You will see a list of Authorization Servers to pick from. The URL is under the column labeled `Issuer URI`.
 
 ::: tip SCIM
-Okta is also capable of externally managing your Directus users, allowing for more unified user provisioning within your organization. This is accomplished by using our [API's dedicated SCIM endpoints](../api-reference/reference.md#scim).
+Okta is also capable of externally managing your Directus users, allowing for more unified user provisioning within your organization. This is accomplished by using our [API's dedicated SCIM endpoints](../api/reference.md#scim).
 :::

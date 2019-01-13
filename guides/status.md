@@ -43,7 +43,7 @@ Option              | Description
 
 ## Soft Delete
 
-As mentioned above, Soft Delete is meant to _feel_ like an item has been deleted without permanently removing it from the database. They are hidden from both the App and API responses unless explicitely requested by an Admin [using the `status` parameter](/api-reference/reference.md#status). Non-admin users do not have access to soft-deleted items.
+As mentioned above, Soft Delete is meant to _feel_ like an item has been deleted without permanently removing it from the database. They are hidden from both the App and API responses unless explicitely requested by an Admin [using the `status` parameter](/api/reference.md#status). Non-admin users do not have access to soft-deleted items.
 
 ## Workflow
 
