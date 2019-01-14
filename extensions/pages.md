@@ -4,7 +4,7 @@
 
 ## Files & Structure
 
-A Page is made up of at least two core files. You can create a page from scratch or use the [included page extension demo](https://github.com/directus/api/tree/master/extensions/core/pages/testing). Simply remove the prepended underscore (`_`) to enable the demo.
+A Page is made up of at least two core files. You can create a page from scratch or use the [included page extension demo](https://github.com/directus/api/tree/master/extensions/core/pages/_demo). Simply remove the prepended underscore (`_`) to enable the demo.
 
 ### `page.vue`
 
