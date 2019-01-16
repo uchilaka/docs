@@ -8,6 +8,16 @@
 
 **Extension** endpoints are defined in the `endpoints.php` file within that extension's directory.
 
+The endpoint identification will be the file or directory name.
+
+### Using Files
+
+The following file path: A file stored in `public/extensions/custom/endpoints/example.php` will be accesible in `/custom/example` endpoint.
+
+### Using Directories
+
+The following file path: A file stored in `public/extensions/custom/endpoints/example/endpoints.php` will be accesible in `/custom/example` endpoint. When using directories the entrypoint file is `endpoints.php`.
+
 ```php
 <?php
 
@@ -44,21 +54,21 @@ return [
   '/articles' => [
     'group' => true,
     'endpoints' => [
-      // `/custom/articles
+      // `/custom/<endpoint-id>/articles
       '' => [
           'method' => 'GET',
           'handler' => function ($request, $response) {
 
           }
       ],
-      // `/custom/articles/category
+      // `/custom/<endpoint-id>/articles/category
       '/category' => [
         'method' => 'GET',
         'handler' => function ($request, $response) {
 
         }
       ],
-      // `/custom/articles/preview
+      // `/custom/<endpoint-id>/articles/preview
       '/preview' => [
         'method' => 'GET',
         'handler' => function ($request, $response) {
