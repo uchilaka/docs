@@ -2707,7 +2707,13 @@ GET /
 {
   "data": {
     "api": {
-      "version": "2.0.0-rc.2"
+      "version": "2.1.4",
+      "database": "mysql",
+      "project_name": "Directus",
+      "project_logo": {
+        "full_url": "http://localhost/uploads/_/originals/logo.jpg",
+        "url": "/uploads/_/originals/logo.jpg"
+      }
     },
     "server": {
       "general": {
