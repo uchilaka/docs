@@ -28,6 +28,7 @@ return [
   // The endpoint path:
   // '' means it is located at: `/custom/<endpoint-id>`
   // '/` means it is located at: `/custom/<endpoint-id>/`
+  // 'test' and `/test` means it is located at: `/custom/<endpoint-id>/test
   '' => [
     'method' => 'GET',
     'handler' => function (Request $request, Response $response) {
