@@ -2707,7 +2707,7 @@ GET /
 {
   "data": {
     "api": {
-      "version": "2.1.4",
+      "version": "2.0.14",
       "database": "mysql",
       "project_name": "Directus",
       "project_logo": {
