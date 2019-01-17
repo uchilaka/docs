@@ -100,3 +100,11 @@ this.$helpers.micromustache.render(
 this.$helpers.shortid.generate();
 // => PPBqWA9
 ```
+
+### [`date-fns`](https://www.npmjs.com/package/date-fns)
+
+> date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.
+
+```js
+this.$helpers.dateFns;
+```
