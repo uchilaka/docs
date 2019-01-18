@@ -2183,6 +2183,12 @@ Returns a list of roles.
 GET /[project]/roles
 ```
 
+Returns a list of roles and their users
+
+```http
+GET /[project]/roles?fields=*,users.user.*
+```
+
 #### Get Role
 
 Returns the details of one or more roles.
