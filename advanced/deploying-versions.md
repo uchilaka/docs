@@ -108,7 +108,7 @@ $ cd ..
 $ git clone -b build git@github.com:directus/api.git api-build
 ```
 
-6. Delete everything in `api-build` except the `.git` folder
+6. Delete everything in `api-build` except the `.git` folder and `composer.json` file
 
 7. Delete all nested .git folders (prevent submodules)
 
@@ -124,7 +124,6 @@ $ cd ..
 
 * bin/
 * config/
-* docker/
 * logs/
 * migrations/
 * public/
@@ -132,7 +131,7 @@ $ cd ..
 * vendor/
 * LICENSE.md
 * README.md
-* docker-compose.yml
+* composer.json
 
 
 9. Delete all .DS_Store files
