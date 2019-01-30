@@ -135,6 +135,7 @@ The API uses numeric codes to avoid the need for translated error messages based
 - `0213` - Field does not allow object or array as value (422)
 - `0214` - Unknown Filter (422)
 - `0215` - Unable to access data from a related collection (403)
+- `0216` - Delete/Disable last admin is forbidden (403)
 
 #### Collections Error Codes
 
