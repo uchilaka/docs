@@ -687,11 +687,12 @@ The `groups` parameter allows grouping the result by one or more fields.
 #### Examples
 
 Users table:
-| name    | country |
-+---------+---------+
-| John    | US      |
-| Joseph  | UK      |
-| John    | UK      |
+
+| name      | country  |
+| --------- | -------- |
+| John      | US       |
+| Joseph    | GB       |
+| John      | GB       |
 
 Grouping the Users table by `name` will result in the following:
 
