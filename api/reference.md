@@ -686,10 +686,35 @@ The `groups` parameter allows grouping the result by one or more fields.
 
 #### Examples
 
+Users table:
+| name    | country |
++---------+---------+
+| John    | US      |
+| Joseph  | UK      |
+| John    | UK      |
+
+Grouping the Users table by `name` will result in the following:
+
 ```
-# Groups the result by id and name fields
-groups=id,name
+groups=name
 ```
+
+```json
+{
+  "data": [
+    {
+      "name": "John"
+    },
+    {
+      "name": "Joseph"
+    }
+  ]
+}
+```
+
+All items that has the same fields in `groups` will be merged together.
+
+Grouping by both `name` and `country` will result on all items to be returned, because none of them match another record with the same `name` and `country` combined.
 
 ### Skip Activity Logging
 
