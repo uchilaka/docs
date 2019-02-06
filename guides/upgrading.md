@@ -21,7 +21,8 @@ If you do not have access to git on your server and installed Directus via FTP, 
 
 1. Download the [latest release of Directus](https://github.com/directus/directus/releases/latest)
 2. Upload/replace existing Directus files **making sure not to replace**:
-    * [API](https://github.com/directus/directus/tree/master/config) and [App](https://github.com/directus/directus/blob/master/public/admin/config.js) config files
+    * [API](https://github.com/directus/directus/tree/master/config) config files (`api.php`, `api.[project].php`, etc)
+    * [App](https://github.com/directus/directus/blob/master/public/admin/config.js) config file
     * [File storage directory](https://github.com/directus/directus/tree/master/public/uploads)
     * [Custom extensions](https://github.com/directus/directus/tree/master/public/extensions/custom)
     * [Log files](https://github.com/directus/directus/tree/master/logs)
