@@ -26,6 +26,7 @@ If you do not have access to git on your server and installed Directus via FTP, 
     * [Custom extensions](https://github.com/directus/directus/tree/master/public/extensions/custom)
     * [Log files](https://github.com/directus/directus/tree/master/logs)
     * Overrides for [CSS](https://github.com/directus/directus/blob/master/public/admin/style.css) and [Javascript](https://github.com/directus/directus/blob/master/public/admin/script.js)
+3. Run the database migration script by clicking: _Settings > Upgrade_
 
 ## How can I find my current version of Directus?
 
