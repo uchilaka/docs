@@ -308,6 +308,8 @@ curl https://example.com/api/types?access_token=staticToken&project=_
 
 #### Project via Header
 
+curl -H "Authorization: Bearer staticToken" -H "X-Directus-Project: _" https://example.com/api/
+
 ### Refresh Auth Token
 
 Gets a new fresh token using a valid JWT auth token.
