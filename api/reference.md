@@ -298,6 +298,16 @@ The access token that is returned through this endpoint must be used with any su
 | `/server/ping`                   | No
 | `/types`                         | **Yes**
 
+The proctected endpoints that doesn't starts with `/[project]`, requires the user to send the project name via HTTP header or query string when using static tokens. JWT tokens already has this information in their payloads.
+
+#### Project via Query String
+
+```
+curl https://example.com/api/types?access_token=staticToken&project=_
+```
+
+#### Project via Header
+
 ### Refresh Auth Token
 
 Gets a new fresh token using a valid JWT auth token.
