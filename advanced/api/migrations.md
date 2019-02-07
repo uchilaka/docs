@@ -2,11 +2,19 @@
 
 The migration and seeder files are created using [Phinx](https://phinx.org). They define a database schema programmatically, making it easier to make and apply changes. Each migration file represents a table.
 
-To create a new migration file use the following command: `vendor/bin/phinx create MyNewMigration -c config/migrations.php`, it will create a new migration in the format `YYYYMMDDHHMMSS_my_new_migration.php`, where the first 14 characters are replaced with the current timestamp down to the second.
+To create a new migration file use the following command: 
+```sh
+vendor/bin/phinx create MyNewMigration -c config/migrations.php
+``` 
+It will create a new migration in the format `YYYYMMDDHHMMSS_my_new_migration.php`, where the first 14 characters are replaced with the current timestamp down to the second.
 
 Once you have the schema updated you'll want to update the content within it. Seeders are a way to insert data into tables, with each seeder representing the default data for a table. Seeders run directly after the migrations, when the database install command is executed.
 
-To [create a new seeder file](http://docs.phinx.org/en/latest/seeding.html#creating-a-new-seed-class) use the following command: `php vendor/bin/phinx seed:create UsersSeeder -c config/migrations.php`, it will create a new file in `migrations/db/seeds` named `UsersSeeder.php` with the similar template shown below.
+To [create a new seeder file](http://docs.phinx.org/en/latest/seeding.html#creating-a-new-seed-class) use the following command: 
+```sh 
+php vendor/bin/phinx seed:create UsersSeeder -c config/migrations.php
+``` 
+It will create a new file in `migrations/db/seeds` named `UsersSeeder.php` with the similar template shown below.
 
 ## Seeder Template
 
