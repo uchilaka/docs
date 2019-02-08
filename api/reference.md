@@ -1574,7 +1574,11 @@ Uploads or creates a new file.
 POST /[project]/files
 ```
 
-There are two ways to upload a file:
+::: tip NOTE
+All uploads except when using URLs requires the `filename` property.
+:::
+
+There are different ways to upload a file:
 
 ##### Using Base64 Content
 
@@ -1599,8 +1603,15 @@ Directus supports adding embed videos from YouTube and Vimeo to Directus Files u
 
 ```json
 {
-  "filename": "image.jpg",
   "data": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
+```
+
+##### Using URLs
+
+```json
+{
+  "data": "https://example.com/path/to/image.jpg"
 }
 ```
 
