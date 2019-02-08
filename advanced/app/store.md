@@ -107,7 +107,7 @@ When in `development` mode, you can view all of these state variables in [Vue De
   "auth":{
     "token":"xxxxxxxxx",
     "url":"https://example.com",
-    "env":"_",
+    "project":"_",
     "error":null,
     "loading":false,
     "projectName":"Directus Example"
