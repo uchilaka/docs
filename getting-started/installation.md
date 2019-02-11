@@ -70,4 +70,4 @@ Once you've completed the installer you will automatically be taken to the login
 
 ---
 
-👍 You've successfully installed Directus! Now you're ready to [add your first collection](/guides/collections.ms).
+👍 You've successfully installed Directus! Now you're ready to [add your first collection](/guides/collections.md).
