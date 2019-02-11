@@ -4,7 +4,7 @@
 
 ## Token
 
-The Directus API returns a [JWT token](https://jwt.io/) on successful login. This token will always expire in 5 minutes.
+The Directus API returns a [JWT token](https://jwt.io/) on successful login. This token will always expire in 5 minutes. There are also static tokens for each user, though because these tokens don't change they should be used with caution. You can learn more about both of these types of tokens in [API Reference: Authentication](https://docs.directus.io/api/reference.html#authentication).
 
 ## SDK Login / Logout
 
