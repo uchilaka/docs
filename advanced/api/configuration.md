@@ -16,7 +16,7 @@ Subsequent projects can be added with new config files, using this naming conven
 
 ## Configure Manually
 
-::: note
+::: tip
 After configuring, if you would like to login to your custom project using the Directus Frontend, you'll need to add your new project as an entry into the `config.js` file.
 :::
 
