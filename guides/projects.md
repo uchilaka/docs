@@ -6,11 +6,11 @@
 
 Directus allows for one instance of the API/App to manage any number of project databases. Each project has its own database and is configured in its dedicated API config file, where all options can be configured.
 
-::: note
+::: tip
 [View all project options available within the API configuration.](/advanced/api/configuration.html#config-file-options)
 :::
 
-::: note
+::: tip
 [Learn how to connect to your different project APIs.](/api/reference.html#project-prefix)
 :::
 
