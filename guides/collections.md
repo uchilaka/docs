@@ -1,8 +1,10 @@
-# Collections
+﻿# Collections
 
 > A Collection is a grouping of similar Items. Each collection represents a table in your database.
 
 ## Creating Collections
+
+![Create Collection] (../img/screenshots/createCollection.gif)
 
 To create a collection, head over to the _Collections & Fields_ page in the _Admin Settings_. From here, click the "New" button ("+") in the top right and enter a new for your collection. This is the technical name used in the database and API. After the collection has been created you're taken to the settings page for this new collection. From here you can [setup the fields](./fields.md) and configure the collection's settings:
 

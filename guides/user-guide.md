@@ -1,10 +1,10 @@
-# App User Guide
+﻿# App User Guide
 
 > This guide is written for non-technical users just getting started with Directus — it does not cover setup or other Admin features. If you're completely new to the platform it is recommended that you read our [Introduction to Directus](../getting-started/introduction.html).
 
 ## Login
 
-![Login](../img/screenshots/login.png)
+![Login](../img/screenshots/login.gif)
 
 This is probably the first Directus page you'll see, so let's learn a bit more about what you can do here. First, Directus uses your email address instead of a username, so there's one less thing to forget. Simply enter your email address and type in your Directus user's password.
 
@@ -100,7 +100,7 @@ The main section of the app contains the actual page's content.
 
 ## Collections
 
-![Collections](../img/screenshots/collections.png)
+![Collections](../img/screenshots/collections.gif)
 
 A "collection" is a _group_ or _category_ of items. This could be almost anything: articles, projects, customers, sales, reports, messages, etc. This page lists all of the collections you have access to.
 
@@ -123,6 +123,8 @@ Each layout may have options for customizing its appearance. These can also be f
 You can easily search through items by entering a query into the search box in the header. This is a quick tool for finding specific items. When not in use, the search input displays the number of items displayed.
 
 ### Filtering
+
+![Filtering](../img/screenshots/filtering.gif)
 
 For more precise results, you can click on the filter icon on the right-side of the search input to expose the filter dropdown. Here you can add a single filter (eg: where _Publish Date_ is after today) or chain multiple filters together.
 
@@ -183,7 +185,7 @@ Alternatively, simply clicking on an item will take you to its [Item Detail](#It
 
 ## Item Detail
 
-![Item Detail](../img/screenshots/item-detail.png)
+![Item Detail](../img/screenshots/items.gif)
 
 This page is used to view, create, edit, or delete a specific item based on your [role permissions](#). The main content of this page shows the interface for each available field. The [Info Sidebar](#) of this page is used for Item Activity and Comments.
 
@@ -298,6 +300,8 @@ This shortcut to your user's profile is where you can edit account information s
 Every edit, creation, deletion, upload, comment, login, and error – all captured in one place. This timeline of activity allows you to go back in time to what you did and when.
 
 ## Limited Permissions
+
+![Permissions](../img/screenshots/permissions.gif)
 
 The features described above assume you have full permissions, however your user's role may have limited permissions. You may only see a subset of collections, fields, items or pages depending on the privileges you've been granted. Furthermore, access to items and fields may change based on Workflow, so it's possible that if you edit an item's status it may suddenly disappear or become read-only. This is all normal and is configured by your project's administrator.
 
