@@ -4,7 +4,7 @@
 
 ## Creating Collections
 
-<video width="1920" height="1080" controls>
+<video width="100%" controls>
   <source src="../img/video/create-collection.mp4" type="video/mp4">
 </video>
 

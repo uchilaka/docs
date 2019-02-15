@@ -8,7 +8,9 @@ A many-to-one (M2O) relationship exists when an item of **Collection A** is link
 
 ### Setup
 
-<video width="1920" height="1080" controls>
+<br>
+
+<video width="100%" controls>
   <source src="../img/video/m2o.mp4" type="video/mp4">
 </video>
 
