@@ -4,7 +4,10 @@
 
 ## Login
 
-![Login](../img/screenshots/login.gif)
+<video width="1920" height="1080" controls>
+  <source src="../img/video/login.mp4" type="video/mp4">
+  ![Login](../img/screenshots/login.png)
+</video>
 
 This is probably the first Directus page you'll see, so let's learn a bit more about what you can do here. First, Directus uses your email address instead of a username, so there's one less thing to forget. Simply enter your email address and type in your Directus user's password.
 
@@ -100,7 +103,11 @@ The main section of the app contains the actual page's content.
 
 ## Collections
 
-![Collections](../img/screenshots/collections.gif)
+<video width="1920" height="1080" controls>
+  <source src="../img/video/collections.mp4" type="video/mp4">
+  ![Collections](../img/screenshots/collections.png)
+</video>
+
 
 A "collection" is a _group_ or _category_ of items. This could be almost anything: articles, projects, customers, sales, reports, messages, etc. This page lists all of the collections you have access to.
 
@@ -124,7 +131,9 @@ You can easily search through items by entering a query into the search box in t
 
 ### Filtering
 
-![Filtering](../img/screenshots/filtering.gif)
+<video width="1920" height="1080" controls>
+  <source src="../img/video/filter.mp4" type="video/mp4">
+</video>
 
 For more precise results, you can click on the filter icon on the right-side of the search input to expose the filter dropdown. Here you can add a single filter (eg: where _Publish Date_ is after today) or chain multiple filters together.
 
@@ -185,7 +194,10 @@ Alternatively, simply clicking on an item will take you to its [Item Detail](#It
 
 ## Item Detail
 
-![Item Detail](../img/screenshots/items.gif)
+<video width="1920" height="1080" controls>
+  <source src="../img/video/edit-items.mp4" type="video/mp4">
+  ![Item Detail](../img/screenshots/item-detail.png)
+</video>
 
 This page is used to view, create, edit, or delete a specific item based on your [role permissions](#). The main content of this page shows the interface for each available field. The [Info Sidebar](#) of this page is used for Item Activity and Comments.
 
@@ -301,7 +313,9 @@ Every edit, creation, deletion, upload, comment, login, and error – all captur
 
 ## Limited Permissions
 
-![Permissions](../img/screenshots/permissions.gif)
+<video width="1920" height="1080" controls>
+  <source src="../img/video/permissions.mp4" type="video/mp4">
+</video>
 
 The features described above assume you have full permissions, however your user's role may have limited permissions. You may only see a subset of collections, fields, items or pages depending on the privileges you've been granted. Furthermore, access to items and fields may change based on Workflow, so it's possible that if you edit an item's status it may suddenly disappear or become read-only. This is all normal and is configured by your project's administrator.
 

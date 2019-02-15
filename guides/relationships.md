@@ -8,7 +8,9 @@ A many-to-one (M2O) relationship exists when an item of **Collection A** is link
 
 ### Setup
 
-![Setup M2O](../img/screenshots/m2o.gif)
+<video width="1920" height="1080" controls>
+  <source src="../img/video/m2o.mp4" type="video/mp4">
+</video>
 
 This setup is specific to the `movies → directors` (M2O) field. The following steps assume you already have two collections: `movies` and `directors`. Each collection has the default `id` primary key and a `name` field.
 
