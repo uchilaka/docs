@@ -62,7 +62,7 @@ Have a few followers on Twitter? A quick post mentioning our [@directus](https:/
 
 ### Testimonials
 
-One sentence. Even that was a sentence and it was only two words! If you're a fan of Directus, we'd love to hear why with a short endorsement. Shoot us an email, Tweet, or Slack message. And if you'd like to have your testimonial [on our website](https://directus.io/#testimonials) be sure to include your name, title, company, and picture.
+One sentence. Even that was a sentence and it was only two words! If you're a fan of Directus, we'd love to hear why with a short endorsement. Shoot us an email, Tweet, or [Slack](https://slack.directus.io) message. And if you'd like to have your testimonial [on our website](https://directus.io/#testimonials) be sure to include your name, title, company, and picture.
 
 ### SWAG
 

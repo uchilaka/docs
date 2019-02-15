@@ -1,6 +1,6 @@
 # 👩‍💻 Contributing
 
-> Our small team truly appreciates every contribution made by our community: feature requests, bug reports, and especially pull requests!. If you have _any_ questions please reach out to our Core team on [Slack](https://slack.getdirectus.com).
+> Our small team truly appreciates every contribution made by our community: feature requests, bug reports, and especially pull requests!. If you have _any_ questions please reach out to our Core team on [Slack](https://slack.directus.io).
 
 ## Repositories
 

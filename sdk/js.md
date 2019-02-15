@@ -107,7 +107,7 @@ async function fetchAllItems() {
 
 ## Reference
 
-If you think a method is missing, please reach out on GitHub or Slack!
+If you think a method is missing, please reach out on GitHub or [Slack](https://slack.directus.io)!
 
 ### Authentication
 
