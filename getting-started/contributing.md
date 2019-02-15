@@ -141,7 +141,7 @@ git fetch upstream
 git checkout master
 git merge upstream/master
 
-# If there were any new commits, rebase your development branch
+# If there were any new commits, rebase your master branch
 git checkout newfeature
 git rebase master
 ```
