@@ -232,10 +232,10 @@ Choose where files can be uploaded. Currently we support local and Amazon-S3
 
 | Name          | Description   |
 | ------------- | ------------- |
-| `adapter`     | `local` for local filesystem or `s3` for Amazon-S3
-| `root`        | Root path where files are uploaded
-| `root_url`    | Public URL with access to `root` files
-| `thumb_root`  | Root path where the generated thumbnails images are stored
+| `adapter`     | `local` for local filesystem or `s3` for Amazon-S3 (Default:  `local`)
+| `root`        | Root path where files are uploaded (Default: `./public/uploads/_/originals`)
+| `root_url`    | Public URL with access to `root` files (Default: `/uploads/_/originals`)
+| `thumb_root`  | Root path where the generated thumbnails images are stored (Default: `./public/uploads/_/thumbnails`)
 | `key`         | S3 Bucket Key
 | `secret`      | S3 Bucket Secret
 | `region`      | S3 Bucket Region
