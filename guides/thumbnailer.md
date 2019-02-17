@@ -25,9 +25,10 @@ As you can see, when requesting a thumbnail the end result is the same, all of t
 
 :::tip
 If using nginx, make sure to check your configuration.  
-If configuration is not set up correctly, Directus will treat `/thumbnail` as a project instead of the thumbnailer.
+If configuration is not set up correctly, Directus will treat `/thumbnail` as a project instead of the thumbnailer and will respond with the following error: 
+`API Environment Configuration Not Found: thumbnail`
 
-Example config:
+Example nginx configuration:
 ```
 location /thumbnail {
     try_files $uri $uri/ /thumbnail/index.php?$
