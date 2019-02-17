@@ -23,6 +23,19 @@ https://directus.example.com/thumbnail/<project>/<width>/<height>/<action>/<qual
 
 As you can see, when requesting a thumbnail the end result is the same, all of the heavy-lifting happens automatically behind the scenes.
 
+:::tip
+If using nginx, make sure to check your configuration.  
+If configuration is not set up correctly, Directus will treat `/thumbnail` as a project instead of the thumbnailer and will respond with the following error: 
+`API Environment Configuration Not Found: thumbnail`
+
+Example nginx configuration:
+```
+location /thumbnail {
+    try_files $uri $uri/ /thumbnail/index.php?$
+}
+```
+:::
+
 ## Configuration
 
 The whitelist is managed within the project's _Global Settings_ and are stored in the `directus_settings` collection. Below are the configurable options:
