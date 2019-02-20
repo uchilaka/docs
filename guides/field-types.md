@@ -11,12 +11,14 @@
 * `time` – Time, eg: `14:09:22`
 * `file` – Foreign key to `directus_files.id`
 * `group` – Groups fields together visually, children save group into `directus_fields.group`
+* `hash` – Its value gets hashed based on the `hasher` option. (Default to: [`password_hash.PASSWORD_DEFAULT`](http://php.net/manual/en/function.password-hash.php))
 * `integer` – Whole number
 * `decimal` – Number that includes a decimal
 * `json` – Standard JSON format in API response
 * `lang` – Specific to translation interfaces, this stores the language key
 * `m2o` – Many-to-One Relationship
 * `o2m` – One-to-Many Relationship
+* `slug` – Removes all the special characters from another field. It will ignore the mirrored field value if the slug already has a value set.
 * `sort` – System field that stores a item order within the collection items
 * `status` – System field used for publishing workflows
 * `string` – Any text or characters, limited by its length
