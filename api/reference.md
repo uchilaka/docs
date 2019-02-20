@@ -2866,6 +2866,12 @@ POST /projects
 | `app_url`       | The application's URL.                 | No
 | `cors_enabled`  | Enable CORS. Default `true`            | No
 | `auth_secret`   | Sets the authentication secret key     | No
+| `auth`          | [Auth Object](#projects-auth-config)   | No
+| `cors`          | [CORS Object](#projects-cors-config)   | No
+| `cache`         | [Cache Object](#projects-cache-config) | No
+| `storage`       | [Storage Object](#projects-storage-config) | No
+| `mail`          | [Mail Object](#projects-mail-config) | No
+| `rate_limit`    | [Rate Limit Object](#projects-mail-config) | No
 
 ::: warning
 When `project` is not specified it will create the default configuration.
@@ -2884,6 +2890,89 @@ If there's a fille in the root named `.lock` this instance is locked from creati
     "user_password": "password"
 }
 ```
+
+### Projects Auth Config
+
+| Attribute       | Description
+| --------------- | --------------------------------------
+| `secret`        | Auth secret key
+| `public`        | Auth public key
+| `social_providers` | List of SSO Providers.
+
+SSO Providers supported `okta`, `github`, `facebook`, `google`, and `twitter`.
+
+Read more about the `auth` configuration [here](../advanced/api/configuration.md#auth).
+
+### Projects CORS Config
+
+| Attribute       | Description
+| --------------- | --------------------------------------
+| `enabled`       | Enable (`true`) or disable (`false`) CORS
+| `origin`        | List of allowed origin hosts
+| `methods`       | List of allowed HTTP methods
+| `headers`       | List of allowed HTTP headers
+| `exposed_header`| List of HTTP headers to expose in the response
+| `max_age`       | How long (in seconds) to cache a preflight request
+| `credentials`   | Include client credentials (cookies, auth headers, and TLS client certificates)
+
+Read more about the `cors` configuration [here](../advanced/api/configuration.md#cors).
+
+### Projects Cache Config
+
+| Attribute       | Description
+| --------------- | --------------------------------------
+| `enabled`       | Enable (`true`) or disable (`false`) cache
+| `response_ttl`  | How long (in seconds) the cache will be valid
+| `adapter`       | Cache adapter identifier (`apc`, `apcu`, `filesystem`, `memcached`, `redis`)
+| `path`          | When using `filesystem` adapter, path where the cache will be stored
+| `host`          | The adapter host
+| `port`          | The adapter port
+
+Read more about the `cache` configuration [here](../advanced/api/configuration.md#cache).
+
+### Projects Storage Config
+
+| Attribute       | Description
+| --------------- | --------------------------------------
+| `adapter`       | Storage adapter identifier
+| `root`          | Storage root path
+| `root_url`      | Storage url to access files in `root`
+| `thumb_root`    | Thumbnails root path
+| `key`           | S3 Bucket key
+| `secret`        | S3 Bucket secret
+| `region`        | S3 Bucket region
+| `version`       | S3 Bucket version
+| `bucket`        | S3 Bucket name
+| `options`       | S3 Bucket options
+| `endpoint`      | S3 Bucket endpoint
+
+Read more about the `storage` configuration [here](../advanced/api/configuration.md#storage).
+
+### Projects Mail Config
+
+| Attribute       | Description
+| --------------- | --------------------------------------
+| `transport`     | Mail transport
+| `sendmail`      | Mail sendmail command (when `sendmail` is used)
+| `host`          | SMTP host
+| `port`          | SMTP port
+| `username`      | SMTP username
+| `password`      | SMTP password
+| `encryption`    | SMTP encryption
+
+Read more about the `storage` configuration [here](../advanced/api/configuration.md#mail).
+
+### Projects Rate Limit Config
+
+| Attribute       | Description
+| --------------- | --------------------------------------
+| `enabled`       | Enable (`true`) or Disable (`false`)
+| `limit`         | Number of request within `interval`
+| `interval`      | How long (in seconds) a interval will last
+| `adapter`       | Rate limit adapter
+| `host`          | Adapter host
+| `port`          | Adapter port
+| `timeout`       | Adapter request timeout
 
 ## Field Types
 
