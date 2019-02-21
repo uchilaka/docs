@@ -621,6 +621,12 @@ The wildcards character for `rlike` and `nrlike` are `%` (percentage) and `_` (u
 > From MySQL Docs: https://dev.mysql.com/doc/refman/5.7/en/string-comparison-functions.html#operator_like
 > % matches any number of characters, even zero characters.
 > _ matches exactly one character.
+>
+>`JOHN%` will return matches `John`, `Johnson`, `Johnny`, `Johnathan`, etc. \
+>`JO%N%` will return the above matches, as well as `Jon`, `Jonny`, `Joan`, `Joanne`, `Jones`, etc. \
+>`J_N%` will return `Janice`, `Jane`, `Jones`, `Jinn`, `Jennifer`, `Junior`, etc. \
+>`J_N__` will return `Jonas`, `Jenny`, `Janie`, `Jones`, etc.
+
 
 #### AND vs OR
 
