@@ -616,6 +616,8 @@ Used to search items in a collection that matche the filter's conditions. Filter
 | `all`                | Contains all given related item's IDs  |
 | `has`                | Has one or more related items's IDs    |
 
+##### Filter: Raw Like
+
 The wildcards character for `rlike` and `nrlike` are `%` (percentage) and `_` (underscore).
 
 > From MySQL Docs: https://dev.mysql.com/doc/refman/5.7/en/string-comparison-functions.html#operator_like
@@ -627,6 +629,53 @@ The wildcards character for `rlike` and `nrlike` are `%` (percentage) and `_` (u
 >`J_N%` will return `Janice`, `Jane`, `Jones`, `Jinn`, `Jennifer`, `Junior`, etc. \
 >`J_N__` will return `Jonas`, `Jenny`, `Janie`, `Jones`, etc.
 
+##### Filter: Relational
+
+You can use dot notation on relational field. Using the same format: `filter[<field-name>][<operator>]=<value>` with the only difference `<field-name>` can reference a field from the related collection.
+
+If you have a `projects` collection with a field named `author` that's related to another collection named `users` you can reference any `users` field using dot notation; Example: `author.<any-users-field>`.
+
+The example below uses the `rlike` filter to get all projects that belongs to users that has a `@directus.io` domain email. In other words ends with `@directus.io`
+
+```
+GET /items/projects?filter[author.email][rlike]=%@directus.io
+```
+
+::: tip
+Make sure the field is a relational field before using the dot-notation, otherwise the API will return a error saying the field cannot be found.
+:::
+
+You can reference as many field as possible, as long as they are all relational field, except the last one, it could be either relational or non-relational.
+
+```
+GET /items/users?filter[comments.thread.title][like]=Directus
+```
+
+In the example above it will returns all users that have comments in a thread that has `Directus` in its title.
+
+There's two filter `has` and `all` that only works on `O2M`-type fields, any other type of fields used will throw an error saying the field cannot be found.
+
+The `all` filter will returns items that contains all IDs passed.
+
+```
+GET /items/projects?filter[contributors][all]=1,2,3
+```
+
+The example above will return all projects that have the user with ID 1, 2, and 3 as collaborator.
+
+Using `has` will return items that has at least the mininum number given as related items. 
+
+Example of requesting projects with at least one contributor:
+
+```
+GET /items/projects?filter[contributors][has]=1
+```
+
+Example of requesting projects with at least three contributors:
+
+```
+GET /items/projects?filter[contributors][has]=3
+```
 
 #### AND vs OR
 
