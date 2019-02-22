@@ -702,6 +702,8 @@ The `q` parameter allows you to perform a search on all `string` and `number` ty
 
 The `groups` parameter allows grouping the result by one or more fields.
 
+This parameter is a raw parameter, it adds all the fields you pass to the [`GROUP BY`](https://dev.mysql.com/doc/refman/5.6/en/group-by-modifiers.html) in SQL. This can result in SQL errors when the [`ONLY_FULL_GROUP_BY`](https://dev.mysql.com/doc/refman/5.6/en/sql-mode.html#sqlmode_only_full_group_by) mode is enabled in MySQL, and there's columns in `ORDER BY` that doesn't exists in the `GROUP BY`.
+
 #### Examples
 
 Users table:
