@@ -8,14 +8,14 @@
 
 Yes, this is a very broad description. Directus is a simple solution for complex problems.
 
-## What is a "headless" CMS?
+### What is a "headless" CMS?
 With _traditional_ CMS you choose a design template, throw in some content, and it generates a blog or simple website. However that means that these platforms are limited to websites only, since your designs and content are all jumbled together.
 
 In a "headless" CMS, there are no templates built-in, no design or layout editor, and it doesn't generate a website (aka the "head"). It only manages _content_. That's it. Now that your content is cleanly decoupled, you can connect it anywhere! Websites, sure, but also native apps, kiosks, digital signage, other software, internet-of-things (IoT) devices, or any other data-driven project.
 
 In short: traditional CMS are for small or medium-sized websites, headless CMS can manage content for anything.
 
-## What is a database wrapper?
+### What is a "database wrapper"?
 Our database-wrapper uses the SQL database's schema to dynamically build a set of custom API endpoints based on the custom achitecture. This means you can install it on top of existing databases, tailor actual database tables/columns to specific project requirements, and even build/optimize in the database directly. 
 
 Perhaps one of the biggest advantages of using a database-wrapper like ours in your project, is that you always have direct access to your pure and unaltered data. Meaning, you can always bypass the API, SDK, or CMS and connect to data directly — effectively removing _any_ bottleneck or additional latency.
