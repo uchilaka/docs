@@ -140,10 +140,10 @@ Certain layouts support sorting items. In the List view, clicking a column heade
 
 ### Reordering
 
-Certain layouts support changing the order of items. For example, on the List layout you can enable drag-and-drop reordering by clicking on the sort column's header (the left-most column). Once enabled, you can reorder items by dragging them by their handle. Reordering items is often used to change the way the content is stored and can change your actual project, so you should always use this feature with care.
+Certain layouts support _manually_ changing the order of items. For example, on the List layout you can enable drag-and-drop reordering by clicking on the "sort" icon in the header (the left-most column). Once enabled, you can drag items to a new order using their handle. Reordering instantly updates the actual sort values for all items, so you should be careful using this feature.
 
 ::: tip
-This feature is only available if your collection supports reordering.
+This feature is only available if your collection has a "sort" field.
 :::
 
 ### Bookmarking
