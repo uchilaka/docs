@@ -155,9 +155,32 @@ While it is most common to suport one global set of languages per project, you _
 
 Every parent collection (eg: `articles`) contains all language-agnostic fields, such as: _Publish Date_, _Author_, and a _Featured Toggle_. But we also need to create a related collection (eg: `article_translations`) with any fields that will be translated, such as the _Title_ and _Body_. Let's go over the required fields in these translation collections.
 
-* Parent Foreign Key — This is the field that stores the parent item's primary key. So in our example we would add an `article` field to store the article's ID. This is a utility field so typically you will want to enable "Hidden On Detail" so it doesn't appear.
-* Language Foreign Key — This is the field that stores the language code. We recommend calling this field `language`. This is a utility field so typically you will want to enable "Hidden On Detail" so it doesn't appear.
-* Translated Fields — You can add any number of other fields, each will be translated within the interface.
+#### Parent Foreign Key
+
+This is the field that stores the parent item's primary key. So in our example we would add an `article` field to store the article's ID.
+
+Suggested field configuration:
+
+* Interface: Numeric
+* Schema
+   * Hidden On Detail: `true` (this is a utility field so typically you will want to enable this option so it doesn't appear)
+   * Field type: `integer`
+   * Signed: `false`
+
+#### Language Foreign Key
+
+This is the field that stores the language code. We recommend calling this field `language`.
+
+Suggested field configuration:
+
+* Interface: Text input
+* Schema
+   * Hidden On Detail: `true` (this is a utility field so typically you will want to enable this option so it doesn't appear)
+   * Field type: `lang`
+
+#### Translated Fields
+
+You can add any number of other fields, each will be translated within the interface.
 
 ### Setup
 
