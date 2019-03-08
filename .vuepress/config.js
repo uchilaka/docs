@@ -60,6 +60,7 @@ module.exports = {
           '/guides/database',
           '/guides/fields',
           '/guides/field-types',
+          '/guides/interfaces',
           ['/guides/i18n', 'Internationalization'],
           '/guides/permissions',
           '/guides/projects',
