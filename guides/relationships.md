@@ -10,7 +10,7 @@ A many-to-one (M2O) relationship exists when an item of **Collection A** is link
 
 <br>
 
-<video width="100%" controls>
+<video width="100%" autoplay muted controls loop>
   <source src="../img/video/m2o.mp4" type="video/mp4">
 </video>
 

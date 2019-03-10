@@ -4,7 +4,7 @@
 
 ## Login
 
-<video width="100%" controls>
+<video width="100%" autoplay muted controls loop>
   <source src="../img/video/login.mp4" type="video/mp4">
   ![Login](../img/screenshots/login.png)
 </video>
@@ -103,7 +103,7 @@ The main section of the app contains the actual page's content.
 
 ## Collections
 
-<video width="100%" controls>
+<video width="100%" autoplay muted controls loop>
   <source src="../img/video/collections.mp4" type="video/mp4">
   ![Collections](../img/screenshots/collections.png)
 </video>
@@ -133,7 +133,7 @@ You can easily search through items by entering a query into the search box in t
 
 <br>
 
-<video width="100%" controls>
+<video width="100%" autoplay muted controls loop>
   <source src="../img/video/filter.mp4" type="video/mp4">
 </video>
 
@@ -196,7 +196,7 @@ Alternatively, simply clicking on an item will take you to its [Item Detail](#It
 
 ## Item Detail
 
-<video width="100%" controls>
+<video width="100%" autoplay muted controls loop>
   <source src="../img/video/edit-items.mp4" type="video/mp4">
   ![Item Detail](../img/screenshots/item-detail.png)
 </video>
@@ -315,7 +315,7 @@ Every edit, creation, deletion, upload, comment, login, and error – all captur
 
 ## Limited Permissions
 
-<video width="100%" controls>
+<video width="100%" autoplay muted controls loop>
   <source src="../img/video/permissions.mp4" type="video/mp4">
 </video>
 

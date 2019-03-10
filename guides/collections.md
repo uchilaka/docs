@@ -4,7 +4,7 @@
 
 ## Creating Collections
 
-<video width="100%" controls>
+<video width="100%" autoplay muted controls loop>
   <source src="../img/video/create-collection.mp4" type="video/mp4">
 </video>
 
