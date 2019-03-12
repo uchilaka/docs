@@ -55,7 +55,7 @@ In this example we'll notify an admin user everytime a new article is created.
   'actions' => [
     'item.create.articles' => function ($data, $collectionName) {
       $content = 'New article was created with the title: ' . $data['title'];
-      // pesudo function
+      // pseudo function
       notify('admin@example.com', 'New Article', $content);
     }
   ]
