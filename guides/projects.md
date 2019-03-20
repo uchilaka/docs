@@ -29,3 +29,11 @@ As of now, this can only be done manually.
 1. Delete the project's API config file
 1. Delete the project from your App's config file
 1. Delete any files in that project's storage adapter
+
+## Linking to a Project
+
+Since Directus is multitenant, you need a way to link to specific projects. This is accomplished by adding a project query parameter to the login page containing a base64 encoded URL of the API you want to use, the application will automatically select "Other" (if allowed) and pre-fill the API URL.
+
+```
+https://directus.app/#/login?project=aHR0cHM6Ly9hcGkuZGlyZWN0dXMuY2xvdWQvZGNFeEFNcGxFYVBJLw==
+```
