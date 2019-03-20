@@ -123,7 +123,7 @@ Example:
 $container = \Directus\Application\Application::getInstance()->getContainer();
 $acl = $container->get('acl');
 
-if ($acl->canRead('directus_users)) {
+if ($acl->canRead('directus_users')) {
     // read directus_users items
 }
 ```
