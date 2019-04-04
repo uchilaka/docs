@@ -58,7 +58,7 @@ This is what you're reading right now. We believe that maintaining great Documen
 
 ### Directus Demos
 
-To make it as easy as possible to actually play around with Directus we maintain two online demos: [latest release](https://directus.app) (stable) and [latest commit](https://next.directus.app) (canary). Both demos reset each hour so if things look a little screwy just wait a bit.
+To make it as easy as possible to actually play around with Directus we maintain two online demos: [latest release](https://directus.app) (stable) and [latest commit](https://next.directus.app) (canary). Both demos reset each hour so if things look a little screwy just wait a bit. To access either of these demos you can use the credentials: `admin@example.com` and `password`.
 
 ### Directus Website
 
