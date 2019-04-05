@@ -1,6 +1,6 @@
 # 🧠 Concepts
 
-> Directus ([duh REKT iss](/img/directus.mp3)) is latin for: _laid straight, arranged in lines_. The broadest goal of Directus is to present data in a simple, orderly, and intuitive way.
+> Directus ([duh REKT iss](http://audio.pronouncekiwi.com/Salli/Directus)) is latin for: _laid straight, arranged in lines_. The broadest goal of Directus is to present data in a simple, orderly, and intuitive way.
 
 ## Glossary
 
