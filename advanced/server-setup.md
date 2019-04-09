@@ -84,16 +84,16 @@ Directus `.htaccess` actually uses `FileInfo` for rewriting and `Options` to fol
 ```
 disable_symlinks if_not_owner;
 
-location /admin {
-    rewrite ^/admin/(.*) /admin/index.html last;
-}
-
 location / {
     try_files $uri $uri/ /index.php$args;
 }
 
+location /admin {
+    try_files $uri $uri/ /admin/index.html$args;
+}
+
 location /thumbnail {
-    rewrite /thumbnail/(.*) /thumbnail/index.php last;
+    try_files $uri $uri/ /thumbnail/index.php$args;
 }
 
 # Deny direct access to php files in extensions
