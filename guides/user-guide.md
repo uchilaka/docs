@@ -84,9 +84,9 @@ At the bottom of the navigation sidebar is your user's avatar and name. Hovering
 
 * **Admin Settings** – Only available to members of the Administrator Role
 * **Help & Docs** – An external link to these Directus Docs
-* **File Library** – Navigates to the [File Library](#File-Library)
-* **User Directory** – Navigates to the [User Directory](#User-Directory)
-* **My Activity** – Navigates to the [Activity Page](#Activity-Page)
+* **File Library** – Navigates to the [File Library](#file-library)
+* **User Directory** – Navigates to the [User Directory](#user-directory)
+* **My Activity** – Navigates to the [Activity Page](#activity-page)
 * **My Profile** – Navigates to your profile page, where you can update your user account
 * **Sign Out** – Logs you out of Directus
 
@@ -112,11 +112,11 @@ This page displays the items within a collection. All the inforation you need mi
 
 ### Layouts
 
-The Items page will use the List layout by default, but depending on the collection content, you may want to view items as a grid of cards, on a map, in a calendar, or in other ways. You can change the layout from the top of the [Info sidebar](#Info-Sidebar).
+The Items page will use the List layout by default, but depending on the collection content, you may want to view items as a grid of cards, on a map, in a calendar, or in other ways. You can change the layout from the top of the [Info sidebar](#info-sidebar).
 
 ### Layout Options
 
-Each layout may have options for customizing its appearance. These can also be found in the [Info sidebar](#Info-Sidebar), just below the [Layout](#Layouts) dropdown. For example, the default List layout lets you toggle/reorder field columns and change row spacing.
+Each layout may have options for customizing its appearance. These can also be found in the [Info sidebar](#info-sidebar), just below the [Layout](#layouts) dropdown. For example, the default List layout lets you toggle/reorder field columns and change row spacing.
 
 ### Searching
 
@@ -150,7 +150,7 @@ This feature is only available if your collection has a "sort" field.
 
 As you can see, there are many ways to fine-tune the way you view Items. Whenever you change one of the above options, Directus saves it to your user's preferences so it will look the same next time you view the page. If you would like to save _multiple_ different views, then you would use bookmarks.
 
-You can create a bookmark by clicking the icon to the right of the breadcrumb in the [header](#Header). Once clicked, you'll be prompted to enter a name for the bookmark, and then it will be added to your [Bookmarks](#Bookmarks) list in the navigation sidebar for easy access.
+You can create a bookmark by clicking the icon to the right of the breadcrumb in the [header](#header). Once clicked, you'll be prompted to enter a name for the bookmark, and then it will be added to your [Bookmarks](#bookmarks) list in the navigation sidebar for easy access.
 
 To delete a bookmark, just hover over it in the Bookmarks list and click the delete icon on the right.
 
@@ -167,25 +167,25 @@ If you see bookmarks that you didn't create, don't worry. They are likely Role o
 
 ### Creating Items
 
-To add a new item to the collection, just click the New button ("+") in the header. This will open a blank [Item Detail](#Item-Detail) page for authoring content.
+To add a new item to the collection, just click the New button ("+") in the header. This will open a blank [Item Detail](#item-detail) page for authoring content.
 
 ### Selecting & Opening Items
 
 Certain layouts allow for selecting items. List view items can be selected by toggling the checkbox on the left-side of its row; you can select-all _visible_ items by clicking the checkbox in the column header (keyboard shortcut: ⌘A Mac, Ctrl+A Win). The Card view shows a selection toggle when you hover over each card.
 
-Once one or more items are selected, a Delete button will appear in the header. Once two or more items are selected, a [Batch Edit](#Batch-Edit) button will appear in the header.
+Once one or more items are selected, a Delete button will appear in the header. Once two or more items are selected, a [Batch Edit](#batch-edit) button will appear in the header.
 
 ::: warning
 It is possible to quickly and irreversibly delete many items on this page. Always perform batch deletes carefully!
 :::
 
-Alternatively, simply clicking on an item will take you to its [Item Detail](#Item-Detail) page.
+Alternatively, simply clicking on an item will take you to its [Item Detail](#item-detail) page.
 
 ## Item Detail
 
 ![Item Detail](../img/screenshots/item-detail.png)
 
-This page is used to view, create, edit, or delete a specific item based on your [role permissions](#). The main content of this page shows the interface for each available field. The [Info Sidebar](#) of this page is used for Item Activity and Comments.
+This page is used to view, create, edit, or delete a specific item based on your [role permissions](#). The main content of this page shows the interface for each available field. The [Info Sidebar](#info-sidebar) of this page is used for Item Activity and Comments.
 
 ### Saving
 
@@ -256,11 +256,11 @@ Also in the info sidebar, and comingled with the activity timeline, are any comm
 
 The file library is an annex of all files added to Directus. Files may be added through item fields (eg: a slideshow interface) or directly to the File Library itself. To add a file directly to the library, drag a file directly onto the page or click the New button ("+") in the header. Directus automatically pulls in metadata from added files/embeds, such as: description, location, tags, and dimensions.
 
-Directus also supports multiple [storage adapters](#), so you may have the option to save files to different locations.
+Directus also supports multiple [storage adapters](../extensions/storage-adapters.md), so you may have the option to save files to different locations.
 
-There's also an automatic [thumbnailer](#) included, so you can easily save your original files at different sizes. Allowed thumbnail sizes are setup by your administrator.
+There's also an automatic [thumbnailer](./thumbnailer.md) included, so you can easily save your original files at different sizes. Allowed thumbnail sizes are setup by your administrator.
 
-By default the File Library displays as a Card layout with thumbnails, but you can change this in the [Info Sidebar](#Info-Sidebar).
+By default the File Library displays as a Card layout with thumbnails, but you can change this in the [Info Sidebar](#info-sidebar).
 
 ## User Directory
 
@@ -268,7 +268,7 @@ By default the File Library displays as a Card layout with thumbnails, but you c
 
 The user directory is a single place to browse all Directus users. Clicking on a user here will open up their user profile page.
 
-By default the File Library displays as a Card layout with images/avatars, but you can change this in the [Info Sidebar](#Info-Sidebar).
+By default the File Library displays as a Card layout with images/avatars, but you can change this in the [Info Sidebar](#info-sidebar).
 
 ::: tip
 Clicking on any user's name or avatar throughout the system will open a modal to quickly see their user profile.
