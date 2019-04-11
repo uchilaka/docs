@@ -301,6 +301,6 @@ Every edit, creation, deletion, upload, comment, login, and error – all captur
 
 The features described above assume you have full permissions, however your user's role may have limited permissions. You may only see a subset of collections, fields, items or pages depending on the privileges you've been granted. Furthermore, access to items and fields may change based on Workflow, so it's possible that if you edit an item's status it may suddenly disappear or become read-only. This is all normal and is configured by your project's administrator.
 
-Keep permissions in mind when discussing content or sending links to colleages, as they may not be able to see/edit the same items you have access to.
+Keep permissions in mind when discussing content or sending links to colleagues, as they may not be able to see/edit the same items you have access to.
 
 Only users with the Administrator role are guaranteed to see _everything_ in the system, including some special features only available to them. Learn more about the [Administrator Role](./roles.md).
