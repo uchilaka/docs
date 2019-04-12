@@ -2775,22 +2775,6 @@ GET /layouts
 GET /pages
 ```
 
-### Get Interface
-
-All endpoints defined in an interface will be located within the `interfaces` group.
-
-```http
-GET /[project]/interfaces/[interface-id]
-```
-
-### Get Page
-
-All endpoints defined in a page will be located within the `pages` group.
-
-```http
-GET /[project]/pages/[page-id]
-```
-
 ### Get Custom Endpoint
 
 All custom endpoints that are not related to an extension will be located under the `custom` group.
