@@ -82,39 +82,64 @@ Directus `.htaccess` actually uses `FileInfo` for rewriting and `Options` to fol
 ### `directus.conf`
 
 ```
-disable_symlinks if_not_owner;
+server {
+    listen 80;
+    
+    # Change to corresponding location
+    root /projects/directus/public;
 
-location / {
-    try_files $uri $uri/ /index.php$args;
-}
+    # Change virtual host if needed
+    server_name directus.local;
+    
+    index index.html index.htm index.nginx-debian.html index.php;
 
-location /admin {
-    try_files $uri $uri/ /admin/index.html$args;
-}
+    # disable_symlinks if_not_owner;
 
-location /thumbnail {
-    try_files $uri $uri/ /thumbnail/index.php$args;
-}
+    location / {
+        try_files $uri $uri/ /index.php$args;
+    }
 
-# Deny direct access to php files in extensions
-location /extensions/.+\.php$ {
-    deny all;
-}
+    location /admin {
+        try_files $uri $uri/ /admin/index.html$args;
+    }
 
-# All uploads files (originals) cached for a year
-location ~* /uploads/([^/]+)/originals/(.*) {
-    add_header Cache-Control "max-age=31536000";
-}
+    location /thumbnail {
+        try_files $uri $uri/ /thumbnail/index.php$args;
+    }
 
-# Serve php, html and cgi files as text file
-location ~* /uploads/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
-  add_header Content-Type text/plain;
-}
+    # Deny direct access to php files in extensions
+    location /extensions/.+\.php$ {
+        deny all;
+    }
 
-# Deny access to any file starting with .ht,
-# including .htaccess and .htpasswd
-location ~ /\.ht {
-    deny all;
+    # All uploads files (originals) cached for a year
+    location ~* /uploads/([^/]+)/originals/(.*) {
+        add_header Cache-Control "max-age=31536000";
+    }
+
+    # Serve php, html and cgi files as text file
+    location ~* /uploads/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
+        add_header Content-Type text/plain;
+    }
+
+    # Deny access to any file starting with .ht,
+    # including .htaccess and .htpasswd
+    location ~ /\.ht {
+        deny all;
+    }
+
+    # pass PHP scripts to FastCGI server
+    #
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+    
+        # With php-fpm (or other unix sockets):
+        # fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+        # With php-cgi (or other tcp sockets):
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
 }
 ```
 
