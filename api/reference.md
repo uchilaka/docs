@@ -884,7 +884,6 @@ GET /[project]/items/[collection-name]/[pk]
 | ------------- | -------------------------- |
 | `fields`      | [Read More](#fields)       |
 | `meta`        | [Read More](#meta)         |
-| `status`      | [Read More](#status)       |
 | `lang`        | [Read More](#language)     |
 
 #### Examples
@@ -908,7 +907,6 @@ GET /[project]/items/[collection-name]/[pk1],[pk2],[pk3]
 | ------------- | -------------------------- |
 | `fields`      | [Read More](#fields)       |
 | `meta`        | [Read More](#meta)         |
-| `status`      | [Read More](#status)       |
 | `lang`        | [Read More](#language)     |
 
 #### Examples
