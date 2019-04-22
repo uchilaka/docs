@@ -92,25 +92,16 @@ $ cd api
 $ composer install -a
 ```
 
-4. Install and build the system extensions
-
-```bash
-$ cd extensions
-$ npm install
-$ npm run build
-$ cd ..
-```
-
-5. Clone the build branch of the api
+4. Clone the build branch of the api
 
 ```bash
 $ cd ..
 $ git clone -b build git@github.com:directus/api.git api-build
 ```
 
-6. Delete everything in `api-build` except the `.git` folder and `composer.json` file
+5. Delete everything in `api-build` except the `.git` folder and `composer.json` file
 
-7. Delete all nested .git folders (prevent submodules)
+6. Delete all nested .git folders (prevent submodules)
 
 ```bash
 $ cd api/vendor
@@ -120,7 +111,7 @@ $ ( find . -type d -name ".git" \
 $ cd ..
 ```
 
-8. Move these files into `api-build`:
+7. Move these files into `api-build`:
 
 * bin/
 * config/
@@ -134,14 +125,14 @@ $ cd ..
 * composer.json
 
 
-9. Delete all .DS_Store files
+8. Delete all .DS_Store files
 
 ```bash
 $ cd api-build
 $ find . -name '.DS_Store' -type f -delete
 ```
 
-10. Add this .gitignore file:
+9. Add this .gitignore file:
 
 ```
 Icon
@@ -196,7 +187,7 @@ composer.lock
 !**/.gitkeep
 ```
 
-11. Add-commit-push
+10. Add-commit-push
 
 ```bash
 $ git add .
@@ -204,9 +195,9 @@ $ git commit -m "<VERSION NUMBER>"
 $ git push origin build
 ```
 
-12. Create release on GH
+11. Create release on GH
 
-13. Delete local repos
+12. Delete local repos
 
 ```bash
 $ cd ..
