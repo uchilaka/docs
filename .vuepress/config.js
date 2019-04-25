@@ -114,6 +114,7 @@ module.exports = {
           ['/advanced/app/configuration', 'Application Configuration'],
           ['/advanced/api/configuration', 'API Configuration'],
           ['/advanced/api/codebase', 'API Codebase'],
+          ['/advanced/api/data', 'Direct Data Access'],
           // ['/advanced/deploying-versions', 'Deploying Versions'],
         ]
       }
