@@ -78,7 +78,8 @@ module.exports = {
         title: '🚀 API Reference',
         collapsable: true,
         children: [
-          '/api/reference',
+          ['/api/reference', 'Reference'],
+          ['/api/graphql','GraphQL'],
         ]
       },
       {
