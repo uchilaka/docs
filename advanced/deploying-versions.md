@@ -89,7 +89,7 @@ $ cd api
 3. Install the composer dependencies
 
 ```bash
-$ composer install -a
+$ composer install -a --no-dev
 ```
 
 4. Clone the build branch of the api
