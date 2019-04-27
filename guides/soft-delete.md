@@ -1,6 +1,6 @@
 # Soft Delete
 
->  A [Collection](/guides/collections.md) with Soft Delete enabled doesn't delete items permanently, it keeps the data in the database flaged as deleted. You enable Soft Delete on a Collection basis by adding the [Status](/guides/status.md) field to it. Items which are soft-deleted stay in the database but aren't visible in the App or API unless explicitly requested by an Admin [using the `status` parameter](/api/reference.md#status). 
+>  A [Collection](/guides/collections.md) with Soft Delete enabled doesn't delete items permanently, it keeps the data in the database flagged as deleted. You enable Soft Delete on a Collection basis by adding the [Status](/guides/status.md) field to it. Items which are soft-deleted stay in the database but aren't visible in the App or API unless explicitly requested by an Admin [using the `status` parameter](/api/reference.md#status). 
 
 ## Enable Soft Delete for a Collections
 
