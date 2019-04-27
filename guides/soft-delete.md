@@ -49,7 +49,9 @@ The Status Mapping option allows you to add or change the statuses of your Statu
 When you look at the Status Mapping option `deleted` you see it has a setting `"soft_delete": true`.
 You can change the setting to `false` then your Collection does not have soft-delete applied to it anymore in case no other status option has `soft_delete` set to `true`. 
 
-**Be aware:** When none of the Status Mapping options has `soft_delete` set to `true`, then all delete operations are permanently and will remove your items from the database too! 
+::: warning
+When none of the Status Mapping options has `soft_delete` set to `true`, then all delete operations are permanently and will remove your items from the database too! 
+:::
 
 So it is important that one of your Status Mapping options of your Status field has `soft_delete` set to `true` if you want Soft Delete to be enabled for your Collection. 
 
