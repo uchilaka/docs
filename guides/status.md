@@ -43,7 +43,17 @@ Option              | Description
 
 ## Soft Delete
 
-As mentioned above, Soft Delete is meant to _feel_ like an item has been deleted without permanently removing it from the database. They are hidden from both the App and API responses unless explicitely requested by an Admin [using the `status` parameter](/api/reference.md#status). Non-admin users do not have access to soft-deleted items.
+As mentioned above, Soft Delete is meant to _act_ as if an item has been truly deleted, but without permanently removing it from the database. Soft-deleted items are hidden from both the App and API responses unless explicitely requested by an Admin [using the `status` parameter](/api/reference.md#status). Non-admin users do not have access to soft-deleted items.
+
+As of now there is no way to "resurrect" soft-deleted items through the App, they are for all intents and purposes, deleted. However these items still exist in the database and can be acceessed there.
+
+When deleting an item, the API does the following:
+
+1. Check if the collection has a status field
+2. Check if the delta data has the status field (meaning the status was changed)
+3. Check if the new status value (_from delta data_) has `soft_delete = true`
+  * If yes, it sets the `action` to `SOFT_DELETE`
+  * If no, it hard deletes the item (permanently removed from the database)
 
 ## Workflow
 
@@ -52,13 +62,3 @@ The status interface also enables extended permission options that allow [settin
 ## Custom Status Interfaces
 
 The core status interface should work for 90% of use-cases, but you can still take advantage of the functionality with different styling or interactions. To do this you would [create a custom interface](/extensions/interfaces.md) that uses the `status` [field type](/guides/field-types.md).
-
-## Soft-Delete Flow
-
-When soft-deleting an item, the API does the following:
-
-1. Check if the collection has a status field
-2. Check if the delta data has the status field (_Meaning the status was changed_)
-3. Look for all status values with `soft_delete = true`
-4. Checks if the new status value (_from delta data_) is one of status values from Step 3
-5. Sets `action` to `SOFT_DELETE`
