@@ -23,7 +23,7 @@ The Directus API requires URL rewriting for routing requests. On Apache this mea
 
 ## SQL
 
-Directus has been developed and tested on MySQL and requires version 5.2+.
+Directus has been developed and tested on MySQL and requires version 5.7+.
 
 ::: tip Alternate SQL Vendors
 In theory, Directus should work with MySQL drop-in alternatives such as MariaDB or Percona Server. However these are not officially supported so you should proceed at your own risk.
