@@ -10,7 +10,7 @@ In order to work on the API, you'll need to install the source version locally. 
 
 * A HTTP Web Server that supports URL rewrites
     * _Comes with .htaccess included for Apache_
-* MySQL 5.2+
+* MySQL 5.7+
     * Database (empty or existing)
     * Database User (with access to database)
 * PHP 7.1+
