@@ -7,7 +7,7 @@
 Directus is quite flexible and can be installed on many different varieties of server/database setups. Learn more about the [Directus Requirements](/advanced/requirements.md).
 
 * HTTP/Web Server
-* MySQL 5.2+
+* MySQL 5.7+
     * Database (empty or existing)
     * Database User (with access to database)
 * PHP 7.1+
