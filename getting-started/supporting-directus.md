@@ -20,11 +20,15 @@ Our merchandise is a great way to support Directus – you get a shirt and we ge
 
 ### Commissions
 
-Another great way to get something back for your financial support (other than our amazing software) is to commission Directus work. If you need an interface, layout, or other custom feature – just [reach out to our parent company](mailto:contact@rngr.org?subject=Directus+Commission+Inquiry) to design and build it for you. If it can be merged into our Core codebase then it even benefits the entire community!
+Another great way to get something back for your financial support (other than our amazing software) is to commission a new Directus feature. If you need an interface, layout, or other custom feature – just [reach out to our parent company](mailto:contact@rngr.org?subject=Directus+Commission+Inquiry) to design and build it for you. If it can be merged into our Core codebase then it even benefits the entire community!
+
+### Sponsored Bugs
+
+Is that pesky bug not getting solved fast enough for your needs? We triage all of our reported bugs ([App](https://github.com/directus/app/projects/17) and [API](https://github.com/directus/api/projects/17)) based on priority and how long the fix is estimated to take. If you need a bug fixed sooner you can reach out to us about "sponsoring" it. We provide an cost estimate for subsidizing a more expeditious resolution.
 
 ### Premium Support
 
-If you need a little extra help setting things up, or would like to have a monthly retainer of premium support hours please
+For everything else, whether you just need a little extra help setting things up, or would like an ongoing monthly retainer of premium support hours, please reach out to [support@directus.io](mailto:support@directus.io).
 
 ## Platform Contributions
 
