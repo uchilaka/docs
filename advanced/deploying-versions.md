@@ -47,7 +47,7 @@ $ git clone -b build git@github.com:directus/app.git app-build
 7. Copy everything from `app/dist` to `app-build`
 
 ```bash
-$ cp -r app/dist/. app-build
+$ cp -r app/dist/ app-build
 ```
 
 8. Delete all .DS_Store files
@@ -232,7 +232,7 @@ $ rm -rf api-build/.git
 5. Copy everything in the api-build folder to the main directus/directus repo
 
 ```bash
-$ cp -r api-build/* directus
+$ cp -r api-build/ directus
 ```
 
 6. Clone the app build
@@ -256,7 +256,7 @@ $ rm -rf app-build/.git
 9. Copy everything from app-build to directus/public/admin
 
 ```bash
-$ cp -r app-build/* directus/public/admin
+$ cp -r app-build/ directus/public/admin
 ```
 
 10. Duplicate the `directus/public/admin/config_example.js` file to `directus/public/admin/config.js`
