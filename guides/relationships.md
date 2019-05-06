@@ -106,7 +106,7 @@ This setup is specific to the `movies → genres` (M2M) field. The following ste
     * Map `movies.id` to **Movie** under the junction
     * Map `genres.id` to **Genre** under the junction
 12. Options: **Visible Columns** sets the columns the interface shows (we're using `name`)
-    * **Display Template** sets the columns the interface shows (we're using `{{name}}`)
+    * **Display Template** sets the columns the interface shows (we're using `{{movie.name}}`)
 :::
 
 ![M2M](../img/m2m.png)
