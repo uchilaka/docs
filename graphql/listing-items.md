@@ -1,16 +1,10 @@
 # Listing Items
 
-<!-- ### Formatting the collection names
-
-While Directus REST API uses `snake_case` for collection names, the GraphQL standard is to use `camelCase` in queries. So if you have a collection named `member_favorites` it should be queried as `memberFavorites`. -->
-
-### Formatting the collection names
-
-To get the collection of items, the field name should be like: `<collection-name>_collection`
-<br>For example, if you have a collection named `movies` and you want to list down all the movies, the query should be:
+You can get a set of items from a particular collection.
+<br>For example, if you want to list down all the movies from the `movies` collection, the query should be:
 
 ```
-movies_collection(limit:10) {
+movies(limit:10) {
   data {
     name
   }
@@ -21,15 +15,16 @@ movies_collection(limit:10) {
 }
 ```
 
-Here the `data` is an array containing all the items while `meta` has the metadata about the items being displayed. The response format is same as the REST API so you can add queries in GraphQL which is supported in REST API.
+Here the `data` is an array containing all the items while `meta` has the metadata about the items being displayed. The response format is same as the REST API so you can add queries in GraphQL which is supported in REST API. Read more about meta [here.](/api/reference.html#metadata)
 
 ### Arguments
 
 Collection supports following 3 arguments.
 
 - limit: Limits the number of items per page.
-- offset: To skip the number of items multiplied by limit from start
-- filter: To list specific items based on their values. [Read More](./filters)
+- offset: To skip the number of items multiplied by limit from start.
+- filter: To list specific items based on their values. [Read More](./filters.html)
+- id: To get a specific item with primary key. [Read More](./item-details.html).
 
 A complete example to list down items from the `movies` collection:
 
@@ -37,7 +32,7 @@ A complete example to list down items from the `movies` collection:
 <template>
   <div id="app">
     <ul>
-      <li v-for="item in movies_collection.data">{{ item.name }}</li>
+      <li v-for="item in movies.data">{{ item.name }}</li>
     </ul>
   </div>
 </template>
@@ -47,9 +42,9 @@ import gql from "graphql-tag";
 
 export default {
   apollo: {
-    movies_collection: gql`
+    movies: gql`
       query {
-        movies_collection(limit: 10) {
+        movies(limit: 10) {
           data {
             name
           }

@@ -1,21 +1,28 @@
 # Item Details
 
-When you're querying an item, you should use its collection name as field name and use `id` as argument. For example if you want to get details of a movie with id `1` from `movies` collection:
+When you want a specific item based on a primary key, you can pass an `id` as argument. For example if you want to get details of a movie with id `1` from `movies` collection:
 
 ```
 movies(id: 1) {
-  name
-  genre
-  status
+  data {
+    name
+    genre
+    status
+  }
 }
 ```
+
+::: tip
+When you're requesting an item based on primary key, obviously you'll always get a single item. But the response you'll get will always be an array with a single item. This is because how GraphQL & Directus is designed. The GraphQL expects a predefined `types` of a field. So in our case, an **item** or **list of items** will always be an `array`.
+:::
 
 A complete example to get details of an item from the `movies` collection:
 
 ```vue
 <template>
   <div id="app">
-    <h1>{{ movies.name }}</h1>
+    <!-- You should always select `0th` item when you're requesting an item based on primary key -->
+    <h1>{{ movies.data[0].name }}</h1>
   </div>
 </template>
 
@@ -27,9 +34,11 @@ export default {
     movies: gql`
       query {
         movies(id: 1) {
-          name
-          genre
-          status
+          data {
+            name
+            genre
+            status
+          }
         }
       }
     `
