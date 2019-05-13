@@ -2,13 +2,13 @@
 
 ## Lodash
 
-Lodash is available in every Vue component. It's accessible under the `$lodash` property:
+Lodash is globally available in the browser. It's accessible under the `_` name:
 
 ```js
 {
   computed: {
     fields() {
-      return this.$lodash.keyBy(this.fields, "field");
+      return _.keyBy(this.fields, "field");
     }
   }
 }
