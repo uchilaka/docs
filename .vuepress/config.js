@@ -112,6 +112,7 @@ module.exports = {
           ['/advanced/source', 'Local Dev Environment'],
           ['/advanced/server-setup', 'Server Setup'],
           ['/advanced/app/configuration', 'Application Configuration'],
+          ['/advanced/app/helpers', 'Application Helpers'],
           ['/advanced/api/configuration', 'API Configuration'],
           ['/advanced/api/codebase', 'API Codebase'],
           ['/advanced/api/data', 'Direct Data Access'],
