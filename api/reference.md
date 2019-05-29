@@ -1612,7 +1612,7 @@ PATCH /[project]/fields/[collection]/[field]
 Permanently deletes a field and its content.
 
 ```http
-DELETE /[project]/fields/[collection]
+DELETE /[project]/fields/[collection]/[field]
 ```
 
 :::warning
