@@ -107,10 +107,10 @@ module.exports = {
         children: [["/api/reference", "Reference"]]
       },
       {
-        title: "✡️ GraphQL",
+        title: "💎 GraphQL",
         collapsable: true,
         children: [
-          "/graphql/configure",
+          ["/graphql/configure", "Configuring"]
           "/graphql/how-to-use",
           "/graphql/listing-items",
           "/graphql/filters",
