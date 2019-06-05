@@ -108,7 +108,7 @@ A "collection" is a _group_ or _category_ of items. This could be almost anythin
 
 ![Item Browse](../img/screenshots/item-browse-order.png)
 
-This page displays the items within a collection. All the inforation you need might be displayed here, or you can use this page to find and manage specific items. This is one of the most powerful pages in Directus, with many different features available depending on the layout chosen.
+This page displays the items within a collection. All the information you need might be displayed here, or you can use this page to find and manage specific items. This is one of the most powerful pages in Directus, with many different features available depending on the layout chosen.
 
 ### Layouts
 

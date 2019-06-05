@@ -140,15 +140,16 @@ module.exports = {
         title: "🚧 Advanced",
         collapsable: true,
         children: [
-          ["/advanced/app/standalone", "Standalone Application"],
-          ["/advanced/api/standalone", "Standalone API"],
-          ["/advanced/other-install-methods", "Other Install Methods"],
-          ["/advanced/source", "Local Dev Environment"],
-          ["/advanced/server-setup", "Server Setup"],
-          ["/advanced/app/configuration", "Application Configuration"],
-          ["/advanced/api/configuration", "API Configuration"],
-          ["/advanced/api/codebase", "API Codebase"],
-          ["/advanced/api/data", "Direct Data Access"]
+          ['/advanced/app/standalone', 'Standalone Application'],
+          ['/advanced/api/standalone', 'Standalone API'],
+          ['/advanced/other-install-methods', 'Other Install Methods'],
+          ['/advanced/source', 'Local Dev Environment'],
+          ['/advanced/server-setup', 'Server Setup'],
+          ['/advanced/app/configuration', 'Application Configuration'],
+          ['/advanced/app/helpers', 'Application Helpers'],
+          ['/advanced/api/configuration', 'API Configuration'],
+          ['/advanced/api/codebase', 'API Codebase'],
+          ['/advanced/api/data', 'Direct Data Access'],
           // ['/advanced/deploying-versions', 'Deploying Versions'],
         ]
       }

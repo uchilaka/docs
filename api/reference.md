@@ -308,7 +308,9 @@ curl https://example.com/api/types?access_token=staticToken&project=_
 
 #### Project via Header
 
+```
 curl -H "Authorization: Bearer staticToken" -H "X-Directus-Project: _" https://example.com/api/
+```
 
 ### Refresh Auth Token
 
@@ -1610,7 +1612,7 @@ PATCH /[project]/fields/[collection]/[field]
 Permanently deletes a field and its content.
 
 ```http
-DELETE /[project]/fields/[collection]
+DELETE /[project]/fields/[collection]/[field]
 ```
 
 :::warning
