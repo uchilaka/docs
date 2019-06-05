@@ -1,4 +1,4 @@
-# Relationships
+﻿# Relationships
 
 > If certain collections within your project are related then you can connect them with Relationships. There are multiple types of relationships but technically Directus only needs to store one: the **Many-to-One**.
 
@@ -7,6 +7,12 @@
 A many-to-one (M2O) relationship exists when an item of **Collection A** is linked to one single item of **Collection B**, but an item of **Collection B** may be linked to many items of **Collection A**. For example, a movie has one director, but directors have many movies.
 
 ### Setup
+
+<br>
+
+<video width="100%" autoplay muted controls loop>
+  <source src="../img/video/m2o.mp4" type="video/mp4">
+</video>
 
 This setup is specific to the `movies → directors` (M2O) field. The following steps assume you already have two collections: `movies` and `directors`. Each collection has the default `id` primary key and a `name` field.
 
