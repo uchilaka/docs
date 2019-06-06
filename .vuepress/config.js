@@ -110,7 +110,7 @@ module.exports = {
         title: "💎 GraphQL",
         collapsable: true,
         children: [
-          ["/graphql/configure", "Configuring"]
+          ["/graphql/configure", "Configuring"],
           "/graphql/how-to-use",
           "/graphql/listing-items",
           "/graphql/filters",
