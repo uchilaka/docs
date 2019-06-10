@@ -4,8 +4,6 @@ GraphQL offers many benefits over REST APIs. One of the main benefits is clients
 
 Directus is offering a GraphQL API which is a wrapper on the current REST API.
 
-> As GraphQL is in development, it is not yet merged with `master` branch & not being added to releases.
-
 ::: warning Limited Support
 Currently supports "Queries" only. "Mutations" & "Subscription" support will be added soon.
 :::
@@ -13,7 +11,6 @@ Currently supports "Queries" only. "Mutations" & "Subscription" support will be 
 Steps to configure:
 
 - Clone the API repo.
-- Checkout `graphql` branch.
 - Do `composer update`
 - Download & install the [GraphiQL](https://electronjs.org/apps/graphiql) tool on your system.
   - It provides the GUI for editing and testing GraphQL queries and mutations.
