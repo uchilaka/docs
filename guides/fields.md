@@ -29,6 +29,7 @@ Only the "Name" is required for this step, but it's good to familiarize yourself
   * **Unique** — Whether or not this field's value must be unique within the collection.
   * **Hidden Detail** — Hides the field on the Item Detail page.
   * **Hidden Browse** — Hides the field on the Item Browse page.
+  * **Signed** — "Signed" is used to store negative values, "Unsigned" can only be positive.
 
 ### 3. Relationship Setup
 
