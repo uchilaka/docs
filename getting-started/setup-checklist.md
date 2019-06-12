@@ -57,6 +57,6 @@
 
 If all of the above fails, you should:
 
-1. Ask for help on the `#support` channel of our [Community Slack](https://slack.directus.io/)
-2. Post a question on [StackOverflow](https://stackoverflow.com/search?q=directus)
-3. If this truly seems like a `bug` (vs. a configuration problem) then report it on GitHub issues for [the appropriate repository](https://github.com/directus)
+- Ask for help on the `#support` channel of our [Community Slack](https://slack.directus.io/)
+- Post a question on [StackOverflow](https://stackoverflow.com/search?q=directus)
+- If this truly seems like a `bug` (vs. a configuration problem) then report it on GitHub issues for [the appropriate repository](https://github.com/directus)
