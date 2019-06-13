@@ -3,10 +3,10 @@
 > If you're having difficulty getting Directus up-and-running, this setup checklist will help troubleshoot and diagnose issues. Follow each step, in order, and you should be good to go!
 
 :::warning
-**This checklist applies to the OS-level requirements for your Directus server**. If you are installing Directus using any of the other installation methods outlined [here](https://docs.directus.io/getting-started/installation.html#setup), you will need to examine your container image (or other system configuration) to ensure these requirements are met.
+**This checklist applies to the OS-level requirements for your Directus server**. If you are installing Directus using any of the other installation methods outlined [here](/getting-started/installation.html#setup), you will need to examine your container image (or other system configuration) to ensure these requirements are met.
 :::
 
-1. **Check your Server Requirements** — Ensure that your server meets the [minimum Directus requirements](https://docs.directus.io/advanced/requirements.html):
+1. **Check your Server Requirements** — Ensure that your server meets the [minimum Directus requirements](/advanced/requirements.html):
 
     - Apache 2
     - PHP 7.1+
@@ -46,7 +46,7 @@
 
 7. **Are you using the [latest release of Directus](https://github.com/directus/directus/releases)?**
 
-8. **Did you run the migration script?** This is especially important if you have upgraded from a previous version. You can run this from the App by navigating to: _Settings > Update Database_. Or run it directly with our [CLI](https://docs.directus.io/guides/cli.html#upgrade-directus-schema) or [API Endpoint](https://docs.directus.io/api/reference.html#update).
+8. **Did you run the migration script?** This is especially important if you have upgraded from a previous version. You can run this from the App by navigating to: _Settings > Update Database_. Or run it directly with our [CLI](/guides/cli.html#upgrade-directus-schema) or [API Endpoint](/api/reference.html#update).
 
 9. **Did you install or create the API configuration file?**
 
