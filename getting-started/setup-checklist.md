@@ -79,7 +79,7 @@ Your docker (or Kubernetes) images are made of the same "stuff" as a UNIX based 
 The building blocks for a dockerized implementation are containers, and the raw material those are "made of" are your images. At the image level, these tips will also apply to your docker image composition.
 
 ### For example...
-If your [use case](https://docs.directus.io/getting-started/use-cases.html) involves using Directus both for your website and as a headless CMS, then you would likely need to deploy both docker images (app & API) as co-dependent containers in your system. You are able to do this with fancy tech like [Docker Compose](https://docs.docker.com/compose/overview/) which gives you Kubenetes-ish levels of cool with standing up all the containers you need in one `docker-compose up` command from your project root.
+If your [use case](/getting-started/use-cases.html) involves using Directus both for your website and as a headless CMS, then you would likely need to deploy both docker images (app & API) as co-dependent containers in your system. You are able to do this with fancy tech like [Docker Compose](https://docs.docker.com/compose/overview/) which gives you Kubenetes-ish levels of cool with standing up all the containers you need in one `docker-compose up` command from your project root.
 
 ### In summary (about containers)
 If you are implementing a solution for a client or an enterprise, you want to take a look at containers, especially if said client is familiar with modern virtualization technology. It could greatly simpify your speed to market with you brand new Directus CMS.
