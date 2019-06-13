@@ -1,8 +1,10 @@
 # ⚙️ Setup Checklist
 
-> Our Team put together this setup checklist to help with diagnosing a broken Directus setup. Having any issues not addressed here? Reach out to our Core team [Slack](https://slack.directus.io) - we're glad to help
+Our Team put together this checklist to help with diagnosing a broken Directus setup. Got any installation issues not addressed here? Reach out to our Core team [Slack](https://slack.directus.io) - we're glad to help, and you would be helping us make this documentation better.
 
 > **This checklist applies to the OS-level requirements for your Directus server**. If you are installing Directus using any of the other installation methods outlined [here](https://docs.directus.io/getting-started/installation.html#setup), you will need to examine your container image (or other system config as appropriate) to ensure these requirements are met
+
+## The Checklist
 
 1. **Check your Server Requirements** — ensure that your server meets the [minimum Directus requirements](https://docs.directus.io/advanced/requirements.html) i.e.
 
@@ -54,6 +56,28 @@
     - PHP logs
     - MySQL logs
 13. Did you check [GitHub](https://github.com/directus) for an open issue similar to yours?
+
+## But I don't see anything about Docker or Containers...
+
+> If you are a docker ninja, feel free to skip this explainer
+
+There are great guides published with our official docker images for the directus [app](https://hub.docker.com/r/directus/app) and [API](https://hub.docker.com/r/directus/api). Those are your best resources for hitting the ground running with the respective containers.
+
+> If you're taking a stab at rolling your own image from the source code for a bespoke use case, here's a brief explainer along with our best wishes (to all explorers & tinkerers out there 🚀🍻 - do [share your journey](https://slack.directus.io/) and any lessons with us)
+
+
+### So what is Docker, anyway?
+Your docker (or Kubernetes) images are made of the same "stuff" as a UNIX based OS environment, just packaged in a container. Docker - and other containerization frameworks are simply faster, meaner virtualization paradigms (think evolution of VMs from of old).
+
+The building blocks for a dockerized implementation are containers, and the raw material those are "made of" are your images. At the image level, these tips will also apply to your docker image composition.
+
+### For example...
+If your [use case](https://docs.directus.io/getting-started/use-cases.html) involves using Directus both for your website and as a headless CMS, then you would likely need to deploy both docker images (app & API) as co-dependent containers in your system. You are able to do this with fancy tech like [Docker Compose](https://docs.docker.com/compose/overview/) which gives you Kubenetes-ish levels of cool with standing up all the containers you need in one `docker-compose up` command from your project root.
+
+### In summary (about containers)
+If you are implementing a solution for a client or an enterprise, you want to take a look at containers, especially if said client is familiar with modern virtualization technology. It could greatly simpify your speed to market with you brand new Directus CMS.
+
+## Nothing working?
 
 If all of the above fails, you should:
 
